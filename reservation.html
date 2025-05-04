@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms | Boarding House</title>
+    <link rel="stylesheet" href="reservation.css">
+    <style>
+        * {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">LogoName</div>
+        <ul>
+            <li><a href="landingpage.html">Home</a></li>
+            <li><a href="reservation.html">Rooms</a></li>
+            <li><a href="#">FAQ’s</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+        <button class="login-btn">Log In</button>
+    </nav>
+    
+    <section class="room-details">
+        <div class="room-info">
+            <h2>Room #.</h2>
+            <p class="description">Description about the place</p>
+
+            <form class="room-form">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" placeholder="Enter your name">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Room No.</label>
+                        <select><option>Choose Room</option><option>1</option><option>2</option></select>
+                        </div>
+                    <div class="form-group">
+                        <label>Check-In Date</label>
+                        <input type="date">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Boarder Type</label> 
+                        <select><option>Select Type</option><option>Single</option><option>Double</option></select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Available</label>
+                        <input type="text" disabled placeholder="Yes/No"  class="disabled-field">
+                    </div>
+                </div>
+                    <br><br>
+                    <button type="submit" class="button">Reserve</button>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="room-images">
+            <br><br>
+            <div class="main-image">Image Placeholder</div>
+            <br>
+            <div class="slideshow">
+                <button class="prev">&larr;</button>
+                <div class="small-image">Image</div>
+                <div class="small-image">Image</div>
+                <button class="next">&rarr;</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="reviews">
+        <h2>Reviews</h2>
+        <div class="review-container">
+            <div class="review-box"></div>
+            <div class="review-box"></div>
+            <div class="review-box"></div>
+            <div class="review-box"></div>
+            <div class="review-box"></div>
+            <div class="review-box"></div>
+            <div class="review-box"></div>
+        </div>
+    </section>
+</body>
+</html>
