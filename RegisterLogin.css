@@ -15,7 +15,7 @@
 
 .login-button{
     height: 60px;
-    width: 200px;
+    width: auto;
     font-size: 30px;
     letter-spacing: 10px;
     color: rgb(150, 142, 142);
@@ -28,10 +28,22 @@
     color: black;
 }
 
+.name{
+    flex: 1;
+}
 
-#login, #password{
+#fname, #lname{
     height: 60px;
-    width: 500px;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(255, 247, 247);
+    border-radius: 2px;
+    border: 1px solid;
+}
+
+#email, #password, #contactnumber{
+    height: 60px;
+    width: 100%;
     text-align: center;
     background-color: rgb(255, 247, 247);
     border-radius: 2px;
