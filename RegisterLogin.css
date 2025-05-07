@@ -1,0 +1,53 @@
+.login{
+    font-size: 50px;
+    letter-spacing: 30px;
+    color: rgb(56, 56, 56);
+    font-weight: lighter;
+    
+}
+
+.subtext{
+    font-size: 20px;
+    letter-spacing: 10px;
+    color: rgb(56, 56, 56);
+    font-weight: lighter;
+}
+
+.login-button{
+    height: 60px;
+    width: 200px;
+    font-size: 30px;
+    letter-spacing: 10px;
+    color: rgb(150, 142, 142);
+    border-radius: 5px;
+    border: 0px;
+}
+
+.login-button:hover{
+    background-color: rgb(212, 212, 212);
+    color: black;
+}
+
+
+#login, #password{
+    height: 60px;
+    width: 500px;
+    text-align: center;
+    background-color: rgb(255, 247, 247);
+    border-radius: 2px;
+    border: 1px solid;
+}
+
+.register{
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+.register:hover{
+    color: rgb(94, 94, 94);
+}
+
+form{
+    border: 0px solid;
+}           
