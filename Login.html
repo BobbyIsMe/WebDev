@@ -55,45 +55,53 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="col-md-2 bg-light border-end min-vh-100 p-3">
-                <div class="nav flex-column">
-                    <a class="nav-link fw-bold" href="PersonalDetails.html">Personal Details</a>
-                    <a class="nav-link " href="RentedRoom.html">Rented Room</a>
-                </div>
-            </div>
-
-
-            <div class="col-md-10 p-4">
+            <div class="col-md-12 p-4">
                 <div class="col-9 mx-auto">
+                    <div class="mb-4 border text-center" style="height: 200px;">
+                        <p class="pt-5">Image Placeholder</p>
+                    </div>
 
-
-                    <h5>Member since March 1, 2024</h5>
-                    <br>
+                    <h5>Room #.</h5>
+                    <p><strong>Description about the place</strong></p>
 
                     <form>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <label for="Email" class="form-label">Check-in Date</label>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="checkInDate" class="form-label">Check-in Date</label>
                                 <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="Email" value="" placeholder="11820072@usc.edu.ph">
+                                    id="checkInDate" value="" placeholder="March 1, 2024">
                             </div>
-                            <div class="col-md-10">
-                                <br>
-                                <label for="Name" class="form-label">Name</label>
+                            <div class="col-md-6">
+                                <label for="dueDate" class="form-label">Due Date</label>
                                 <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="dueDate" value="" placeholder="Cedrick Andrei Matias">
-                            </div>
-
-                            <div class="col-md-10">
-                                <br>
-                                <label for="Contactnumber" class="form-label">Contact Number</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="Contactnumber" value="" placeholder="09773840464">
+                                    id="dueDate" value="" placeholder="April 1, 2024">
                             </div>
                         </div>
 
 
-
+                        <div class="border p-3 mt-4">
+                            <h5>Billing Details</h5>
+                            <div class="mb-3">
+                                <label for="electricBill" class="form-label">Electric Bill</label>
+                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
+                                    id="electricBill" value="" placeholder="PHP 155.01">
+                            </div>
+                            <div class="mb-3">
+                                <label for="miscBill" class="form-label">Miscellaneous Bill</label>
+                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
+                                    id="miscBill" value="" placeholder="PHP 500.00">
+                            </div>
+                            <div class="mb-3">
+                                <label for="rentBill" class="form-label">Rent Bill</label>
+                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
+                                    id="rentBill" value="" placeholder="PHP 3000.00">
+                            </div>
+                            <div class="mb-3">
+                                <label for="totalBill" class="form-label">Total Bill</label>
+                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
+                                    id="totalBill" value="" placeholder="PHP 3655.01">
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div>
