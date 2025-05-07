@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boarding House</title>
+    <link rel="stylesheet" href="FAQ.css">
+    <style>
+        * {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    <nav>
+        <div class="logo">LogoName</div>
+        <ul>
+            <li><a href="landingpage.html">Home</a></li>
+            <li><a href="reservation.html">Rooms</a></li>
+            <li><a href="FAQ.html">FAQ’s</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+        <button class="login-btn">Log In</button>
+    </nav>
+
+    <div class="faq-section">
+        <h1>Frequently Asked<br>Questions</h1>
+
+        <div class="faq-item">
+            <div class="faq-question">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            <div class="faq-answer">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            <div class="faq-answer">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            <div class="faq-answer">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        </div>
+    </div>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+
+    
+  
+</body>
+
+</html>

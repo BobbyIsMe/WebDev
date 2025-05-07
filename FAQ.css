@@ -1,0 +1,162 @@
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.paragraphs {
+    margin: 0 auto;
+    width: 70%;
+    text-align: justify;
+}
+
+nav {
+    
+    background-color: #f8b6b6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vw 2vw;
+
+}
+
+.logo {
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+nav ul {
+    justify-content: center;
+    width: 70vw;
+    height: 2vw;
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 1.2vw;
+    font-size: 1.2vw;
+}
+
+nav ul li {
+    margin: 0 10px;
+    width: 8vw;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+}
+
+nav ul li a.active {
+    background-color: #ff6b6b;
+    border-radius: 5px;
+    color: white;
+}
+
+.login-btn {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1.5vw;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+.main-image {
+    width: 90%;
+    height: 20vw;
+    margin: 0 auto;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rooms-showcase, .reservation-steps {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 20px;
+}
+
+.reservation-steps {
+
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.room-images {
+    display: flex;
+    justify-content: center;
+    gap: 5vw;
+    margin-top: 10px;
+}
+
+.room-placeholder {
+    width: 20vw;
+    height: 15vw;
+    background-color: #ccc;
+}
+
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.faq-section {
+    max-width: 70%;
+    margin: 5vw auto;
+    padding: 2vw;
+    background-color: #fff0f0;
+    border-radius: 1vw;
+}
+
+.faq-section h1 {
+    text-align: center;
+    font-size: 2.5vw;
+    margin-bottom: 3vw;
+}
+
+.faq-item {
+    margin-bottom: 2vw;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 1vw;
+}
+
+.faq-question {
+    font-size: 1.5vw;
+    cursor: pointer;
+    position: relative;
+    padding-right: 2vw;
+}
+
+.faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    font-size: 1.5vw;
+    transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question::after {
+    content: '-';
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    font-size: 1.2vw;
+    line-height: 1.5;
+    margin-top: 0.5vw;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
