@@ -43,7 +43,7 @@ function signinSubmit(e) {
         .then(res => {
             if (res["status"] === 200) {
                 document.getElementById("signinForm").reset();
-                window.location.replace('../html/home.php');
+                window.location.replace('../pages/home.php');
             } else {
                 alert(res["message"]);
             }
@@ -66,7 +66,7 @@ function signoutClick(e) {
         })
         .then(res => {
             if (res["status"] === 200) {
-                window.location.replace('../html/Login.php'); // replaces the current location
+                window.location.replace('../pages/Login.php'); // replaces the current location
                 // or: window.location = '../public/index.php'; // navigates to another location
             }
         })
