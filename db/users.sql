@@ -7,5 +7,5 @@ CREATE TABLE `Users` (
   `password` varchar(255) NOT NULL,
   `anonymous` boolean NOT NULL,
   `admin` boolean NOT NULL,
-  `date_created` timestamp NOT NULL DEFAULT CURRENT_DATE
+  `date_created` date NOT NULL DEFAULT CURRENT_DATE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

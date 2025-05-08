@@ -4,7 +4,7 @@ $retVal = "";
 $isValid = true;
 $status = 400;
 $data = [];
-
+ 
 $email = trim($_REQUEST['email']);
 $password = trim($_REQUEST['password']);
 

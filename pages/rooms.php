@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rooms | Boarding House</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/reservation.css">
-    <link rel="stylesheet" href="css/navbar.css"/>
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/reservation.css">
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/auth.js"></script>
+    <script type="text/javascript" src="../js/rent_room.js"></script>
 
     <style>
         * {
@@ -15,6 +19,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg border-bottom w-100" style="background-color: #f8b6b6;">
         <div class="container-fluid">
@@ -23,7 +28,7 @@
 
                 <div class="navbar-nav mx-auto">
                     <a class="nav-link me-5" href="home.html">Home</a>
-                    <a class="nav-link me-5" href="rooms.html">Rooms</a>
+                    <a class="nav-link me-5" href="rooms.php">Rooms</a>
                     <a class="nav-link me-5" href="FAQ.html">FAQ's</a>
                     <a class="nav-link me-5" href="ContactUs.html">Contact Us</a>
                     <a class="nav-link me-5" href="About.html">About Us</a>
@@ -35,51 +40,51 @@
                         Profile
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <a class="dropdown-item" href="PersonalDetails.html">Personal Details</a>
-                        <a class="dropdown-item" href="RentedRoom.html">Rented Room</a>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" id="personalDetailsLink" href="PersonalDetails.php">Personal Details</a>
+                        <a class="dropdown-item" id="rentedRoomLink" href="RentedRoom.php">Rented Room</a>
+                        <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
-    
+
     <section class="room-details">
         <div class="room-info">
-            <h2>Room #.</h2>
-            <p class="description">Description about the place</p>
+            <h2 id="room-num">Room #.</h2>
+            <p id="description">Description about the place</p>
 
-            <form class="room-form">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" placeholder="Enter your name">
-                </div>
+            <form id="room-form" method="post" onsubmit="rentSubmit(event)">
                 <div class="form-row">
                     <div class="form-group">
                         <label>Room No.</label>
-                        <select><option>Choose Room</option><option>1</option><option>2</option></select>
-                        </div>
+                        <select id="room-dropdown" name="room_id">
+                            <option>Choose Room</option>
+                        </select>
+                    </div>
                     <div class="form-group">
                         <label>Check-In Date</label>
-                        <input type="date">
+                        <input type="date" name="check_in_date">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Boarder Type</label> 
-                        <select><option>Select Type</option><option>Single</option><option>Double</option></select>
+                        <label>Boarder Type</label>
+                        <select id="boarder-type" name="boarder_type">
+                            <option>Select Type</option>
+                            <option>Single</option>
+                            <option>Double</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
                         <label>Available</label>
-                        <input type="text" disabled placeholder="Yes/No"  class="disabled-field">
+                        <input id="room-status" type="text" disabled value="Yes/No" class="disabled-field">
                     </div>
                 </div>
-                    <br><br>
-                    <button type="submit" class="button">Reserve</button>
-
-                </div>
+                <br><br>
+                <button type="submit" class="button">Reserve</button>
             </form>
         </div>
 
@@ -95,7 +100,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="reviews">
         <h2>Reviews</h2>
         <div class="review-container">
@@ -109,24 +114,11 @@
         </div>
     </section>
 
-    <script>
-        const profileDropdown = document.getElementById("profileDropdown");
-
-        profileDropdown.addEventListener("click", function () {
-            profileDropdown.classList.toggle("active");
-        });
-
-        document.addEventListener('click', function (event) {
-            if (!profileDropdown.contains(event.target)) {
-                profileDropdown.classList.remove('active');
-            }
-        });
-
-    </script>
-
+    <script type="text/javascript" src="../js/session.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
 
 </body>
+
 </html>
