@@ -24,12 +24,22 @@ $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
-$rent_id = $row['rent_id'];
-$room_id = $row['room_id'];
-$boarder_type = $row['boarder_type'];
-$check_in_date = $row['check_in_date'];
-$due_date = $row['due_date'];
-$status = $row['status'];
+if($row != NULL)
+{
+    $rent_id = $row['rent_id'];
+    $room_id = $row['room_id'];
+    $boarder_type = $row['boarder_type'];
+    $check_in_date = $row['check_in_date'];
+    $due_date = $row['due_date'];
+    $status = $row['status'];
+} else {
+    $rent_id = NULL;
+    $room_id = NULL;
+    $boarder_type = NULL;
+    $check_in_date = NULL;
+    $due_date = NULL;
+    $status = NULL;
+}
 
 $stmt = $con->prepare("
     SELECT 
@@ -45,20 +55,19 @@ $stmt->execute();
 $bill_result = $stmt->get_result();
 $bill_row = $bill_result->fetch_assoc();
 
-
-if ($bill_row) {
+if($bill_row != NULL)
+{
     $electricity_bill = $bill_row['electricity_bill'];
     $miscellaneous_bill = $bill_row['miscellaneous_bill'];
     $rent_bill = $bill_row['rent_bill'];
     $total_bill = $bill_row['total_bill'];
 } else {
-    $electricity_bill = null;
-    $miscellaneous_bill = null;
-    $rent_bill = null;
-    $total_bill = null;
+    $electricity_bill = NULL;
+    $miscellaneous_bill = NULL;
+    $rent_bill = NULL;
+    $total_bill = NULL;
 }
 
-// --- Fetch Room Description ---
 $stmt = $con->prepare("
     SELECT 
         r.description
@@ -70,24 +79,25 @@ $stmt->execute();
 $room_result = $stmt->get_result();
 $room_row = $room_result->fetch_assoc();
 
-$description = $room_row ? $room_row['description'] : null; //handle if room description is null
-
+if ($room_row != NULL)
+    $description = $room_row['description'];
+else
+    $description = NULL;
 
 $myObj = array(
-    'room_id' => $room_id ? $room_id : " ",
-    'description' => $description,
-    'boarder_type' => $boarder_type,
-    'check_in_date' => $check_in_date ? $check_in_date : " ",
-    'due_date' => $due_date ? $due_date : " ",
-    'status' => $status,
-    'electricity_bill' => $electricity_bill ? $electricity_bill : " ",
-    'miscellaneous_bill' => $miscellaneous_bill ? $miscellaneous_bill : " ",
-    'rent_bill' => $rent_bill ? $rent_bill : " ",
-    'total_bill' => $total_bill ? $total_bill : " "
+    'room_id' => $room_id != NULL ? $room_id : ".",
+    'description' => $description != NULL ? $description : "Description about the place",
+    'boarder_type' => $boarder_type != NULL ? $boarder_type : "No room rented",
+    'check_in_date' => $check_in_date != NULL ? $check_in_date : "TBD",
+    'due_date' => $due_date != NULL ? $due_date : "TBD",
+    'status' => $status != NULL ? $status : "No room rented",
+    'electricity_bill' => $electricity_bill != NULL ? $electricity_bill : "TBD",
+    'miscellaneous_bill' => $miscellaneous_bill != NULL ? $miscellaneous_bill : "TBD",
+    'rent_bill' => $rent_bill != NULL ? $rent_bill : "TBD",
+    'total_bill' => $total_bill != NULL ? $total_bill : "TBD"
 );
 
 echo json_encode($myObj, JSON_FORCE_OBJECT);
 
 $stmt->close();
 $con->close();
-?>
