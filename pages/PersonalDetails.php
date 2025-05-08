@@ -62,8 +62,8 @@
 
             <div class="col-md-2 bg-light border-end min-vh-100 p-3">
                 <div class="nav flex-column">
-                    <a class="nav-link fw-bold" href="PersonalDetails.html">Personal Details</a>
-                    <a class="nav-link " href="RentedRoom.html">Rented Room</a>
+                    <a class="nav-link fw-bold" href="PersonalDetails.php">Personal Details</a>
+                    <a class="nav-link " href="RentedRoom.php">Rented Room</a>
                 </div>
             </div>
 

@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION["user_email"])) {
+    header("Location: Login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +14,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/landingpage.css">
-        <link rel="stylesheet" href="css/navbar.css"/>
+    <link rel="stylesheet" href="../css/landingpage.css">
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/auth.js"></script>
+    <script type="text/javascript" src="../js/rented_rooms_details.js"></script>
 
     <style>
         * {
@@ -24,8 +35,8 @@
                 <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
 
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link me-5" href="home.html">Home</a>
-                    <a class="nav-link me-5" href="rooms.html">Rooms</a>
+                    <a class="nav-link me-5" href="home.php">Home</a>
+                    <a class="nav-link me-5" href="rooms.php">Rooms</a>
                     <a class="nav-link me-5" href="FAQ.html">FAQ's</a>
                     <a class="nav-link me-5" href="ContactUs.html">Contact Us</a>
                     <a class="nav-link me-5" href="About.html">About Us</a>
@@ -37,12 +48,10 @@
                         Profile
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <a class="dropdown-item" href="PersonalDetails.html">Personal Details</a>
-                        <a class="dropdown-item" href="RentedRoom.html">Rented Room</a>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" id="personalDetailsLink" href="PersonalDetails.php">Personal Details</a>
+                        <a class="dropdown-item" id="rentedRoomLink" href="RentedRoom.php">Rented Room</a>
+                        <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
                     </ul>
-
-
 
                 </div>
             </div>
@@ -54,8 +63,8 @@
 
             <div class="col-md-2 bg-light border-end min-vh-100 p-3">
                 <div class="nav flex-column">
-                    <a class="nav-link">Personal Details</a>
-                    <a class="nav-link fw-bold">Rented Room</a>
+                    <a class="nav-link fw-bold" href="PersonalDetails.php">Personal Details</a>
+                    <a class="nav-link " href="RentedRoom.php">Rented Room</a>
                 </div>
             </div>
 
@@ -67,20 +76,20 @@
                     </div>
 
 
-                    <h5>Room #.</h5>
-                    <p><strong>Description about the place</strong></p>
+                    <h5 id="room-id">Room #.</h5>
+                    <p id="description"><strong>Description about the place</strong></p>
 
                     <form>
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="checkInDate" class="form-label">Check-in Date</label>
                                 <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="checkInDate" value="" placeholder="March 1, 2024">
+                                    id="check-in-date" value=" ">
                             </div>
                             <div class="col-md-6">
                                 <label for="dueDate" class="form-label">Due Date</label>
                                 <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="dueDate" value="" placeholder="April 1, 2024">
+                                    id="due-date" value=" ">
                             </div>
                         </div>
 
@@ -88,24 +97,24 @@
                         <div class="border p-3 mt-4">
                             <h5>Billing Details</h5>
                             <div class="mb-3">
-                                <label for="electricBill" class="form-label">Electric Bill</label>
+                                <label for="electricity-bill" class="form-label">Electric Bill</label>
                                 <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="electricBill" value="" placeholder="PHP 155.01">
+                                    id="electricity-bill" value="">
                             </div>
                             <div class="mb-3">
                                 <label for="miscBill" class="form-label">Miscellaneous Bill</label>
                                 <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="miscBill" value="" placeholder="PHP 500.00">
+                                    id="miscellaneous-bill" value="">
                             </div>
                             <div class="mb-3">
                                 <label for="rentBill" class="form-label">Rent Bill</label>
                                 <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="rentBill" value="" placeholder="PHP 3000.00">
+                                    id="rent-bill" value="">
                             </div>
                             <div class="mb-3">
                                 <label for="totalBill" class="form-label">Total Bill</label>
                                 <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="totalBill" value="" placeholder="PHP 3655.01">
+                                    id="total-bill" value="">
                             </div>
                         </div>
                     </form>
@@ -116,19 +125,18 @@
 
             <script>
                 const profileDropdown = document.getElementById("profileDropdown");
-        
-                profileDropdown.addEventListener("click", function () {
+
+                profileDropdown.addEventListener("click", function() {
                     profileDropdown.classList.toggle("active");
                 });
-        
-                document.addEventListener('click', function (event) {
+
+                document.addEventListener('click', function(event) {
                     if (!profileDropdown.contains(event.target)) {
                         profileDropdown.classList.remove('active');
                     }
                 });
-        
             </script>
-        
+
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
                 crossorigin="anonymous"></script>

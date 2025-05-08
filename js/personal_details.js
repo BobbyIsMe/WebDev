@@ -10,5 +10,5 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById("name").value = `${data.user_name}`;
             document.getElementById("contact-number").value = `${data.contact_number}`;
         })
-        .catch(err => console.error("Failed to fetch rooms:", err));
+        .catch(err => console.error("Failed to fetch personal details:", err));
 });

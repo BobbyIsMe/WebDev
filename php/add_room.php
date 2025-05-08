@@ -4,7 +4,7 @@ include_once("db_connect.php");
 $status = 400;
 $message = "";
 
-if (!isset($_REQUEST['room_id'], $_REQUEST['boarder_type'], $_REQUEST['check_in_date'])) {
+if (!isset($_REQUEST['room_id'], $_REQUEST['boarder_type'])) {
     echo json_encode([
         'status' => 400,
         'message' => 'Missing input parameters.'
@@ -26,7 +26,6 @@ function validateForm($con)
     $user_id = $_SESSION['user_id'];
     $room_id = trim($_REQUEST['room_id']);
     $boarder_type = trim($_REQUEST['boarder_type']);
-    $check_in_date = trim($_REQUEST['check_in_date']);
     $stmt = $con->prepare("SELECT COUNT(*) as count FROM Rooms WHERE room_id = ?");
     $stmt->bind_param("i", $room_id);
     $stmt->execute();
@@ -36,12 +35,6 @@ function validateForm($con)
         return "Invalid room ID.";
     }
     $stmt->close();
-
-    if (!preg_match("/^\d{4}-\d{2}-\d{2}$/", $check_in_date)) {
-        return "Please choose a valid check-in date.";
-    } elseif (!strtotime($check_in_date)) {
-        return "Invalid date value.";
-    }
 
     $allowed_types = ['single', 'double'];
     if (!in_array(strtolower($boarder_type), $allowed_types)) {
@@ -68,9 +61,9 @@ function validateForm($con)
     if ($user_result->num_rows > 0) {
         return "You already have a rented room.";
     }
-    $insertUserSQL = "INSERT INTO Rents (user_id, room_id, boarder_type, check_in_date) VALUES (?, ?, ?, ?)";
+    $insertUserSQL = "INSERT INTO Rents (user_id, room_id, boarder_type) VALUES (?, ?, ?)";
     $stmt = $con->prepare($insertUserSQL);
-    $stmt->bind_param("iiss", $user_id, $room_id, $boarder_type, $check_in_date);
+    $stmt->bind_param("iis", $user_id, $room_id, $boarder_type);
     $stmt->execute();
     $status = 200;
     $stmt->close();

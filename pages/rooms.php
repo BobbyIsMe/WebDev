@@ -27,7 +27,7 @@
                 <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
 
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link me-5" href="home.html">Home</a>
+                    <a class="nav-link me-5" href="home.php">Home</a>
                     <a class="nav-link me-5" href="rooms.php">Rooms</a>
                     <a class="nav-link me-5" href="FAQ.html">FAQ's</a>
                     <a class="nav-link me-5" href="ContactUs.html">Contact Us</a>
@@ -61,10 +61,6 @@
                         <select id="room-dropdown" name="room_id">
                             <option>Choose Room</option>
                         </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Check-In Date</label>
-                        <input type="date" name="check_in_date">
                     </div>
                 </div>
 
