@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boarding House</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/landingpage.css">
-    <link rel="stylesheet" href="navbar.css"/>
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/landingpage.css">
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/auth.js"></script>
 
     <style>
         * {
@@ -18,7 +20,7 @@
 </head>
 
 <body>
-    
+
     <nav class="navbar navbar-expand-lg border-bottom w-100" style="background-color: #f8b6b6;">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarContent">
@@ -38,12 +40,10 @@
                         Profile
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <a class="dropdown-item" href="PersonalDetails.html">Personal Details</a>
-                        <a class="dropdown-item" href="RentedRoom.html">Rented Room</a>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" id="personalDetailsLink" href="PersonalDetails.html">Personal Details</a>
+                        <a class="dropdown-item" id="rentedRoomLink" href="RentedRoom.html">Rented Room</a>
+                        <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
                     </ul>
-
-
 
                 </div>
             </div>
@@ -83,21 +83,7 @@
         </section>
     </div>
 
-    <script>
-        const profileDropdown = document.getElementById("profileDropdown");
-
-        profileDropdown.addEventListener("click", function () {
-            profileDropdown.classList.toggle("active");
-        });
-
-        document.addEventListener('click', function (event) {
-            if (!profileDropdown.contains(event.target)) {
-                profileDropdown.classList.remove('active');
-            }
-        });
-
-    </script>
-
+    <script type="text/javascript" src="../js/session.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>

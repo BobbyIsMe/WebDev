@@ -1,10 +1,17 @@
-<?php 
-    session_start();
-    session_destroy(); //destroy entire session 
-    $myObj = array(
+<?php
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    session_destroy(); // Destroy the session only if user is signed in
+    $response = [
         'status' => 200,
-        'message' => "Success"  
-    );
-    $myJSON = json_encode($myObj, JSON_FORCE_OBJECT);
-    echo $myJSON;
-?>
+        'message' => 'Signed out successfully.'
+    ];
+} else {
+    $response = [
+        'status' => 400,
+        'message' => 'No active session found.'
+    ];
+}
+
+echo json_encode($response, JSON_FORCE_OBJECT);
