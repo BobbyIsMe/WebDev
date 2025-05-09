@@ -61,10 +61,7 @@ function rentSubmit(e) {
     .then(res => {
         alert(res["message"]);
         if (res["status"] === 200) {
-            document.getElementById("room-form").reset();
-            document.getElementById("room-status").value = "Yes/No";
-            document.getElementById("room-num").textContent = `Room #.`;
-            document.getElementById("description").textContent = `Description about the place`;
+            window.location.replace('../pages/RentedRoom.php');
         }
     })
     .catch(error => {

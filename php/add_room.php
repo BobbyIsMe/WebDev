@@ -12,7 +12,7 @@ if (!isset($_REQUEST['room_id'], $_REQUEST['boarder_type'])) {
     exit();
 }
 
-if (!isset($_SESSION["user_email"])) {
+if (!isset($_SESSION["user_id"])) {
     echo json_encode([
         'status' => 400,
         'message' => 'Must be signed in to proceed.'
@@ -32,7 +32,7 @@ function validateForm($con)
     $result = $stmt->get_result();
     $row = $result->fetch_assoc();
     if ($row['count'] == 0) {
-        return "Invalid room ID.";
+        return "Invalid room number.";
     }
     $stmt->close();
 
@@ -41,26 +41,35 @@ function validateForm($con)
         return "Invalid boarder type.";
     }
 
-    $sql = "SELECT COUNT(*) AS rented_count FROM Rents WHERE room_id = ? AND CURRENT_DATE BETWEEN check_in_date AND due_date";
+    $sql = "
+SELECT 
+    (SELECT COUNT(*) 
+     FROM Rents 
+     WHERE room_id = ? 
+       AND CURRENT_DATE BETWEEN check_in_date AND COALESCE(due_date, CURRENT_DATE)
+    ) AS room_rented,
+    (SELECT COUNT(*) 
+     FROM Rents 
+     WHERE user_id = ? 
+       AND (CURRENT_DATE BETWEEN check_in_date AND COALESCE(due_date, CURRENT_DATE)
+            OR due_date IS NULL)
+    ) AS user_has_rent
+";
+
     $stmt = $con->prepare($sql);
-    $stmt->bind_param("i", $room_id);
+    $stmt->bind_param("ii", $room_id, $user_id);
     $stmt->execute();
     $result = $stmt->get_result();
     $row = $result->fetch_assoc();
 
-    if ($row && $row['rented_count'] > 0) {
+    if ($row['room_rented'] > 0) {
         return "Room is not available.";
     }
 
-    $sql_user_check = "SELECT * FROM Rents WHERE user_id = ? AND CURRENT_DATE BETWEEN check_in_date AND due_date OR due_date IS NULL";
-    $stmt = $con->prepare($sql_user_check);
-    $stmt->bind_param("i", $user_id);
-    $stmt->execute();
-    $user_result = $stmt->get_result();
-
-    if ($user_result->num_rows > 0) {
+    if ($row['user_has_rent'] > 0) {
         return "You already have a rented room.";
     }
+
     $insertUserSQL = "INSERT INTO Rents (user_id, room_id, boarder_type) VALUES (?, ?, ?)";
     $stmt = $con->prepare($insertUserSQL);
     $stmt->bind_param("iis", $user_id, $room_id, $boarder_type);

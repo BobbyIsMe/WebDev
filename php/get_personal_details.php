@@ -1,16 +1,23 @@
 <?php
 include_once("db_connect.php");
-$user_name = $_SESSION["user_name"];
-$user_email = $_SESSION["user_email"];
-$contact_number = $_SESSION["user_contact-number"];
+$user_id = $_SESSION["user_id"];
 
-$sql = "SELECT date_created FROM Users WHERE user_id = ?";
+$sql = "
+    SELECT Users.email, Users.contact_number, Users.date_created, Names.fname, Names.lname
+    FROM Users
+    JOIN Names ON Users.name_id = Names.name_id
+    WHERE Users.user_id = ?
+";
 $stmt = $con->prepare($sql);
-$stmt->bind_param("i", $_SESSION["user_id"]);
+$stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
-$date_created =  date("F j, Y",strtotime($row['date_created']));
+
+$user_email = $row['email'];
+$user_name = $row['fname'] . " " . $row['lname'];
+$contact_number = $row['contact_number'];
+$date_created = date("F j, Y", strtotime($row['date_created']));
 
 $myObj = array(
     'user_name' => $user_name,

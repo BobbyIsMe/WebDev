@@ -1,10 +1,13 @@
 <?php
 include_once("db_connect.php");
+
 $retVal = "";
 $isValid = true;
 $status = 400;
 $data = [];
- 
+
+session_regenerate_id(true);
+
 $email = trim($_REQUEST['email']);
 $password = trim($_REQUEST['password']);
 
@@ -36,21 +39,17 @@ if ($isValid) {
     if ($result->num_rows > 0) {
         $isPassword = password_verify($password, $obj->password);
         if ($isPassword == true) {
+            session_regenerate_id(true);
+
             $status = 200;
             $retVal = "Success.";
             $data = $obj;
-            $_SESSION['user_email'] = $obj->email;
             $_SESSION['user_id'] = $obj->user_id;
-            $_SESSION['name_id'] = $obj->name_id;
-            $_SESSION['user_contact-number'] = $obj->contact_number;
-            $_SESSION['user_fname'] = $obj->fname;
-            $_SESSION['user_lname'] = $obj->lname;
-            $_SESSION['user_name'] = "$obj->fname $obj->lname";
         } else {
             $retVal = "You may have entered a wrong email or password.";
         }
     } else {
-        $retVal = "Account does not exist.";
+        $retVal = "You may have entered a wrong email or password.";;
     }
 }
 
