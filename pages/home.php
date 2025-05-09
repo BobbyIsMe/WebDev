@@ -32,7 +32,7 @@
                     <a class="nav-link me-5" href="FAQ.html">FAQ's</a>
                     <a class="nav-link me-5" href="ContactUs.html">Contact Us</a>
                     <a class="nav-link me-5" href="About.html">About Us</a>
-                </div>
+             </div>
 
                 <div class="dropdown ms-auto">
                     <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
@@ -44,7 +44,7 @@
                         <a class="dropdown-item" id="rentedRoomLink" href="RentedRoom.php">Rented Room</a>
                         <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
                     </ul>
-
+           
                 </div>
             </div>
         </div>
