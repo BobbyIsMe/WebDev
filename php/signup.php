@@ -44,24 +44,29 @@ if ($isValid) {
 
 // Insert records
 if ($isValid) {
-    $insertNameSQL = "INSERT INTO Names (fname, lname) VALUES (?, ?)";
-    $stmt = $con->prepare($insertNameSQL);
-    $stmt->bind_param("ss", $fname, $lname);
-    $stmt->execute();
+    $con->begin_transaction();
+    try {
+        $stmt = $con->prepare("INSERT INTO Names (fname, lname) VALUES (?, ?)");
+        $stmt->bind_param("ss", $fname, $lname);
+        $stmt->execute();
+        $name_id = $stmt->insert_id;
+        $stmt->close();
 
-    $name_id = $stmt->insert_id;
-    $stmt->close();
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $con->prepare("INSERT INTO Users (name_id, email, contact_number, password) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("isss", $name_id, $email, $contact_number, $hashedPassword);
+        $stmt->execute();
+        $stmt->close();
 
-    $insertUserSQL = "INSERT INTO Users (name_id, email, contact_number, password) VALUES (?, ?, ?, ?)";
-    $stmt = $con->prepare($insertUserSQL);
-    $stmt->bind_param("isss", $name_id, $email, $contact_number, $hashedPassword);
-    $stmt->execute();
-    $stmt->close();
-    $retVal = "Account created successfully.";
-    unset($_SESSION['user_email']);
-    $status = 200;
+        $con->commit();
+        $retVal = "Account created successfully.";
+        $status = 200;
+    } catch (Exception $e) {
+        $con->rollback();
+        $retVal = "Error: " . $e->getMessage();
+        $status = 500;
+    }
 }
 
 $myObj = array(

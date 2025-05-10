@@ -26,41 +26,36 @@ function validateForm($con)
     $user_id = $_SESSION['user_id'];
     $room_id = trim($_REQUEST['room_id']);
     $boarder_type = trim($_REQUEST['boarder_type']);
-    $stmt = $con->prepare("SELECT COUNT(*) as count FROM Rooms WHERE room_id = ?");
-    $stmt->bind_param("i", $room_id);
+    $stmt = $con->prepare("
+    SELECT 
+        COUNT(*) AS room_exists,
+        (SELECT COUNT(*) 
+         FROM Rents 
+         WHERE room_id = ? 
+           AND CURRENT_DATE BETWEEN check_in_date AND COALESCE(due_date, CURRENT_DATE)
+        ) AS room_rented,
+        (SELECT COUNT(*) 
+         FROM Rents 
+         WHERE user_id = ? 
+           AND (CURRENT_DATE BETWEEN check_in_date AND COALESCE(due_date, CURRENT_DATE)
+                OR due_date IS NULL)
+        ) AS user_has_rent
+    FROM Rooms r
+    WHERE r.room_id = ?
+");
+    $stmt->bind_param("iii", $room_id, $user_id, $room_id);
     $stmt->execute();
     $result = $stmt->get_result();
     $row = $result->fetch_assoc();
-    if ($row['count'] == 0) {
-        return "Invalid room number.";
-    }
     $stmt->close();
 
-    $allowed_types = ['single', 'double'];
-    if (!in_array(strtolower($boarder_type), $allowed_types)) {
-        return "Invalid boarder type.";
+    if ($row['room_exists'] == 0) {
+        return "Invalid room number.";
     }
 
-    $sql = "
-SELECT 
-    (SELECT COUNT(*) 
-     FROM Rents 
-     WHERE room_id = ? 
-       AND CURRENT_DATE BETWEEN check_in_date AND COALESCE(due_date, CURRENT_DATE)
-    ) AS room_rented,
-    (SELECT COUNT(*) 
-     FROM Rents 
-     WHERE user_id = ? 
-       AND (CURRENT_DATE BETWEEN check_in_date AND COALESCE(due_date, CURRENT_DATE)
-            OR due_date IS NULL)
-    ) AS user_has_rent
-";
-
-    $stmt = $con->prepare($sql);
-    $stmt->bind_param("ii", $room_id, $user_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $row = $result->fetch_assoc();
+    if (!in_array(strtolower($boarder_type), ['single', 'double'])) {
+        return "Invalid boarder type.";
+    }
 
     if ($row['room_rented'] > 0) {
         return "Room is not available.";
@@ -70,8 +65,7 @@ SELECT
         return "You already have a rented room.";
     }
 
-    $insertUserSQL = "INSERT INTO Rents (user_id, room_id, boarder_type) VALUES (?, ?, ?)";
-    $stmt = $con->prepare($insertUserSQL);
+    $stmt = $con->prepare("INSERT INTO Rents (user_id, room_id, boarder_type) VALUES (?, ?, ?)");
     $stmt->bind_param("iis", $user_id, $room_id, $boarder_type);
     $stmt->execute();
     $status = 200;

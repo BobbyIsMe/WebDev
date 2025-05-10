@@ -36,6 +36,8 @@ if ($isValid) {
     $result = $stmt->get_result();
     $obj = mysqli_fetch_object($result);
     $stmt->close();
+    $retVal = "Wrong email or password.";
+
     if ($result->num_rows > 0) {
         $isPassword = password_verify($password, $obj->password);
         if ($isPassword == true) {
@@ -45,11 +47,7 @@ if ($isValid) {
             $retVal = "Success.";
             $data = $obj;
             $_SESSION['user_id'] = $obj->user_id;
-        } else {
-            $retVal = "You may have entered a wrong email or password.";
         }
-    } else {
-        $retVal = "You may have entered a wrong email or password.";;
     }
 }
 

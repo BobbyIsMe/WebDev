@@ -2,13 +2,12 @@
 include_once("db_connect.php");
 $user_id = $_SESSION["user_id"];
 
-$sql = "
+$stmt = $con->prepare("
     SELECT Users.email, Users.contact_number, Users.date_created, Names.fname, Names.lname
     FROM Users
     JOIN Names ON Users.name_id = Names.name_id
     WHERE Users.user_id = ?
-";
-$stmt = $con->prepare($sql);
+");
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
