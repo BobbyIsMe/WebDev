@@ -35,9 +35,9 @@
                         Profile
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <a class="dropdown-item" href="PersonalDetails.php">Personal Details</a>
-                        <a class="dropdown-item" href="RentedRoom.php">Rented Room</a>
-                        <a class="dropdown-item" href="#">Logout</a>
+                        <a class="dropdown-item" id="personalDetailsLink" href="PersonalDetails.php">Personal Details</a>
+                        <a class="dropdown-item" id="rentedRoomLink" href="RentedRoom.php">Rented Room</a>
+                        <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
                     </ul>
                 </div>
             </div>
