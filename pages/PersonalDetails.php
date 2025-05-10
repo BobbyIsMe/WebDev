@@ -37,10 +37,10 @@
                 <div class="navbar-nav mx-auto">
                     <a class="nav-link me-5" href="home.php">Home</a>
                     <a class="nav-link me-5" href="rooms.php">Rooms</a>
-                    <a class="nav-link me-5" href="FAQ.html">FAQ's</a>
-                    <a class="nav-link me-5" href="ContactUs.html">Contact Us</a>
-                    <a class="nav-link me-5" href="About.html">About Us</a>
-                </div>
+                    <a class="nav-link me-5" href="FAQ.php">FAQ's</a>
+                    <a class="nav-link me-5" href="ContactUs.php">Contact Us</a>
+                    <a class="nav-link me-5" href="About.php">About Us</a>
+             </div>
 
                 <div class="dropdown ms-auto">
                     <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
@@ -72,7 +72,7 @@
                 <div class="col-9 mx-auto">
 
 
-                    <h5 id="date-created">Member since March 1, 2024</h5>
+                    <h5 id="date-created"> </h5>
                     <br>
 
                     <form>

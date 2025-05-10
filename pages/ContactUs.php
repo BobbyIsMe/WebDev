@@ -23,11 +23,11 @@
                 <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
 
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link me-5" href="home.html">Home</a>
-                    <a class="nav-link me-5" href="rooms.html">Rooms</a>
-                    <a class="nav-link me-5" href="FAQ.html">FAQ's</a>
-                    <a class="nav-link me-5" href="ContactUs.html">Contact Us</a>
-                    <a class="nav-link me-5" href="About.html">About Us</a>
+                    <a class="nav-link me-5" href="home.php">Home</a>
+                    <a class="nav-link me-5" href="rooms.php">Rooms</a>
+                    <a class="nav-link me-5" href="FAQ.php">FAQ's</a>
+                    <a class="nav-link me-5" href="ContactUs.php">Contact Us</a>
+                    <a class="nav-link me-5" href="About.php">About Us</a>
                 </div>
 
                 <div class="dropdown ms-auto">
@@ -36,8 +36,8 @@
                         Profile
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <a class="dropdown-item" href="PersonalDetails.html">Personal Details</a>
-                        <a class="dropdown-item" href="RentedRoom.html">Rented Room</a>
+                        <a class="dropdown-item" href="PersonalDetails.php">Personal Details</a>
+                        <a class="dropdown-item" href="RentedRoom.php">Rented Room</a>
                         <a class="dropdown-item" href="#">Logout</a>
                     </ul>
                 </div>
@@ -80,21 +80,7 @@
         </div>
     </section>
 
-    <script>
-        const profileDropdown = document.getElementById("profileDropdown");
-
-        profileDropdown.addEventListener("click", function () {
-            profileDropdown.classList.toggle("active");
-        });
-
-        document.addEventListener('click', function (event) {
-            if (!profileDropdown.contains(event.target)) {
-                profileDropdown.classList.remove('active');
-            }
-        });
-
-    </script>
-
+    <script type="text/javascript" src="../js/session.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>

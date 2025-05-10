@@ -37,10 +37,10 @@ if (!isset($_SESSION["user_id"])) {
                 <div class="navbar-nav mx-auto">
                     <a class="nav-link me-5" href="home.php">Home</a>
                     <a class="nav-link me-5" href="rooms.php">Rooms</a>
-                    <a class="nav-link me-5" href="FAQ.html">FAQ's</a>
-                    <a class="nav-link me-5" href="ContactUs.html">Contact Us</a>
-                    <a class="nav-link me-5" href="About.html">About Us</a>
-                </div>
+                    <a class="nav-link me-5" href="FAQ.php">FAQ's</a>
+                    <a class="nav-link me-5" href="ContactUs.php">Contact Us</a>
+                    <a class="nav-link me-5" href="About.php">About Us</a>
+             </div>
 
                 <div class="dropdown ms-auto">
                     <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
@@ -76,8 +76,8 @@ if (!isset($_SESSION["user_id"])) {
                     </div>
 
 
-                    <h5 id="room-id">Room #.</h5>
-                    <p id="description"><strong>Description about the place</strong></p>
+                    <h5 id="room-id">Loading room number...</h5>
+                    <p id="description"><strong>Loading room description...</strong></p>
 
                     <form>
                         <div class="row mb-3">

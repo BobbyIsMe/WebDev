@@ -30,8 +30,8 @@ $result = $stmt->get_result();
 $row = $result->fetch_assoc();
         
 $myObj = array(
-    'room_id' => $row['room_id'] ?? ".",
-    'description' => $row['description'] ?? "Description about the place",
+    'room_id' => $row['room_id'] ?? "No room rented",
+    'description' => $row['description'] ?? "Please rent a room to load futher details",
     'boarder_type' => $row['boarder_type'] ?? "No room rented",
     'check_in_date' => $row['check_in_date'] ?? "TBD",
     'due_date' => $row['due_date'] ?? "TBD",
