@@ -28,6 +28,9 @@ if (isset($_SESSION["user_id"])) {
 </head>
 
 <body>
+
+
+
     <nav class="navbar navbar-expand-lg border-bottom w-100" style="background-color: #f8b6b6;">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarContent">
@@ -52,11 +55,14 @@ if (isset($_SESSION["user_id"])) {
     </nav>
 
     <div class="container-fluid">
-        <div class="row">
+       <div class = "login-overlay-container">
+        <img src="../img/background.jpeg" class="img-fluid background-image" alt="Room Image">
+        <div class="login-overlay" style=" background-color: rgba(116, 50, 50, 0.5);">
+            <div class="row" >
             <div class="col-md-12 p-4">
-                <div class="col-8 mx-auto">
+                <div class="col-12 mx-auto">
 
-                    <form id="signinForm" method="get" onsubmit="signinSubmit(event)" style="background-color: rgb(243, 243, 243);">
+                    <form id="signinForm" method="get" onsubmit="signinSubmit(event)" style="background-color: rgb(255, 255, 255);">
                         <div class="col-8 mx-auto">
                         <div class="border p-3 mt-4 text-center">
                                 <div class="login">LOGIN</div>
@@ -93,6 +99,8 @@ if (isset($_SESSION["user_id"])) {
                 </div>
             </div>
         </div>
+        </div>
+       </div>
     </div>
 
     <script type="text/javascript" src="../js/session.js"></script>
