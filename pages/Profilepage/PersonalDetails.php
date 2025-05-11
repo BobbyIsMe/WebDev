@@ -1,9 +1,9 @@
 <?php
-session_start();
-if (!isset($_SESSION["user_id"])) {
-    header("Location: Login.php");
-    exit();
-}
+    session_start();
+    if(!isset($_SESSION["user_id"])){
+        header("Location: Login.php");
+        exit();
+    }
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ if (!isset($_SESSION["user_id"])) {
     <link rel="stylesheet" href="../css/navbar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/auth.js"></script>
-    <script type="text/javascript" src="../js/rented_rooms_details.js"></script>
+    <script type="text/javascript" src="../js/personal_details.js"></script>
 
     <style>
         * {
@@ -29,7 +29,8 @@ if (!isset($_SESSION["user_id"])) {
 
 <body>
 
-    <nav class="navbar navbar-expand-lg border-bottom w-100" style="background-color: #f8b6b6;">
+   <div class="topnav">
+    <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarContent">
                 <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
@@ -40,7 +41,7 @@ if (!isset($_SESSION["user_id"])) {
                     <a class="nav-link me-5" href="FAQ.php">FAQ's</a>
                     <a class="nav-link me-5" href="ContactUs.php">Contact Us</a>
                     <a class="nav-link me-5" href="About.php">About Us</a>
-             </div>
+                </div>
 
                 <div class="dropdown ms-auto">
                     <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
@@ -52,11 +53,11 @@ if (!isset($_SESSION["user_id"])) {
                         <a class="dropdown-item" id="rentedRoomLink" href="RentedRoom.php">Rented Room</a>
                         <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
                     </ul>
-
                 </div>
             </div>
         </div>
     </nav>
+</div>
 
     <div class="container-fluid">
         <div class="row">
@@ -71,50 +72,30 @@ if (!isset($_SESSION["user_id"])) {
 
             <div class="col-md-10 p-4">
                 <div class="col-9 mx-auto">
-                    <div class="mb-4 border text-center" style="height: 200px;">
-                        <p class="pt-5">Image Placeholder</p>
-                    </div>
 
 
-                    <h5 id="room-id">Loading room number...</h5>
-                    <p id="description"><strong>Loading room description...</strong></p>
+                    <h5 id="date-created"> </h5>
+                    <br>
 
                     <form>
-                        <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="checkInDate" class="form-label">Check-in Date</label>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <label for="Email" class="form-label">Email</label>
                                 <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="check-in-date" value=" ">
+                                    id="email" value=" ">
                             </div>
-                            <div class="col-md-6">
-                                <label for="dueDate" class="form-label">Due Date</label>
+                            <div class="col-md-10">
+                                <br>
+                                <label for="Name" class="form-label">Name</label>
                                 <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="due-date" value=" ">
+                                    id="name" value=" ">
                             </div>
-                        </div>
 
-
-                        <div class="border p-3 mt-4">
-                            <h5>Billing Details</h5>
-                            <div class="mb-3">
-                                <label for="electricity-bill" class="form-label">Electric Bill</label>
+                            <div class="col-md-10">
+                                <br>
+                                <label for="Contactnumber" class="form-label">Contact Number</label>
                                 <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="electricity-bill" value="">
-                            </div>
-                            <div class="mb-3">
-                                <label for="miscBill" class="form-label">Miscellaneous Bill</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="miscellaneous-bill" value="">
-                            </div>
-                            <div class="mb-3">
-                                <label for="rentBill" class="form-label">Rent Bill</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="rent-bill" value="">
-                            </div>
-                            <div class="mb-3">
-                                <label for="totalBill" class="form-label">Total Bill</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="total-bill" value="">
+                                    id="contact-number" value=" ">
                             </div>
                         </div>
                     </form>
@@ -127,6 +108,7 @@ if (!isset($_SESSION["user_id"])) {
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
                 crossorigin="anonymous"></script>
+
 </body>
 
 </html>

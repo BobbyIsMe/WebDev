@@ -18,7 +18,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg border-bottom w-100" style="background-color: #f8b6b6;">
+    <div class="topnav">
+    <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarContent">
                 <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
@@ -28,7 +29,7 @@
                     <a class="nav-link me-5" href="rooms.php">Rooms</a>
                     <a class="nav-link me-5" href="FAQ.php">FAQ's</a>
                     <a class="nav-link me-5" href="ContactUs.php">Contact Us</a>
-                    <a class="nav-link me-5" href="About.php">About Us</a>
+                    <a class="nav-link me-5 text-white" href="About.php">About Us</a>
                 </div>
 
                 <div class="dropdown ms-auto">
@@ -45,6 +46,8 @@
             </div>
         </div>
     </nav>
+</div>
+    
 
     <main>
         <section class="about-us">

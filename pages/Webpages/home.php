@@ -21,18 +21,19 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg border-bottom w-100" style="background-color: #f8b6b6;">
+    <div class="topnav">
+    <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarContent">
                 <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
 
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link me-5" href="home.php">Home</a>
+                    <a class="nav-link me-5 text-white" href="home.php">Home</a>
                     <a class="nav-link me-5" href="rooms.php">Rooms</a>
                     <a class="nav-link me-5" href="FAQ.php">FAQ's</a>
                     <a class="nav-link me-5" href="ContactUs.php">Contact Us</a>
                     <a class="nav-link me-5" href="About.php">About Us</a>
-             </div>
+                </div>
 
                 <div class="dropdown ms-auto">
                     <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
@@ -44,11 +45,11 @@
                         <a class="dropdown-item" id="rentedRoomLink" href="RentedRoom.php">Rented Room</a>
                         <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
                     </ul>
-           
                 </div>
             </div>
         </div>
     </nav>
+</div>
     <div style="padding: 2vw;">
         <header>
             <br>

@@ -24,14 +24,16 @@ if (isset($_SESSION["user_id"])) {
         * {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
+
+
     </style>
 </head>
 
 <body>
 
 
-
-    <nav class="navbar navbar-expand-lg border-bottom w-100" style="background-color: #f8b6b6;">
+<div class="topnav" >
+<nav class="navbar navbar-expand-lg border-bottom w-100 p-3" >
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarContent">
                 <a class="navbar-brand mx-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
@@ -53,6 +55,8 @@ if (isset($_SESSION["user_id"])) {
             </div>
         </div>
     </nav>
+</div>
+    
 
     <div class="container-fluid">
        <div class = "login-overlay-container">
@@ -60,7 +64,7 @@ if (isset($_SESSION["user_id"])) {
         <div class="login-overlay" style=" background-color: rgba(116, 50, 50, 0.5);">
             <div class="row" >
             <div class="col-md-12 p-4">
-                <div class="col-12 mx-auto">
+                <div class="col-10 mx-auto" >
 
                     <form id="signinForm" method="get" onsubmit="signinSubmit(event)" style="background-color: rgb(255, 255, 255);">
                         <div class="col-8 mx-auto">

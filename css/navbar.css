@@ -1,11 +1,11 @@
 #profileDropdown:hover {
-    background-color: #f2a1a1;
+    background-color:rgba(14, 131, 117, 0.69);
     color: #111111;
 }
 
 #profileDropdown.active {
-    background-color: #f2a1a1;
-    color: #111111;
+    background-color:rgba(14, 131, 117, 0.69);
+    color: #ffffff;
 }
 
 
@@ -21,12 +21,17 @@
 }
 
 .dropdown-item {
-    color: #111111;
+    color: #000000;
     padding: 12px 20px;
     margin: 0;
     transition: background-color 0.2s ease;
 }
 
 .dropdown-item:hover {
-    background-color: #f2a1a1;
+    background-color:rgba(14, 131, 117, 0.69);
+    color:white;
+}
+
+.navbar{
+    background-color:rgb(17, 180, 161, 0.69);
 }
