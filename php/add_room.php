@@ -4,7 +4,7 @@ include_once("db_connect.php");
 $status = 400;
 $message = "";
 
-if (!isset($_REQUEST['room_id'], $_REQUEST['boarder_type'])) {
+if (!isset($_POST['room_id'], $_POST['boarder_type'])) {
     echo json_encode([
         'status' => 400,
         'message' => 'Missing input parameters.'
@@ -24,8 +24,8 @@ function validateForm($con)
 {
     global $status;
     $user_id = $_SESSION['user_id'];
-    $room_id = trim($_REQUEST['room_id']);
-    $boarder_type = trim($_REQUEST['boarder_type']);
+    $room_id = trim($_POST['room_id']);
+    $boarder_type = trim($_POST['boarder_type']);
     $stmt = $con->prepare("
     SELECT 
         COUNT(*) AS room_exists,

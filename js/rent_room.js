@@ -3,7 +3,7 @@ let rooms = [];
 document.addEventListener('DOMContentLoaded', () => {
     const dropdown = document.getElementById("room-dropdown");
 
-    fetch("../php/get_rooms.php")
+    fetch("../../php/get_rooms.php")
         .then(res => res.json())
         .then(data => {
             rooms = data.rooms;
@@ -48,7 +48,7 @@ function rentSubmit(e) {
     const formData = new FormData(document.getElementById("room-form"));
     const data = new URLSearchParams(formData);
 
-    fetch('../php/add_room.php', {
+    fetch('../../php/add_room.php', {
         method: 'POST',
         body: data
     })
@@ -61,7 +61,7 @@ function rentSubmit(e) {
     .then(res => {
         alert(res["message"]);
         if (res["status"] === 200) {
-            window.location.replace('../pages/RentedRoom.php');
+            window.location.replace('../pages/Profilepage/RentedRoom.php');
         }
     })
     .catch(error => {

@@ -4,12 +4,12 @@ $retVal = "";
 $isValid = true;
 $status = 400;
 
-$fname = trim($_REQUEST['first_name']);
-$lname = trim($_REQUEST['last_name']);
-$contact_number = trim($_REQUEST['contact_number']);
-$email = trim($_REQUEST['email']);
-$password = trim($_REQUEST['password']);
-$confirmpassword = trim($_REQUEST['confirm_password']);
+$fname = trim($_POST['first_name']);
+$lname = trim($_POST['last_name']);
+$contact_number = trim($_POST['contact_number']);
+$email = trim($_POST['email']);
+$password = trim($_POST['password']);
+$confirmpassword = trim($_POST['confirm_password']);
 
 // Check fields are empty or not
 if ($fname == '' || $lname == '' || $email == '' || $contact_number == '' || $password == '' || $confirmpassword == '') {

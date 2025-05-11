@@ -41,9 +41,9 @@ function signinSubmit(e) {
             return response.json();
         })
         .then(res => {
-            if (res["status"] === 200) {
+            if (res["status"] == 200) {
                 document.getElementById("signinForm").reset();
-                window.location.replace('../pages/home.php');
+                window.location.replace('../pages/Webpages/home.php');
             } else {
                 alert(res["message"]);
             }
@@ -66,7 +66,7 @@ function signoutClick(e) {
         })
         .then(res => {
             if (res["status"] === 200) {
-                window.location.replace('../pages/Login.php'); // replaces the current location
+                window.location.replace('../pages/Signin/Login.php'); // replaces the current location
                 // or: window.location = '../public/index.php'; // navigates to another location
             }
         })

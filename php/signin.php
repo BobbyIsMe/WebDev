@@ -4,12 +4,15 @@ include_once("db_connect.php");
 $retVal = "";
 $isValid = true;
 $status = 400;
-$data = [];
 
 session_regenerate_id(true);
 
-$email = trim($_REQUEST['email']);
-$password = trim($_REQUEST['password']);
+if (!isset($_POST['email'], $_POST['password'])) {
+    $password = '';
+}
+
+$email = isset($_POST['email']) ? trim($_POST['email']) : '';
+$password = isset($_POST['password']) ? trim($_POST['password']) : '';
 
 // Check fields are empty or not
 if ($email == '' || $password == '') {
@@ -45,7 +48,6 @@ if ($isValid) {
 
             $status = 200;
             $retVal = "Success.";
-            $data = $obj;
             $_SESSION['user_id'] = $obj->user_id;
         }
     }
@@ -53,7 +55,6 @@ if ($isValid) {
 
 $myObj = array(
     'status' => $status,
-    'data' => $data,
     'message' => $retVal
 );
 $myJSON = json_encode($myObj, JSON_FORCE_OBJECT);
