@@ -12,12 +12,12 @@ if (isset($_SESSION["user_id"])) {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Room Details</title>
+    <title>Registration</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../css/landingpage.css">
-    <link rel="stylesheet" href="../css/navbar.css" />
-    <link rel="stylesheet" href="../css/RegisterLogin.css" />
+<link rel="stylesheet" href="../../css/Webpage/landingpage.css"/>
+<link rel="stylesheet" href="../../css/navbar.css"/>
+<link rel="stylesheet" href="../../css/Signin/RegisterLogin.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/auth.js"></script>
@@ -57,12 +57,12 @@ if (isset($_SESSION["user_id"])) {
     
         <div class="container-fluid">
         <div class = "login-overlay-container">
-        <img src="../img/background.jpeg" class="img-fluid background-image" alt="Room Image">
+        <img src="../../img/background.jpeg" class="img-fluid background-image" alt="Room Image">
             <div class="login-overlay" style=" background-color: rgba(116, 50, 50, 0.5);">
                 <div class="row">
                     <div class="col-md-12 p-4">
                         <div class="col-10 mx-auto">
-                            <form id="signupForm" method="post" onsubmit="signupSubmit(event)" style="background-color: rgb(243, 243, 243);">
+                            <form id="signupForm" method="post" onsubmit="signupSubmit(event)" style="background-color: rgb(255, 255, 255);">
                                 <div class="border p-3 mt-4 text-center">
                                     <br>
                                     <div class="login">REGISTRATION</div><br>
