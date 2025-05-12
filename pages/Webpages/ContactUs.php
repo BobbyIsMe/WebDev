@@ -26,11 +26,11 @@
                     <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
 
                     <div class="navbar-nav mx-auto">
-                        <a class="nav-link me-5" href="home.php">Home</a>
-                        <a class="nav-link me-5" href="rooms.php">Rooms</a>
-                        <a class="nav-link me-5" href="FAQ.php">FAQ's</a>
-                        <a class="nav-link me-5 text-white" href="ContactUs.php">Contact Us</a>
-                        <a class="nav-link me-5" href="About.php">About Us</a>
+                            <a class="nav-link me-5" href="home.php">HOME</a>
+                            <a class="nav-link me-5" href="rooms.php">ROOMS</a>
+                            <a class="nav-link me-5" href="FAQ.php">FAQ'S</a>
+                            <a class="nav-link me-5 text-white fw-bold" href="ContactUs.php">CONTACT US</a>
+                            <a class="nav-link me-5" href="About.php">ABOUT US</a>
                     </div>
 
                     <div class="dropdown ms-auto">

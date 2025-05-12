@@ -7,7 +7,7 @@
     <title>Boarding House</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../../css/Webpage/landingpage.css">
+    <link rel="stylesheet" href="../../css/Webpage/Home.css">
     <link rel="stylesheet" href="../../css/navbar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/auth.js"></script>
@@ -29,11 +29,11 @@
                     <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
 
                     <div class="navbar-nav mx-auto">
-                            <a class="nav-link me-5 text-white" href="home.php">HOME</a>
-                            <a class="nav-link me-5" href="rooms.php">ROOMS</a>
-                            <a class="nav-link me-5" href="FAQ.php">FAQ'S</a>
-                            <a class="nav-link me-5" href="ContactUs.php">CONTACT US</a>
-                            <a class="nav-link me-5" href="About.php">ABOUT US</a>
+                        <a class="nav-link me-5 text-white fw-bold" href="home.php">HOME</a>
+                        <a class="nav-link me-5" href="rooms.php">ROOMS</a>
+                        <a class="nav-link me-5" href="FAQ.php">FAQ'S</a>
+                        <a class="nav-link me-5" href="ContactUs.php">CONTACT US</a>
+                        <a class="nav-link me-5" href="About.php">ABOUT US</a>
                     </div>
 
                     <div class="dropdown ms-auto">
@@ -88,18 +88,37 @@
             <br>
         </section>
 
-        <section class="reservation-steps">
-            <h2>Steps on Reserving</h2>
-            <p class="paragraphs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et
-                dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 
-        </section>
+        <div class="col-12 row navFoot mx-auto">
+            <div class="col-6 navBox " style="border-right: 1px solid black">
+                <section class="reservation-steps ">
+                    <h2>RESERVATION STEPS</h2>
+                    <p class="paragraphs">
+                        1.  Create an account
+                        <br>
+                        2.  Sign In
+                        <br>
+                        3. Navigate to the rooms section
+                        <br>
+                        4. Select the room you want to avail
+                        <br>
+                        5. Fill in the details, and Reserve!
+                        <br>    
+                    </p>
+                </section>
+            </div>
+            <div class="col-6 navBox">
+                <div class="map-placeholder">
+                    <div>
+                        <img src="../../img/mapArrow.png" alt="bembi">
+                    </div>
+                </div>
+                <br>
+                <a href="https://maps.app.goo.gl/bkQG8VRU2HgTdWMg8" class="map-button" target="_blank">Click for Google
+                    Map link</a>
+            </div>
+        </div>
     </div>
 
     <script type="text/javascript" src="../../js/session.js"></script>
