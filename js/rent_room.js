@@ -59,9 +59,10 @@ function rentSubmit(e) {
         return response.json();
     })
     .then(res => {
-        alert(res["message"]);
         if (res["status"] === 200) {
             window.location.replace('../pages/Profilepage/RentedRoom.php');
+        } else {
+            document.getElementById("message").textContent = res["message"];
         }
     })
     .catch(error => {

@@ -25,6 +25,7 @@ function refreshFilter() {
 
 function onSubmit(e) {
     e.preventDefault();
+    document.getElementById("status_dropdown").value = "status";
     refreshFilter();
     const form = document.getElementById("filter_form");
     const formData = new FormData(form);
@@ -44,6 +45,7 @@ function onSubmit(e) {
 document.getElementById("recent").addEventListener("click", function (event) {
     event.preventDefault();
     document.getElementById("filter_form").reset();
+    document.getElementById("status_dropdown").value = "status";
     refreshFilter();
     page = 1;
     loadPage(1);
@@ -114,21 +116,21 @@ function loadPage(page) {
                                                 <br>
                                                 <label for="name" class="form-label">Name</label>
                                                 <input type="text" readonly
-                                                    class="form-control-plaintext border bg-light px-2" id="name"
-                                                    value=${rent.name}>
+                                                    class="paragraphs form-control-plaintext border bg-light px-2" id="name"
+                                                    value="${rent.name}">
                                             </div>
                                             <div class="col-12">
                                                 <br>
                                                 <label for="email" class="form-label">Email</label>
                                                 <input type="text" readonly
-                                                    class="form-control-plaintext border bg-light px-2" id="email"
+                                                    class="paragraphs form-control-plaintext border bg-light px-2" id="email"
                                                     value=${rent.email}>
                                             </div>
                                             <div class="col-12">
                                                 <br>
                                                 <label for="contact_number" class="form-label">Contact Number</label>
                                                 <input type="text" readonly
-                                                    class="form-control-plaintext border bg-light px-2"
+                                                    class="paragraphs form-control-plaintext border bg-light px-2"
                                                     id="contact_number" value=${rent.contact_number}>
                                             </div>
                                             <div class="row col-12 mx-auto container-fluid margin-content">
@@ -136,7 +138,7 @@ function loadPage(page) {
                                                     <br>
                                                     <label for="check_in_date" class="form-label">Check-in Date</label>
                                                     <input type="text" readonly
-                                                        class="form-control-plaintext border bg-light px-2"
+                                                        class="paragraphs form-control-plaintext border bg-light px-2"
                                                         id="check_in_date" value=${rent.check_in_date}>
                                                 </div>
                                                 <div class="col-2 container-fluid margin-content">
@@ -145,14 +147,14 @@ function loadPage(page) {
                                                     <br>
                                                     <label for="due_date" class="form-label">Due Date</label>
                                                     <input type="text" readonly
-                                                        class="form-control-plaintext border bg-light px-2"
+                                                        class="paragraphs form-control-plaintext border bg-light px-2"
                                                         id="due_date" value=${rent.due_date}>
                                                 </div>
                                                 <div class="col-5 container-fluid margin-content">
                                                     <br>
                                                     <label for="status" class="form-label">Status</label>
                                                     <input type="text" readonly
-                                                        class="form-control-plaintext border bg-light px-2" id="status"
+                                                        class="paragraphs form-control-plaintext border bg-light px-2" id="status"
                                                         value=${rent.status}>
                                                 </div>
                                                 <div class="col-2 container-fluid">
@@ -161,7 +163,7 @@ function loadPage(page) {
                                                     <br>
                                                     <label for="boarder_type" class="form-label">Boarder Type</label>
                                                     <input type="text" readonly
-                                                        class="form-control-plaintext border bg-light px-2"
+                                                        class="paragraphs form-control-plaintext border bg-light px-2"
                                                         id="boarder_type" value=${rent.boarder_type}>
                                                 </div>
                                             </div>
@@ -190,7 +192,7 @@ function loadPage(page) {
                                                         <label for="electricity_bill" class="form-label">Electricity
                                                             Bill</label>
                                                         <input type="text" readonly
-                                                            class="form-control-plaintext border bg-light px-2"
+                                                            class="paragraphs form-control-plaintext border bg-light px-2"
                                                             id="electricity_bill" value=${rent.electricity_bill}>
                                                     </div>
 
@@ -201,7 +203,7 @@ function loadPage(page) {
                                                         <label for="miscellaneous_bill" class="form-label">Miscellaneous
                                                             Bill</label>
                                                         <input type="text" readonly
-                                                            class="form-control-plaintext border bg-light px-2"
+                                                            class="paragraphs form-control-plaintext border bg-light px-2"
                                                             id="miscellaneous_bill" value=${rent.miscellaneous_bill}>
                                                     </div>
 
@@ -209,7 +211,7 @@ function loadPage(page) {
                                                         <br>
                                                         <label for="rent_bill" class="form-label">Rent Bill</label>
                                                         <input type="text" readonly
-                                                            class="form-control-plaintext border bg-light px-2"
+                                                            class="paragraphs form-control-plaintext border bg-light px-2"
                                                             id="rent_bill" value=${rent.rent_bill}>
                                                     </div>
 
@@ -219,7 +221,7 @@ function loadPage(page) {
                                                         <br>
                                                         <label for="total_bill" class="form-label">Total Bill</label>
                                                         <input type="text" readonly
-                                                            class="form-control-plaintext border bg-light px-2"
+                                                            class="paragraphs form-control-plaintext border bg-light px-2"
                                                             id="total_bill" value=${rent.total_bill}>
                                                     </div>
                                                 </div>
@@ -245,7 +247,7 @@ function loadPage(page) {
                     ["total_bill"]: rent.total_bill
                 });
             });
-            document.getElementById("page_number").textContent = `Page ${page} of ${data.totalPages}`;
+            document.getElementById("page_number").innerHTML = data.totalPages != 0 ? `Page <strong>${page}</strong> of <strong>${data.totalPages}</strong>` : data.message;
             document.getElementById("prev_button").disabled = (page === 1);
             document.getElementById("next_button").disabled = (page === totalPages);
         })

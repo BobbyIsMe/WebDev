@@ -42,9 +42,12 @@
                             Profile
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" id="personalDetailsLink" href="PersonalDetails.php">Personal
-                                Details</a>
-                            <a class="dropdown-item" id="rentedRoomLink" href="RentedRoom.php">Rented Room</a>
+                            <a class="dropdown-item" id="personalDetailsLink" href="../Profilepage/PersonalDetails.php">Personal Details</a>
+                            <a class="dropdown-item" id="rentedRoomLink" href="../Profilepage/RentedRoom.php">Rented Room</a>
+                            <?php session_start();
+                            if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
+                                <a class="dropdown-item" id="adminLink" href="../Profilepage/Admin.php">Admin</a>
+                            <?php endif; ?>
                             <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
                         </ul>
                     </div>
@@ -95,16 +98,16 @@
                 <section class="reservation-steps ">
                     <h2>RESERVATION STEPS</h2>
                     <p class="paragraphs">
-                        1.  Create an account
+                        1. Create an account
                         <br>
-                        2.  Sign In
+                        2. Sign In
                         <br>
                         3. Navigate to the rooms section
                         <br>
                         4. Select the room you want to avail
                         <br>
                         5. Fill in the details, and Reserve!
-                        <br>    
+                        <br>
                     </p>
                 </section>
             </div>

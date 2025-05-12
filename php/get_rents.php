@@ -80,7 +80,7 @@ if($page < 1 || $page > $totalPages) {
 }
 
 $offset = ($page - 1) * $total;
-if($result->num_rows == 0) {
+if($totalRows == 0) {
     echo json_encode([
         'status' => 400,
         'message' => 'No rents found.',

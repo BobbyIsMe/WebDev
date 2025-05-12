@@ -28,11 +28,11 @@
                     <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
 
                     <div class="navbar-nav mx-auto">
-                            <a class="nav-link me-5" href="home.php">HOME</a>
-                            <a class="nav-link me-5 text-white fw-bold" href="rooms.php">ROOMS</a>
-                            <a class="nav-link me-5" href="FAQ.php">FAQ'S</a>
-                            <a class="nav-link me-5" href="ContactUs.php">CONTACT US</a>
-                            <a class="nav-link me-5" href="About.php">ABOUT US</a>
+                        <a class="nav-link me-5" href="home.php">HOME</a>
+                        <a class="nav-link me-5 text-white fw-bold" href="rooms.php">ROOMS</a>
+                        <a class="nav-link me-5" href="FAQ.php">FAQ'S</a>
+                        <a class="nav-link me-5" href="ContactUs.php">CONTACT US</a>
+                        <a class="nav-link me-5" href="About.php">ABOUT US</a>
                     </div>
 
                     <div class="dropdown ms-auto">
@@ -43,7 +43,8 @@
                         <ul class="dropdown-menu dropdown-menu-end">
                             <a class="dropdown-item" id="personalDetailsLink" href="../Profilepage/PersonalDetails.php">Personal Details</a>
                             <a class="dropdown-item" id="rentedRoomLink" href="../Profilepage/RentedRoom.php">Rented Room</a>
-                            <?php session_start(); if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
+                            <?php session_start();
+                            if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
                                 <a class="dropdown-item" id="adminLink" href="../Profilepage/Admin.php">Admin</a>
                             <?php endif; ?>
                             <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
@@ -84,9 +85,10 @@
                         <input id="room-status" type="text" disabled value="Yes/No" class="disabled-field">
                     </div>
                 </div>
-                <br><br>
                 <button type="submit" class="button">Reserve</button>
             </form>
+            <p class="paragraphs" id="message">
+            </p>
         </div>
 
 

@@ -233,3 +233,9 @@ header {
     border-radius: 5px;
 }
 
+.paragraphs{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+}

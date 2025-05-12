@@ -13,7 +13,7 @@ if (!isset($_SESSION["user_id"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/Webpage/landingpage.css">
+    <link rel="stylesheet" href="../../css/Profile/profile.css">
     <link rel="stylesheet" href="../../css/navbar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/auth.js"></script>
@@ -51,7 +51,7 @@ if (!isset($_SESSION["user_id"])) {
                             <a class="dropdown-item" id="personalDetailsLink" href="PersonalDetails.php">Personal
                                 Details</a>
                             <a class="dropdown-item" id="rentedRoomLink" href="RentedRoom.php">Rented Room</a>
-                            <?php session_start();
+                            <?php
                             if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
                                 <a class="dropdown-item" id="adminLink" href="../Profilepage/Admin.php">Admin</a>
                             <?php endif; ?>
@@ -69,7 +69,7 @@ if (!isset($_SESSION["user_id"])) {
                 <div class="nav flex-column ">
                     <a class="nav-link " href="PersonalDetails.php">Personal Details</a>
                     <a class="nav-link" href="RentedRoom.php">Rented Room</a>
-                    <?php 
+                    <?php
                     if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
                         <a class="nav-link fw-bold" href="Admin.php">Admin</a>
                     <?php endif; ?>
@@ -91,27 +91,26 @@ if (!isset($_SESSION["user_id"])) {
 
 
                         <div class="row mb-3">
-                            <div class="col-md-6">
-                                <label for="checkInDate" class="form-label">Check-in Date</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="check-in-date" value=" ">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="dueDate" class="form-label">Due Date</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="due-date" value=" ">
-                            </div>
-
-                            <div class="col-md-6">
+                            <div class="col-md-6 mb-3">
                                 <label for="boarder_type" class="form-label">Boarder Type</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
+                                <input type="text" readonly class="paragraphs form-control-plaintext border bg-light px-2"
                                     id="boarder_type" value=" ">
                             </div>
 
                             <div class="col-md-6">
                                 <label for="status" class="form-label">Status</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
+                                <input type="text" readonly class="paragraphs form-control-plaintext border bg-light px-2"
                                     id="status" value=" ">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="checkInDate" class="form-label">Check-in Date</label>
+                                <input type="text" readonly class="paragraphs form-control-plaintext border bg-light px-2"
+                                    id="check-in-date" value=" ">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="dueDate" class="form-label">Due Date</label>
+                                <input type="text" readonly class="paragraphs form-control-plaintext border bg-light px-2"
+                                    id="due-date" value=" ">
                             </div>
                         </div>
 
@@ -120,22 +119,22 @@ if (!isset($_SESSION["user_id"])) {
                             <h5>Billing Details</h5>
                             <div class="mb-3">
                                 <label for="electricity-bill" class="form-label">Electric Bill</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
+                                <input type="text" readonly class="paragraphs form-control-plaintext border bg-light px-2"
                                     id="electricity-bill" value="">
                             </div>
                             <div class="mb-3">
                                 <label for="miscBill" class="form-label">Miscellaneous Bill</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
+                                <input type="text" readonly class="paragraphs form-control-plaintext border bg-light px-2"
                                     id="miscellaneous-bill" value="">
                             </div>
                             <div class="mb-3">
                                 <label for="rentBill" class="form-label">Rent Bill</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
+                                <input type="text" readonly class="paragraphs form-control-plaintext border bg-light px-2"
                                     id="rent-bill" value="">
                             </div>
                             <div class="mb-3">
                                 <label for="totalBill" class="form-label">Total Bill</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
+                                <input type="text" readonly class="paragraphs form-control-plaintext border bg-light px-2"
                                     id="total-bill" value="">
                             </div>
                         </div>

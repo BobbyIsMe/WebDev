@@ -13,9 +13,9 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/Webpage/landingpage.css">
+    <link rel="stylesheet" href="../../css/Profile/profile.css">
     <link rel="stylesheet" href="../../css/navbar.css" />
-    <link rel="stylesheet" href="../../css/admin.css" />
+    <link rel="stylesheet" href="../../css/Profile/admin.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/auth.js"></script>
 
@@ -106,7 +106,7 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
 
                         <!---Admin Body Page-->
                         <div id="rent-list">
-
+                            
                         </div>
 
                     </div>
@@ -117,7 +117,7 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                                 Previous
                             </button>
                             <span>|</span>
-                            <div id="page_number">
+                            <div id="page_number" class="paragraphs">
                                 Page # out of 10
                             </div>
                             <span>|</span>
@@ -153,33 +153,33 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Name</label>
                                     <input type="text" readonly
-                                        class="form-control form-control-plaintext border bg-light px-2" id="rent_name"
+                                        class="paragraphs form-control form-control-plaintext border bg-light px-2" id="rent_name"
                                         value="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="text" readonly
-                                        class="form-control form-control-plaintext border bg-light px-2" id="rent_email"
+                                        class="paragraphs form-control form-control-plaintext border bg-light px-2" id="rent_email"
                                         value="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="contact_number" class="form-label">Contact Number</label>
                                     <input type="text" readonly
-                                        class="form-control form-control-plaintext border bg-light px-2"
+                                        class="paragraphs form-control form-control-plaintext border bg-light px-2"
                                         id="rent_contact_number" value="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="check_in_date" class="form-label">Check-in Date</label>
-                                    <input type="date" class="form-control" id="rent_check_in_date" name="check_in_date"
+                                    <input type="date" class="paragraphs form-control" id="rent_check_in_date" name="check_in_date"
                                         required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="due_date" class="form-label">Due Date</label>
-                                    <input type="date" class="form-control" id="rent_due_date" name="due_date" required>
+                                    <input type="date" class="paragraphs form-control" id="rent_due_date" name="due_date" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="status" class="form-label">Status</label>
-                                    <select class="form-select" id="rent_status" name="status" required>
+                                    <select class="paragraphs form-select" id="rent_status" name="status" required>
                                         <option value="pending">Pending</option>
                                         <option value="approved">Approved</option>
                                         <option value="rejected">Rejected</option>
@@ -188,7 +188,7 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                                 </div>
                                 <div class="mb-3">
                                     <label for="boarder_type" class="form-label">Boarder Type</label>
-                                    <select class="form-select" id="rent_boarder_type" name="boarder_type" required>
+                                    <select class="paragraphs form-select" id="rent_boarder_type" name="boarder_type" required>
                                         <option value="single">Single</option>
                                         <option value="double">Double</option>
                                     </select>
@@ -216,43 +216,43 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Name</label>
                                     <input type="text" readonly
-                                        class="form-control form-control-plaintext border bg-light px-2" id="bill_name"
+                                        class="paragraphs form-control form-control-plaintext border bg-light px-2" id="bill_name"
                                         value="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="text" readonly
-                                        class="form-control form-control-plaintext border bg-light px-2" id="bill_email"
+                                        class="paragraphs form-control form-control-plaintext border bg-light px-2" id="bill_email"
                                         value="">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="contact_number" class="form-label">Contact Number</label>
                                     <input type="text" readonly
-                                        class="form-control form-control-plaintext border bg-light px-2"
+                                        class="paragraphs form-control form-control-plaintext border bg-light px-2"
                                         id="bill_contact_number" value="">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="electricity_bill" class="form-label">Electricity Bill</label>
-                                    <input type="text" class="form-control form-control-plaintext border  px-2"
+                                    <input type="text" class="paragraphs form-control form-control-plaintext border  px-2"
                                         id="bill_electricity_bill" value="" name="electricity_bill">
                                 </div>
                                 <div class="mb-3">
                                     <label for="miscellaneous_bill" class="form-label">Miscellaneous Bill</label>
-                                    <input type="text" class="form-control form-control-plaintext border  px-2"
+                                    <input type="text" class="paragraphs form-control form-control-plaintext border  px-2"
                                         id="bill_miscellaneous_bill" value="" name="miscellaneous_bill">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="rent_bill" class="form-label">Rent Bill</label>
-                                    <input type="text" class="form-control form-control-plaintext border  px-2"
+                                    <input type="text" class="paragraphs form-control form-control-plaintext border  px-2"
                                         id="bill_rent_bill" value="" name="rent_bill">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="total_bill" class="form-label">Total Bill</label>
-                                    <input type="text" class="form-control form-control-plaintext border px-2"
+                                    <input type="text" class="paragraphs form-control form-control-plaintext border px-2"
                                         id="bill_total_bill" value="" name="total_bill">
                                 </div>
                             </div>
@@ -280,17 +280,17 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                             <div class="modal-body">
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="text" class="form-control form-control-plaintext border  px-2"
+                                    <input type="text" class="paragraphs form-control form-control-plaintext border  px-2"
                                         id="filter_email" value="" name="email">
                                 </div>
                                 <div class="mb-3">
                                     <label for="contact_number" class="form-label">Contact Number</label>
-                                    <input type="text" class="form-control form-control-plaintext border  px-2"
+                                    <input type="text" class="paragraphs form-control form-control-plaintext border  px-2"
                                         id="filter_contact_number" value="" name="contact_number">
                                 </div>
                                 <div class="mb-3">
                                     <label for="room_num" class="form-label">Room</label>
-                                    <select class="form-select" id="room_num" name="room_id">
+                                    <select class="paragraphs form-select" id="room_num" name="room_id">
                                         <option value="">Select Room</option>
                                         <option value="1">Room 1</option>
                                         <option value="2">Room 2</option>
@@ -306,16 +306,16 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                                 </div>
                                 <div class="mb-3">
                                     <label for="check_in_date" class="form-label">Check-in Date</label>
-                                    <input type="date" class="form-control" id="filter_check_in_date"
+                                    <input type="date" class="paragraphs form-control" id="filter_check_in_date"
                                         name="check_in_date">
                                 </div>
                                 <div class="mb-3">
                                     <label for="due_date" class="form-label">Due Date</label>
-                                    <input type="date" class="form-control" id="filter_dueDate" name="due_date">
+                                    <input type="date" class="paragraphs form-control" id="filter_dueDate" name="due_date">
                                 </div>
                                 <div class="mb-3">
                                     <label for="status" class="form-label">Status</label>
-                                    <select class="form-select" id="filter_status" name="status">
+                                    <select class="paragraphs form-select" id="filter_status" name="status">
                                         <option value="">Select Status</option>
                                         <option value="Pending">Pending</option>
                                         <option value="Approved">Approved</option>
@@ -325,7 +325,7 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                                 </div>
                                 <div class="mb-3">
                                     <label for="boarder_type" class="form-label">Boarder Type</label>
-                                    <select class="form-select" id="filter_boarder_type" name="boarder_type">
+                                    <select class="paragraphs form-select" id="filter_boarder_type" name="boarder_type">
                                         <option value="">Select Boarder Type</option>
                                         <option value="Single">Single</option>
                                         <option value="Double">Double</option>
