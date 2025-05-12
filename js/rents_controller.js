@@ -109,7 +109,7 @@ function loadPage(page) {
                                         </div>
                                     </div>
                                     <form>
-                                        <div class="container-fluid">
+                                        <div class="container-fluid margin-content">
                                             <div class="col-12">
                                                 <br>
                                                 <label for="name" class="form-label">Name</label>
@@ -131,24 +131,24 @@ function loadPage(page) {
                                                     class="form-control-plaintext border bg-light px-2"
                                                     id="contact_number" value=${rent.contact_number}>
                                             </div>
-                                            <div class="row col-12 mx-auto container-fluid">
-                                                <div class="col-5 container-fluid ">
+                                            <div class="row col-12 mx-auto container-fluid margin-content">
+                                                <div class="col-5 container-fluid margin-content">
                                                     <br>
                                                     <label for="check_in_date" class="form-label">Check-in Date</label>
                                                     <input type="text" readonly
                                                         class="form-control-plaintext border bg-light px-2"
                                                         id="check_in_date" value=${rent.check_in_date}>
                                                 </div>
-                                                <div class="col-2 container-fluid">
+                                                <div class="col-2 container-fluid margin-content">
                                                 </div>
-                                                <div class="col-5 container-fluid">
+                                                <div class="col-5 container-fluid margin-content">
                                                     <br>
                                                     <label for="due_date" class="form-label">Due Date</label>
                                                     <input type="text" readonly
                                                         class="form-control-plaintext border bg-light px-2"
                                                         id="due_date" value=${rent.due_date}>
                                                 </div>
-                                                <div class="col-5 container-fluid ">
+                                                <div class="col-5 container-fluid margin-content">
                                                     <br>
                                                     <label for="status" class="form-label">Status</label>
                                                     <input type="text" readonly
@@ -157,7 +157,7 @@ function loadPage(page) {
                                                 </div>
                                                 <div class="col-2 container-fluid">
                                                 </div>
-                                                <div class="col-5 container-fluid">
+                                                <div class="col-5 container-fluid margin-content">
                                                     <br>
                                                     <label for="boarder_type" class="form-label">Boarder Type</label>
                                                     <input type="text" readonly
@@ -182,10 +182,10 @@ function loadPage(page) {
                                             </div>
                                         </div>
                                         <form>
-                                            <div class="container-fluid">
-                                                <div class="row col-12 mx-auto container-fluid">
+                                            <div class="container-fluid margin-content">
+                                                <div class="row col-12 mx-auto container-fluid margin-content">
 
-                                                    <div class="col-5 container-fluid ">
+                                                    <div class="col-5 container-fluid margin-content">
                                                         <br>
                                                         <label for="electricity_bill" class="form-label">Electricity
                                                             Bill</label>
@@ -194,9 +194,9 @@ function loadPage(page) {
                                                             id="electricity_bill" value=${rent.electricity_bill}>
                                                     </div>
 
-                                                    <div class="col-2 container-fluid"><br></div>
+                                                    <div class="col-2 container-fluid margin-content"><br></div>
 
-                                                    <div class="col-5 container-fluid">
+                                                    <div class="col-5 container-fluid margin-content">
                                                         <br>
                                                         <label for="miscellaneous_bill" class="form-label">Miscellaneous
                                                             Bill</label>
@@ -205,7 +205,7 @@ function loadPage(page) {
                                                             id="miscellaneous_bill" value=${rent.miscellaneous_bill}>
                                                     </div>
 
-                                                    <div class="col-5 container-fluid ">
+                                                    <div class="col-5 container-fluid margin-content">
                                                         <br>
                                                         <label for="rent_bill" class="form-label">Rent Bill</label>
                                                         <input type="text" readonly
@@ -213,9 +213,9 @@ function loadPage(page) {
                                                             id="rent_bill" value=${rent.rent_bill}>
                                                     </div>
 
-                                                    <div class="col-2 container-fluid"><br></div>
+                                                    <div class="col-2 container-fluid margin-content"><br></div>
 
-                                                    <div class="col-5 container-fluid">
+                                                    <div class="col-5 container-fluid margin-content">
                                                         <br>
                                                         <label for="total_bill" class="form-label">Total Bill</label>
                                                         <input type="text" readonly
