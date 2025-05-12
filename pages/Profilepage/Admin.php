@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] == 0) {
+    header("Location: ../Signin/Login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,16 +36,16 @@
 
     <div class="topnav">
         <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
 
                     <div class="navbar-nav mx-auto">
-                        <a class="nav-link me-5" href="home.php">Home</a>
-                        <a class="nav-link me-5" href="rooms.php">Rooms</a>
-                        <a class="nav-link me-5" href="FAQ.php">FAQ's</a>
-                        <a class="nav-link me-5" href="ContactUs.php">Contact Us</a>
-                        <a class="nav-link me-5" href="About.php">About Us</a>
+                        <a class="nav-link me-5" href="../Webpages/home.php">Home</a>
+                        <a class="nav-link me-5" href="../Webpages/rooms.php">Rooms</a>
+                        <a class="nav-link me-5" href="../Webpages/FAQ.php">FAQ's</a>
+                        <a class="nav-link me-5" href="../Webpages/ContactUs.php">Contact Us</a>
+                        <a class="nav-link me-5" href="../Webpages/About.php">About Us</a>
                     </div>
 
                     <div class="dropdown ms-auto">
@@ -59,21 +66,21 @@
         </nav>
     </div>
 
-    <div class="container-fluid w-100">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-2 bg-light border-end min-vh-100 p-3">
                 <div class="nav flex-column ">
                     <a class="nav-link " href="PersonalDetails.php">Personal Details</a>
                     <a class="nav-link" href="RentedRoom.php">Rented Room</a>
-                    <a class="nav-link fw-bold" href="RentedRoom.php">Admin</a>
-
-
-
+                    <?php
+                    if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
+                        <a class="nav-link fw-bold" href="Admin.php">Admin</a>
+                    <?php endif; ?>
                 </div>
             </div>
 
-            <div class="col-10 container-fluid">
-                <div class="col-12 p-5 container-fluid">
+            <div class="col-10">
+                <div class="col-12 p-5">
                     <div class="adminBody">
                         <div class="d-flex align-items-center">
                             <button id="recent" class="btn" type="button">
@@ -81,16 +88,13 @@
                             </button>
                             |
                             <div class="dropdown">
-                                <button class="btn dropdown-toggle" type="button"
-                                    data-bs-toggle="dropdown">
-                                    By Status
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-end" id="status_dropdown">
-                                    <a class="dropdown-item" id="#">Pending</a>
-                                    <a class="dropdown-item" id="#">Approved</a>
-                                    <a class="dropdown-item" id="#">Rejected</a>
-                                    <a class="dropdown-item" id="#">Closed</a>
-                                </ul>
+                                <select class="form-select border-0" id="status_dropdown" name="rent_status" required>
+                                        <option value="status">Status</option>
+                                        <option value="pending">Pending</option>
+                                        <option value="approved">Approved</option>
+                                        <option value="rejected">Rejected</option>
+                                        <option value="closed">Closed</option>
+                                    </select>
                             </div>
                             |
                             <button id="filter_button" class="btn" type="button" data-bs-toggle="modal"
@@ -136,17 +140,12 @@
                 integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
                 crossorigin="anonymous"></script>
 
-
-
-
-
-
             <!--edit rent-->
             <div class="modal fade" id="rent_popup" tabindex="-1" aria-labelledby="rent_popup" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="rent_popup">Edit Rent Details</h5>
+                            <h5 class="modal-title" id="rent_header">Edit Rent Details</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <form id="rent_form" method="POST" onsubmit="onUpdateRent(event)">
@@ -171,27 +170,27 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="check_in_date" class="form-label">Check-in Date</label>
-                                    <input type="date" class="form-control" id="edit_check_in_date" name="check_in_date"
+                                    <input type="date" class="form-control" id="rent_check_in_date" name="check_in_date"
                                         required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="due_date" class="form-label">Due Date</label>
-                                    <input type="date" class="form-control" id="edit_due_date" name="due_date" required>
+                                    <input type="date" class="form-control" id="rent_due_date" name="due_date" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="status" class="form-label">Status</label>
-                                    <select class="form-select" id="status" name="status" required>
-                                        <option value="Pending">Pending</option>
-                                        <option value="Approved">Approved</option>
-                                        <option value="Rejected">Rejected</option>
-                                        <option value="Closed">Closed</option>
+                                    <select class="form-select" id="rent_status" name="status" required>
+                                        <option value="pending">Pending</option>
+                                        <option value="approved">Approved</option>
+                                        <option value="rejected">Rejected</option>
+                                        <option value="closed">Closed</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="boarder_type" class="form-label">Boarder Type</label>
-                                    <select class="form-select" id="boarder_type" name="boarder_type" required>
-                                        <option value="Single">Single</option>
-                                        <option value="Double">Double</option>
+                                    <select class="form-select" id="rent_boarder_type" name="boarder_type" required>
+                                        <option value="single">Single</option>
+                                        <option value="double">Double</option>
                                     </select>
                                 </div>
                             </div>
@@ -209,7 +208,7 @@
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="bill_popup">Edit Bill Details</h5>
+                            <h5 class="modal-title" id="bill_header">Edit Bill Details</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <form id="bill_form" method="POST" onsubmit="onUpdateBill(event)">
@@ -237,24 +236,24 @@
                                 <div class="mb-3">
                                     <label for="electricity_bill" class="form-label">Electricity Bill</label>
                                     <input type="text" class="form-control form-control-plaintext border  px-2"
-                                        id="edit_electricity_bill" value="" name="electricity_bill">
+                                        id="bill_electricity_bill" value="" name="electricity_bill">
                                 </div>
                                 <div class="mb-3">
                                     <label for="miscellaneous_bill" class="form-label">Miscellaneous Bill</label>
                                     <input type="text" class="form-control form-control-plaintext border  px-2"
-                                        id="edit_miscellaneous_bill" value="" name="miscellaneous_bill">
+                                        id="bill_miscellaneous_bill" value="" name="miscellaneous_bill">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="rent_bill" class="form-label">Rent Bill</label>
                                     <input type="text" class="form-control form-control-plaintext border  px-2"
-                                        id="edit_rent_bill" value="" name="rent_bill">
+                                        id="bill_rent_bill" value="" name="rent_bill">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="total_bill" class="form-label">Total Bill</label>
                                     <input type="text" class="form-control form-control-plaintext border px-2"
-                                        id="edit_total_bill" value="" name="total_bill">
+                                        id="bill_total_bill" value="" name="total_bill">
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -341,7 +340,7 @@
                     </div>
                 </div>
             </div>
-                <script type="text/javascript" src="../../js/rents_controller.js"></script>
+            <script type="text/javascript" src="../../js/rents_controller.js"></script>
 </body>
 
 </html>

@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="../../css/Webpage/landingpage.css">
     <link rel="stylesheet" href="../../css/navbar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/auth.js"></script>
-    <script type="text/javascript" src="../js/rented_rooms_details.js"></script>
+    <script type="text/javascript" src="../../js/auth.js"></script>
+    <script type="text/javascript" src="../../js/rented_rooms_details.js"></script>
 
     <style>
         * {
@@ -28,11 +28,11 @@
                     <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
 
                     <div class="navbar-nav mx-auto">
-                        <a class="nav-link me-5" href="home.php">Home</a>
-                        <a class="nav-link me-5" href="rooms.php">Rooms</a>
-                        <a class="nav-link me-5" href="FAQ.php">FAQ's</a>
-                        <a class="nav-link me-5" href="ContactUs.php">Contact Us</a>
-                        <a class="nav-link me-5" href="About.php">About Us</a>
+                        <a class="nav-link me-5" href="../Webpages/home.php">Home</a>
+                        <a class="nav-link me-5" href="../Webpages/rooms.php">Rooms</a>
+                        <a class="nav-link me-5" href="../Webpages/FAQ.php">FAQ's</a>
+                        <a class="nav-link me-5" href="../Webpages/ContactUs.php">Contact Us</a>
+                        <a class="nav-link me-5" href="../Webpages/About.php">About Us</a>
                     </div>
 
                     <div class="dropdown ms-auto">
@@ -44,6 +44,10 @@
                             <a class="dropdown-item" id="personalDetailsLink" href="PersonalDetails.php">Personal
                                 Details</a>
                             <a class="dropdown-item" id="rentedRoomLink" href="RentedRoom.php">Rented Room</a>
+                            <?php session_start();
+                            if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
+                                <a class="dropdown-item" id="adminLink" href="../Profilepage/Admin.php">Admin</a>
+                            <?php endif; ?>
                             <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
                         </ul>
                     </div>
@@ -54,10 +58,14 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2 bg-light border-end min-vh-100 p-3">
+            <div class="col-2 bg-light border-end min-vh-100 p-3">
                 <div class="nav flex-column ">
                     <a class="nav-link " href="PersonalDetails.php">Personal Details</a>
-                    <a class="nav-link fw-bold" href="RentedRoom.php">Rented Room</a>
+                    <a class="nav-link" href="RentedRoom.php">Rented Room</a>
+                    <?php 
+                    if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
+                        <a class="nav-link fw-bold" href="Admin.php">Admin</a>
+                    <?php endif; ?>
                 </div>
             </div>
 
@@ -130,7 +138,7 @@
                 </div>
             </div>
 
-            <script type="text/javascript" src="../js/session.js"></script>
+            <script type="text/javascript" src="../../js/session.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
                 crossorigin="anonymous"></script>
