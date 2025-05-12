@@ -86,17 +86,32 @@
             </form>
         </div>
 
-        <div class="room-images">
-            <br><br>
-            <div class="main-image">Image Placeholder</div>
-            <br>
-            <div class="slideshow">
-                <button class="prev">&larr;</button>
-                <div class="small-image">Image</div>
-                <div class="small-image">Image</div>
-                <button class="next">&rarr;</button>
-            </div>
+     
+<div class="room-images">
+    <div class="main-image">
+        <!-- These should be your actual room images -->
+        <img src="../../img/test-image.jpg" alt="Room Image 1" class="active">
+        <img src="../../img/test-image2.jpg" alt="Room Image 2">
+        <img src="../../img/test-image3.jpg" alt="Room Image 3">
+    </div>
+    
+    <div class="slideshow">
+        <button class="prev">&lt;</button>
+        
+        <div class="small-image active-thumb">
+            <img src="../../img/test-image.jpg" alt="Room Thumbnail 1">
         </div>
+        <div class="small-image">
+            <img src="../../img/test-image2.jpg" alt="Room Thumbnail 2">
+        </div>
+        <div class="small-image">
+            <img src="../../img/test-image3.jpg" alt="Room Thumbnail 3">
+        </div>
+        
+        <button class="next">&gt;</button>
+    </div>
+</div>
+
     </section>
 
     <section class="reviews">
@@ -116,7 +131,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../js/image-slider.js"></script>
+    <script type="text/javascript" src="../../js/rooms_image-slider.js"></script>
+
 
 </body>
 

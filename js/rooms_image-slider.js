@@ -5,35 +5,61 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.querySelector('.next');
     
     let currentIndex = 0;
+    let autoSlideInterval;
 
     function showImage(index) {
         mainImages.forEach(img => img.classList.remove('active'));
         mainImages[index].classList.add('active');
+        
+        smallImages.forEach(thumb => thumb.classList.remove('active-thumb'));
+        smallImages[index].classList.add('active-thumb');
+        
         currentIndex = index;
-        smallImages.forEach((thumb, i) => {
-            if (i === index) {
-                thumb.classList.add('active-thumb');
-            } else {
-                thumb.classList.remove('active-thumb');
-            }
-        });
     }
 
-    prevBtn.addEventListener('click', function() {
-        currentIndex = (currentIndex - 1 + mainImages.length) % mainImages.length;
-        showImage(currentIndex);
-    });
-
-    nextBtn.addEventListener('click', function() {
+    function nextImage() {
         currentIndex = (currentIndex + 1) % mainImages.length;
         showImage(currentIndex);
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + mainImages.length) % mainImages.length;
+        showImage(currentIndex);
+    }
+
+    function startAutoSlide() {
+        autoSlideInterval = setInterval(nextImage, 5000);
+    }
+
+    function stopAutoSlide() {
+        clearInterval(autoSlideInterval);
+    }
+
+    prevBtn.addEventListener('click', () => {
+        prevImage();
+        stopAutoSlide();
+        startAutoSlide();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        nextImage();
+        stopAutoSlide();
+        startAutoSlide();
     });
 
     smallImages.forEach((thumb, index) => {
-        thumb.addEventListener('click', function() {
+        thumb.addEventListener('click', () => {
             showImage(index);
+            stopAutoSlide();
+            startAutoSlide();
         });
     });
 
+    // Initialize
     showImage(0);
+    startAutoSlide();
+
+    // Pause on hover
+    document.querySelector('.room-images').addEventListener('mouseenter', stopAutoSlide);
+    document.querySelector('.room-images').addEventListener('mouseleave', startAutoSlide);
 });
