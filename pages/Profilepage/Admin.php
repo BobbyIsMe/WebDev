@@ -17,15 +17,20 @@
         * {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
+            box-sizing: border-box;
+        }
+
+        body{
+            overflow-x: hidden;
         }
     </style>
 </head>
 
-<body>
+<body >
 
     <div class="topnav">
         <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
 
@@ -55,7 +60,7 @@
         </nav>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid w-100">
         <div class="row">
             <div class="col-2 bg-light border-end min-vh-100 p-3">
                 <div class="nav flex-column ">
@@ -68,8 +73,8 @@
                 </div>
             </div>
 
-            <div class="col-10">
-                <div class="col-12 p-5">
+            <div class="col-10 container-fluid">
+                <div class="col-12 p-5 container-fluid">
                     <div class="adminBody">
                         <div class="d-flex align-items-center">
                             <button id="btnOptions" class="btn" type="button">
@@ -98,7 +103,7 @@
 
                         <!---Admin Body Page-->
 
-                        <div class="col-12" style="border-top: 1px solid black; border-bottom:  1px solid black;">
+                        <div class="col-12 container-fluid" style="border-top: 1px solid black; border-bottom:  1px solid black;">
 
                             <div class="row">
                                 <div class="col-6 p-5" style="border-right: 1px solid black ;">
