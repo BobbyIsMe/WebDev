@@ -3,10 +3,11 @@
     color: #111111;
 }
 
-#profileDropdown.active {
+#profileDropdown.active{
     background-color:rgba(14, 131, 117, 0.69);
     color: #ffffff;
 }
+
 
 
 .dropdown-menu {

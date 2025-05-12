@@ -1,0 +1,51 @@
+#btnOptions:hover, #btnEdit:hover{
+
+    color: #000000;
+    font-weight: bold;
+}
+
+
+#btnOptions.active, #btnEdit.active{
+
+    color: #000000;
+    border: none !important; 
+    font-weight: bold;
+    text-decoration: underline;
+
+}
+
+#btnOptions{
+    font-size: larger;
+}
+
+.navButton{
+     background-color: white;
+     border: solid 1px rgb(255, 255, 255);
+     border-radius: 5px;
+     font-size: large;
+     width: 100px;
+     height: 50px;
+}
+
+.navButton:hover{
+    background-color:rgba(23, 194, 174, 0.69);
+    border: solid 1px rgba(255, 255, 255, 0.69);
+    color: rgb(0, 0, 0);
+}
+
+.navButton:hover:disabled{
+    border: solid 1px white;
+    background-color: white;
+}
+
+.navButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+.container-fluid { /*remove bootstrap left right margin*/
+    padding-top: 0% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
