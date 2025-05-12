@@ -3,50 +3,59 @@ let email = "";
 let contact_number = "";
 let room_id = "";
 let stat = "";
+let boarder_type = "";
 let check_in_date = "";
 let due_date = "";
 let page = 1;
 let query = "";
 let rent_id = 0;
-$rents = [];
+totalPages = 1;
+rents = [];
 
-function refreshFilter() {      
+function refreshFilter() {
     email = "";
     contact_number = "";
     room_id = "";
     stat = "";
+    boarder_type = "";
     check_in_date = "";
     due_date = "";
+    query = "";
 }
 
 function onSubmit(e) {
     e.preventDefault();
     refreshFilter();
-    const form = document.getElementById("filter-form");
+    const form = document.getElementById("filter_form");
     const formData = new FormData(form);
     email = formData.get("email");
     contact_number = formData.get("contact_number");
     room_id = formData.get("room_id");
+    boarder_type = formData.get("boarder_type");
     stat = formData.get("status");
     check_in_date = formData.get("check_in_date");
     due_date = formData.get("due_date");
-    loadPage(page);
+    page = 1;
+    const modal = bootstrap.Modal.getInstance(document.getElementById('filter_popup'));
+    modal.hide();
+    loadPage(1);
 }
 
-document.getElementById("recent").addEventListener("click", function (event) 
-{   event.preventDefault();
-    document.getElementById("filter-form").reset();
+document.getElementById("recent").addEventListener("click", function (event) {
+    event.preventDefault();
+    document.getElementById("filter_form").reset();
     refreshFilter();
-    loadPage(page);
+    page = 1;
+    loadPage(1);
 });
 
-document.getElementById("statusDropdown").addEventListener("change", function () {
+document.getElementById("status_dropdown").addEventListener("change", function () {
     refreshFilter();
-    document.getElementById("filter-form").reset();
+    document.getElementById("filter_form").reset();
     const selectedValue = this.value;
     stat = selectedValue;
-
-    loadPage(page);
+    page = 1;
+    loadPage(1);
 });
 
 document.getElementById("prev_button").addEventListener("click", () => {
@@ -64,28 +73,25 @@ document.getElementById("next_button").addEventListener("click", () => {
 });
 
 function loadPage(page) {
-    if (!empty(email)) query += `&email=${email}`;
-    if (!empty(contact_number)) query += `&contact_number=${contact_number}`;
-    if (!empty(room_id)) query += `&room_id=${room_id}`;
-    if (!empty(stat)) query += `&status=${stat}`;
-    if (!empty(check_in_date)) query += `&check_in_date=${check_in_date}`;
-    if (!empty(due_date)) query += `&due_date=${due_date}`;
+    if (email != null && email != "") query += `&email=${email}`;
+    if (contact_number != null && contact_number != "") query += `&contact_number=${contact_number}`;
+    if (room_id != null && room_id != "") query += `&room_id=${room_id}`;
+    if (stat != null && stat != "") query += `&status=${stat}`;
+    if (boarder_type != null && boarder_type != "") query += `&boarder_type=${boarder_type}`;
+    if (check_in_date != null && check_in_date != "") query += `&check_in_date=${check_in_date}`;
+    if (due_date != null && due_date != "") query += `&due_date=${due_date}`;
 
     fetch(`../../php/get_rents.php?page=${page}${query}`)
         .then(res => res.json())
         .then(data => {
-            const rents = data.rents;
+            console.log(data);
+            totalPages = data.totalPages;
+            const rentsData = data.rents;
             const tableBody = document.getElementById("rent-list");
-            tableBody.innerHTML = ""; // Clear existing rows
+            tableBody.innerHTML = "";
 
-            rents.forEach(rent => {
-                rents = {
-                    ["rent_id"]: rent.rent_id,
-                    ["name"]: rent.name,
-                    ["email"]: rent.email,
-                    ["contact_number"]: rent.contact_number,
-                    ["room_id"]: rent.room_id
-                };
+            rents = [];
+            rentsData.forEach(rent => {
                 tableBody.innerHTML += `
                 <div class="col-12" style="border-top: 1px solid black; border-bottom:  1px solid black;">
 
@@ -93,12 +99,12 @@ function loadPage(page) {
                                 <div class="col-6 p-5" style="border-right: 1px solid black ;">
                                     <div class="row">
                                         <div class="col-6 my-auto">
-                                            Rent Details
+                                            Rent Details (ID: ${rent.rent_id}, Room #${rent.room_id})
                                         </div>
 
                                         <div class="col-6 d-flex justify-content-end ">
                                             <button id="btnEdit" class="btn" type="button" data-bs-toggle="modal"
-                                                data-bs-target="#rent_popup" onclick="onEditRent(${rent.rent_id})">
+                                                data-bs-target="#rent_popup" onclick="onEditRent(${rent.rent_id}, ${rents.length})">
                                                 Edit Rent
                                             </button>
                                         </div>
@@ -171,7 +177,7 @@ function loadPage(page) {
 
                                             <div class="col-6 d-flex justify-content-end ">
                                                 <button id="btnEdit" class="btn" type="button" data-bs-toggle="modal"
-                                                    data-bs-target="#bill_popup" onclick="onEditBill(${rent.rent_id})">
+                                                    data-bs-target="#bill_popup" onclick="onEditBill(${rent.rent_id}, ${rents.length})">
                                                     Edit Bill
                                                 </button>
                                             </div>
@@ -186,7 +192,7 @@ function loadPage(page) {
                                                             Bill</label>
                                                         <input type="text" readonly
                                                             class="form-control-plaintext border bg-light px-2"
-                                                            id="electricity_bill" value=" ">
+                                                            id="electricity_bill" value=${rent.electricity_bill}>
                                                     </div>
 
                                                     <div class="col-2 container-fluid"><br></div>
@@ -197,7 +203,7 @@ function loadPage(page) {
                                                             Bill</label>
                                                         <input type="text" readonly
                                                             class="form-control-plaintext border bg-light px-2"
-                                                            id="miscellaneous_bill" value=" ">
+                                                            id="miscellaneous_bill" value=${rent.miscellaneous_bill}>
                                                     </div>
 
                                                     <div class="col-5 container-fluid ">
@@ -205,7 +211,7 @@ function loadPage(page) {
                                                         <label for="rent_bill" class="form-label">Rent Bill</label>
                                                         <input type="text" readonly
                                                             class="form-control-plaintext border bg-light px-2"
-                                                            id="rent_bill" value=" ">
+                                                            id="rent_bill" value=${rent.rent_bill}>
                                                     </div>
 
                                                     <div class="col-2 container-fluid"><br></div>
@@ -215,33 +221,48 @@ function loadPage(page) {
                                                         <label for="total_bill" class="form-label">Total Bill</label>
                                                         <input type="text" readonly
                                                             class="form-control-plaintext border bg-light px-2"
-                                                            id="total_bill" value=" ">
+                                                            id="total_bill" value=${rent.total_bill}>
                                                     </div>
                                                 </div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
-                        </div>`;
+                        </div>
+                        <br><br>`;
+                rents.push({
+                    ["rent_id"]: rent.rent_id,
+                    ["name"]: rent.name,
+                    ["email"]: rent.email,
+                    ["contact_number"]: rent.contact_number,
+                    ["room_id"]: rent.room_id
+                });
+                console.log(rents);
             });
-            document.getElementById("pageInfo").textContent = `Page ${page} of ${totalPages}`;
-            document.getElementById("prevButton").disabled = (page === 1);
-            document.getElementById("nextButton").disabled = (page === totalPages);
+            document.getElementById("page_number").textContent = `Page ${page} of ${data.totalPages}`;
+            document.getElementById("prev_button").disabled = (page === 1);
+            document.getElementById("next_button").disabled = (page === totalPages);
         })
         .catch(err => console.error("Failed to fetch rents:", err));
 }
 
-function onEditRent(rentId) {
+function onEditRent(rentId, rentsId) {
+    document.getElementById("rent_name").value = rents[rentsId].name;
+    document.getElementById("rent_email").value = rents[rentsId].email;
+    document.getElementById("rent_contact_number").value = rents[rentsId].contact_number;
     rent_id = rentId;
 }
 
-function onEditBill(rentId) {
+function onEditBill(rentId, rentsId) {
+    document.getElementById("bill_name").textContent = rents[rentsId].name;
+    document.getElementById("bill_email").textContent = rents[rentsId].email;
+    document.getElementById("bill_contact_number").textContent = rents[rentsId].contact_number;
     rent_id = rentId;
 }
 
 function onUpdateRent(e) {
     e.preventDefault();
-    const formData = new FormData(document.getElementById("rent-form"));
+    const formData = new FormData(document.getElementById("rent_form"));
     const data = new URLSearchParams(formData);
     data.append("rent_id", rent_id);
     fetch("../../php/update_rent.php", {
@@ -253,11 +274,14 @@ function onUpdateRent(e) {
             alert(data.message);
         })
         .catch(err => console.error("Failed to update rent:", err));
+    const modal = bootstrap.Modal.getInstance(document.getElementById('rent_popup'));
+    modal.hide();
+    loadPage(1);
 }
 
-function onUpdateRent(e) {
+function onUpdateBill(e) {
     e.preventDefault();
-    const formData = new FormData(document.getElementById("bill-form"));
+    const formData = new FormData(document.getElementById("bill_form"));
     const data = new URLSearchParams(formData);
     data.append("rent_id", rent_id);
     fetch("../../php/update_bill.php", {
@@ -269,9 +293,11 @@ function onUpdateRent(e) {
             alert(data.message);
         })
         .catch(err => console.error("Failed to update bill:", err));
+    const modal = bootstrap.Modal.getInstance(document.getElementById('bill_popup'));
+    modal.hide();
+    loadPage(1);
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
-    loadPage(page);
+    loadPage(1);
 });

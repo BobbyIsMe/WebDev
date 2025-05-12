@@ -19,7 +19,7 @@ if (isset($_SESSION["user_id"])) {
     <link rel="stylesheet" href="../../css/navbar.css" />
     <link rel="stylesheet" href="../../css/Signin/RegisterLogin.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/auth.js"></script>
+    <script type="text/javascript" src="../../js/auth.js"></script>
     <style>
         * {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -66,7 +66,7 @@ if (isset($_SESSION["user_id"])) {
             <div class="col-md-12 p-4">
                 <div class="col-10 mx-auto" >
 
-                    <form id="signinForm" method="get" onsubmit="signinSubmit(event)" style="background-color: rgb(255, 255, 255);">
+                    <form id="signinForm" method="POST" onsubmit="signinSubmit(event)" style="background-color: rgb(255, 255, 255);">
                         <div class="col-8 mx-auto">
                         <div class="border p-3 mt-4 text-center">
                                 <div class="login">LOGIN</div>
@@ -107,7 +107,7 @@ if (isset($_SESSION["user_id"])) {
        </div>
     </div>
 
-    <script type="text/javascript" src="../js/session.js"></script>
+    <script type="text/javascript" src="../../js/session.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>

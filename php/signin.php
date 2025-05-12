@@ -4,15 +4,13 @@ include_once("db_connect.php");
 $retVal = "";
 $isValid = true;
 $status = 400;
+$email = $_POST['email'] ?? null;
+$password = $_POST['password'] ?? null;
 
 session_regenerate_id(true);
 
-if (!isset($_POST['email'], $_POST['password'])) {
-    $password = '';
-}
-
-$email = isset($_POST['email']) ? trim($_POST['email']) : '';
-$password = isset($_POST['password']) ? trim($_POST['password']) : '';
+$email = isset($email) ? trim($email) : '';
+$password = isset($password) ? trim($password) : '';
 
 // Check fields are empty or not
 if ($email == '' || $password == '') {
@@ -49,6 +47,7 @@ if ($isValid) {
             $status = 200;
             $retVal = "Success.";
             $_SESSION['user_id'] = $obj->user_id;
+            $_SESSION['is_admin'] = $obj->admin;
         }
     }
 }

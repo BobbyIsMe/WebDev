@@ -4,35 +4,37 @@ function signupSubmit(e) {
     const formData = new FormData(document.getElementById("signupForm"));
     const data = new URLSearchParams(formData);
 
-    fetch('../php/signup.php', {
+    fetch('../../php/signup.php', {
         method: 'POST',
         body: data
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Network response was not ok");
-        }
-        return response.json();
-    })
-    .then(res => {
-        alert(res["message"]);
-        if (res["status"] === 200) {
-            document.getElementById("signupForm").reset();
-        }
-    })
-    .catch(error => {
-        console.error("Error during sign-up:", error);
-        alert("An error occurred. Please try again.");
-    });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(res => {
+            alert(res["message"]);
+            if (res["status"] === 200) {
+                document.getElementById("signupForm").reset();
+            }
+        })
+        .catch(error => {
+            console.error("Error during sign-up:", error);
+            alert("An error occurred. Please try again.");
+        });
 }
 
 function signinSubmit(e) {
     e.preventDefault();
-    var url = "../php/signin.php";
+    var url = "../../php/signin.php";
 
-    var data = $("#signinForm").serialize();
+    const formData = new FormData(document.getElementById("signinForm"));
+    const data = new URLSearchParams(formData);
     fetch(`${url}?${data.toString()}`, {
-        method: "GET"
+        method: "POST",
+        body: formData
     })
         .then(response => {
             if (!response.ok) {
@@ -43,7 +45,7 @@ function signinSubmit(e) {
         .then(res => {
             if (res["status"] == 200) {
                 document.getElementById("signinForm").reset();
-                window.location.replace('../pages/Webpages/home.php');
+                window.location.replace('../../pages/Webpages/home.php');
             } else {
                 alert(res["message"]);
             }
@@ -57,7 +59,7 @@ function signinSubmit(e) {
 function signoutClick(e) {
     e.preventDefault();
 
-    fetch("../php/signout.php")
+    fetch("../../php/signout.php")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Network response was not ok");
@@ -66,7 +68,7 @@ function signoutClick(e) {
         })
         .then(res => {
             if (res["status"] === 200) {
-                window.location.replace('../pages/Signin/Login.php'); // replaces the current location
+                window.location.replace('../../pages/Signin/Login.php'); // replaces the current location
                 // or: window.location = '../public/index.php'; // navigates to another location
             }
         })

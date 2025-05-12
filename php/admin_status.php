@@ -14,13 +14,13 @@ function requireAdmin($con)
         exit();
     }
 
-    $stmt = $con->prepare("SELECT is_admin FROM Users WHERE user_id = ?");
+    $stmt = $con->prepare("SELECT admin FROM Users WHERE user_id = ?");
     $stmt->bind_param("i", $_SESSION['user_id']);
     $stmt->execute();
     $result = $stmt->get_result();
     $row = $result->fetch_assoc();
     $stmt->close();
-    if ($row['is_admin'] == 0) {
+    if ($row['admin'] == 0) {
         echo json_encode([
             'status' => 400,
             'message' => 'Unauthorized access.'

@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="../../css/navbar.css" />
     <link rel="stylesheet" href="../../css/admin.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/auth.js"></script>
-    <script type="text/javascript" src="../js/rented_rooms_details.js"></script>
+    <script type="text/javascript" src="../../js/auth.js"></script>
 
     <style>
         * {
@@ -20,13 +19,13 @@
             box-sizing: border-box;
         }
 
-        body{
+        body {
             overflow-x: hidden;
         }
     </style>
 </head>
 
-<body >
+<body>
 
     <div class="topnav">
         <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
@@ -77,16 +76,16 @@
                 <div class="col-12 p-5 container-fluid">
                     <div class="adminBody">
                         <div class="d-flex align-items-center">
-                            <button id="btnOptions" class="btn" type="button">
+                            <button id="recent" class="btn" type="button">
                                 Recent
                             </button>
                             |
                             <div class="dropdown">
-                                <button id="btnOptions" class="btn dropdown-toggle" type="button"
+                                <button class="btn dropdown-toggle" type="button"
                                     data-bs-toggle="dropdown">
                                     By Status
                                 </button>
-                                <ul class="dropdown-menu dropdown-menu-end">
+                                <ul class="dropdown-menu dropdown-menu-end" id="status_dropdown">
                                     <a class="dropdown-item" id="#">Pending</a>
                                     <a class="dropdown-item" id="#">Approved</a>
                                     <a class="dropdown-item" id="#">Rejected</a>
@@ -94,7 +93,7 @@
                                 </ul>
                             </div>
                             |
-                            <button id="btnOptions" class="btn" type="button" data-bs-toggle="modal"
+                            <button id="filter_button" class="btn" type="button" data-bs-toggle="modal"
                                 data-bs-target="#filter_popup">
                                 Filter
                             </button>
@@ -102,157 +101,7 @@
                         <br>
 
                         <!---Admin Body Page-->
-
-                        <div class="col-12 container-fluid" style="border-top: 1px solid black; border-bottom:  1px solid black;">
-
-                            <div class="row">
-                                <div class="col-6 p-5" style="border-right: 1px solid black ;">
-                                    <div class="row">
-                                        <div class="col-6 my-auto">
-                                            Rent Details
-                                        </div>
-
-                                        <div class="col-6 d-flex justify-content-end ">
-                                            <button id="btnEdit" class="btn" type="button" data-bs-toggle="modal"
-                                                data-bs-target="#rent_popup">
-                                                Edit Rent
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <form>
-                                        <div class="container-fluid">
-
-                                            <div class="col-12">
-                                                <br>
-                                                <label for="name" class="form-label">Name</label>
-                                                <input type="text" readonly
-                                                    class="form-control-plaintext border bg-light px-2" id="name"
-                                                    value=" ">
-                                            </div>
-                                            <div class="col-12">
-                                                <br>
-                                                <label for="email" class="form-label">Email</label>
-                                                <input type="text" readonly
-                                                    class="form-control-plaintext border bg-light px-2" id="email"
-                                                    value=" ">
-                                            </div>
-
-                                            <div class="col-12">
-                                                <br>
-                                                <label for="contact_number" class="form-label">Contact Number</label>
-                                                <input type="text" readonly
-                                                    class="form-control-plaintext border bg-light px-2"
-                                                    id="contact_number" value=" ">
-                                            </div>
-
-                                            <div class="row col-12 mx-auto container-fluid">
-
-                                                <div class="col-5 container-fluid ">
-                                                    <br>
-                                                    <label for="check_in_date" class="form-label">Check-in Date</label>
-                                                    <input type="text" readonly
-                                                        class="form-control-plaintext border bg-light px-2"
-                                                        id="check_in_date" value=" ">
-                                                </div>
-
-                                                <div class="col-2 container-fluid">
-
-                                                </div>
-
-                                                <div class="col-5 container-fluid">
-                                                    <br>
-                                                    <label for="due_date" class="form-label">Due Date</label>
-                                                    <input type="text" readonly
-                                                        class="form-control-plaintext border bg-light px-2"
-                                                        id="due_date" value=" ">
-                                                </div>
-
-                                                <div class="col-5 container-fluid ">
-                                                    <br>
-                                                    <label for="status" class="form-label">Status</label>
-                                                    <input type="text" readonly
-                                                        class="form-control-plaintext border bg-light px-2" id="status"
-                                                        value=" ">
-                                                </div>
-
-                                                <div class="col-2 container-fluid">
-
-                                                </div>
-
-                                                <div class="col-5 container-fluid">
-                                                    <br>
-                                                    <label for="boarder_type" class="form-label">Boarder Type</label>
-                                                    <input type="text" readonly
-                                                        class="form-control-plaintext border bg-light px-2"
-                                                        id="boarder_type" value=" ">
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-6 p-5">
-                                    <div class="row">
-                                        <div class="col-6 my-auto">
-                                            Bill Details
-                                        </div>
-
-                                        <div class="col-6 d-flex justify-content-end ">
-                                            <button id="btnEdit" class="btn" type="button" data-bs-toggle="modal"
-                                                data-bs-target="#bill_popup">
-                                                Edit Bill
-                                            </button>
-                                        </div>
-                                    </div>
-
-                                    <form>
-                                        <div class="container-fluid">
-                                            <div class="row col-12 mx-auto container-fluid">
-
-                                                <div class="col-5 container-fluid ">
-                                                    <br>
-                                                    <label for="electricity_bill" class="form-label">Electricity
-                                                        Bill</label>
-                                                    <input type="text" readonly
-                                                        class="form-control-plaintext border bg-light px-2"
-                                                        id="electricity_bill" value=" ">
-                                                </div>
-
-                                                <div class="col-2 container-fluid"><br></div>
-
-                                                <div class="col-5 container-fluid">
-                                                    <br>
-                                                    <label for="miscellaneous_bill" class="form-label">Miscellaneous
-                                                        Bill</label>
-                                                    <input type="text" readonly
-                                                        class="form-control-plaintext border bg-light px-2"
-                                                        id="miscellaneous_bill" value=" ">
-                                                </div>
-
-                                                <div class="col-5 container-fluid ">
-                                                    <br>
-                                                    <label for="rent_bill" class="form-label">Rent Bill</label>
-                                                    <input type="text" readonly
-                                                        class="form-control-plaintext border bg-light px-2"
-                                                        id="rent_bill" value=" ">
-                                                </div>
-
-                                                <div class="col-2 container-fluid"><br></div>
-
-                                                <div class="col-5 container-fluid">
-                                                    <br>
-                                                    <label for="total_bill" class="form-label">Total Bill</label>
-                                                    <input type="text" readonly
-                                                        class="form-control-plaintext border bg-light px-2"
-                                                        id="total_bill" value=" ">
-                                                </div>
-                                            </div>
-
-
-                                    </form>
-                                </div>
-                            </div>
+                        <div id="rent-list">
 
                         </div>
 
@@ -276,13 +125,13 @@
 
 
                     </div>
-                    
+
                 </div>
             </div>
 
 
 
-            <script type="text/javascript" src="../js/session.js"></script>
+            <script type="text/javascript" src="../../js/session.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
                 crossorigin="anonymous"></script>
@@ -300,25 +149,25 @@
                             <h5 class="modal-title" id="rent_popup">Edit Rent Details</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form id="rent_form">
+                        <form id="rent_form" method="POST" onsubmit="onUpdateRent(event)">
                             <div class="modal-body">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Name</label>
                                     <input type="text" readonly
-                                        class="form-control form-control-plaintext border bg-light px-2" id="name"
+                                        class="form-control form-control-plaintext border bg-light px-2" id="rent_name"
                                         value="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="text" readonly
-                                        class="form-control form-control-plaintext border bg-light px-2" id="email"
+                                        class="form-control form-control-plaintext border bg-light px-2" id="rent_email"
                                         value="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="contact_number" class="form-label">Contact Number</label>
                                     <input type="text" readonly
                                         class="form-control form-control-plaintext border bg-light px-2"
-                                        id="edit_contact_number" value="">
+                                        id="rent_contact_number" value="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="check_in_date" class="form-label">Check-in Date</label>
@@ -355,14 +204,6 @@
                 </div>
             </div>
 
-
-
-
-
-
-
-
-
             <!--edit bill-->
             <div class="modal fade" id="bill_popup" tabindex="-1" aria-labelledby="bill_popup" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -371,18 +212,18 @@
                             <h5 class="modal-title" id="bill_popup">Edit Bill Details</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form id="bill_form">
+                        <form id="bill_form" method="POST" onsubmit="onUpdateBill(event)">
                             <div class="modal-body">
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Name</label>
                                     <input type="text" readonly
-                                        class="form-control form-control-plaintext border bg-light px-2" id="name"
+                                        class="form-control form-control-plaintext border bg-light px-2" id="bill_name"
                                         value="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="text" readonly
-                                        class="form-control form-control-plaintext border bg-light px-2" id="email"
+                                        class="form-control form-control-plaintext border bg-light px-2" id="bill_email"
                                         value="">
                                 </div>
 
@@ -390,7 +231,7 @@
                                     <label for="contact_number" class="form-label">Contact Number</label>
                                     <input type="text" readonly
                                         class="form-control form-control-plaintext border bg-light px-2"
-                                        id="contact_number" value="">
+                                        id="bill_contact_number" value="">
                                 </div>
 
                                 <div class="mb-3">
@@ -436,7 +277,7 @@
                             <h5 class="modal-title" id="filter_label">Filter</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <form id="filter_form">
+                        <form id="filter_form" method="GET" onsubmit="onSubmit(event)">
                             <div class="modal-body">
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
@@ -445,12 +286,13 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="contact_number" class="form-label">Contact Number</label>
-                                    <input type="text" readonly class="form-control form-control-plaintext border  px-2"
+                                    <input type="text" class="form-control form-control-plaintext border  px-2"
                                         id="filter_contact_number" value="" name="contact_number">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="room_num" class="form-label">Status</label>
-                                    <select class="form-select" id="room_num" name="room_num" required>
+                                    <label for="room_num" class="form-label">Room</label>
+                                    <select class="form-select" id="room_num" name="room_id">
+                                        <option value="">Select Room</option>
                                         <option value="1">Room 1</option>
                                         <option value="2">Room 2</option>
                                         <option value="3">Room 3</option>
@@ -466,16 +308,16 @@
                                 <div class="mb-3">
                                     <label for="check_in_date" class="form-label">Check-in Date</label>
                                     <input type="date" class="form-control" id="filter_check_in_date"
-                                        name="check_in_date" required>
+                                        name="check_in_date">
                                 </div>
                                 <div class="mb-3">
                                     <label for="due_date" class="form-label">Due Date</label>
-                                    <input type="date" class="form-control" id="filter_dueDate" name="due_date"
-                                        required>
+                                    <input type="date" class="form-control" id="filter_dueDate" name="due_date">
                                 </div>
                                 <div class="mb-3">
                                     <label for="status" class="form-label">Status</label>
-                                    <select class="form-select" id="filter_status" name="status" required>
+                                    <select class="form-select" id="filter_status" name="status">
+                                        <option value="">Select Status</option>
                                         <option value="Pending">Pending</option>
                                         <option value="Approved">Approved</option>
                                         <option value="Rejected">Rejected</option>
@@ -484,7 +326,8 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="boarder_type" class="form-label">Boarder Type</label>
-                                    <select class="form-select" id="filter_boarder_type" name="boarder_type" required>
+                                    <select class="form-select" id="filter_boarder_type" name="boarder_type">
+                                        <option value="">Select Boarder Type</option>
                                         <option value="Single">Single</option>
                                         <option value="Double">Double</option>
                                     </select>
@@ -498,7 +341,7 @@
                     </div>
                 </div>
             </div>
-
+                <script type="text/javascript" src="../../js/rents_controller.js"></script>
 </body>
 
 </html>

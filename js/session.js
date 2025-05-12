@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("../php/session_status.php")
+    fetch("../../php/session_status.php")
         .then(res => res.json())
         .then(data => {
             const authLink = document.getElementById("authLink");
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!data.loggedIn) {
                 authLink.textContent = "Sign In";
                 authLink.onclick = null;
-                authLink.setAttribute("href", "../pages/Login.php");
+                authLink.setAttribute("href", "../../pages/Signin/Login.php");
 
                 personalDetails.style.display = "none";
                 rentedRoom.style.display = "none";
