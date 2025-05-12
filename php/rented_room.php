@@ -3,6 +3,11 @@ include_once("db_connect.php");
 
 $user_id = $_SESSION["user_id"];
 
+if(!isset($user_id)) {
+    echo json_encode(array("error" => "Must sign in to view rented room details"));
+    exit();
+}
+
 $stmt = $con->prepare("
     SELECT 
         r.rent_id,

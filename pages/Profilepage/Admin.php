@@ -74,7 +74,7 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                     <a class="nav-link" href="RentedRoom.php">Rented Room</a>
                     <?php
                     if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
-                        <a class="nav-link fw-bold" href="Admin.php">Admin</a>
+                        <a class="nav-link fw-bold active" href="Admin.php">Admin</a>
                     <?php endif; ?>
                 </div>
             </div>
@@ -83,7 +83,7 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                 <div class="col-12 p-5">
                     <div class="adminBody">
                         <div class="d-flex align-items-center">
-                            <button id="recent" class="btn" type="button">
+                            <button id="recent" class="btn adminBtn active" type="button">
                                 Recent
                             </button>
                             |
@@ -97,7 +97,7 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                                     </select>
                             </div>
                             |
-                            <button id="filter_button" class="btn" type="button" data-bs-toggle="modal"
+                            <button id="filter_button" class="btn adminBtn" type="button" data-bs-toggle="modal"
                                 data-bs-target="#filter_popup">
                                 Filter
                             </button>

@@ -2,3 +2,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgba(0, 0, 0, 0.747);
 }
+
+.nav-link.active {
+    color: rgba(10, 88, 205);
+}

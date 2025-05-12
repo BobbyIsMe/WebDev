@@ -67,7 +67,7 @@ if (!isset($_SESSION["user_id"])) {
         <div class="row">
             <div class="col-2 bg-light border-end min-vh-100 p-3">
                 <div class="nav flex-column ">
-                    <a class="nav-link " href="PersonalDetails.php">Personal Details</a>
+                    <a class="nav-link active" href="PersonalDetails.php">Personal Details</a>
                     <a class="nav-link" href="RentedRoom.php">Rented Room</a>
                     <?php
                     if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>

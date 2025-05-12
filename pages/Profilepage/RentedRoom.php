@@ -67,8 +67,8 @@ if (!isset($_SESSION["user_id"])) {
         <div class="row">
             <div class="col-2 bg-light border-end min-vh-100 p-3">
                 <div class="nav flex-column ">
-                    <a class="nav-link " href="PersonalDetails.php">Personal Details</a>
-                    <a class="nav-link" href="RentedRoom.php">Rented Room</a>
+                    <a class="nav-link" href="PersonalDetails.php">Personal Details</a>
+                    <a class="nav-link active" href="RentedRoom.php">Rented Room</a>
                     <?php
                     if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
                         <a class="nav-link fw-bold" href="Admin.php">Admin</a>
@@ -85,22 +85,21 @@ if (!isset($_SESSION["user_id"])) {
 
 
                     <h5 id="room-id">Loading room number...</h5>
-                    <p id="description"><strong>Loading room description...</strong></p>
+                    <p id="description" class="paragraphs"><strong>Loading room description...</strong></p>
 
                     <form>
 
 
                         <div class="row mb-3">
                             <div class="col-md-6 mb-3">
-                                <label for="boarder_type" class="form-label">Boarder Type</label>
-                                <input type="text" readonly class="paragraphs form-control-plaintext border bg-light px-2"
-                                    id="boarder_type" value=" ">
-                            </div>
-
-                            <div class="col-md-6">
                                 <label for="status" class="form-label">Status</label>
                                 <input type="text" readonly class="paragraphs form-control-plaintext border bg-light px-2"
                                     id="status" value=" ">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="boarder_type" class="form-label">Boarder Type</label>
+                                <input type="text" readonly class="paragraphs form-control-plaintext border bg-light px-2"
+                                    id="boarder_type" value=" ">
                             </div>
                             <div class="col-md-6">
                                 <label for="checkInDate" class="form-label">Check-in Date</label>

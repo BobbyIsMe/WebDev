@@ -29,6 +29,8 @@ function onSubmit(e) {
     refreshFilter();
     const form = document.getElementById("filter_form");
     const formData = new FormData(form);
+     document.getElementById("recent").classList.remove("active");
+    document.getElementById("filter_button").classList.add("active");
     email = formData.get("email");
     contact_number = formData.get("contact_number");
     room_id = formData.get("room_id");
@@ -45,6 +47,8 @@ function onSubmit(e) {
 document.getElementById("recent").addEventListener("click", function (event) {
     event.preventDefault();
     document.getElementById("filter_form").reset();
+    document.getElementById("recent").classList.add("active");
+    document.getElementById("filter_button").classList.remove("active");
     document.getElementById("status_dropdown").value = "status";
     refreshFilter();
     page = 1;
@@ -54,6 +58,8 @@ document.getElementById("recent").addEventListener("click", function (event) {
 document.getElementById("status_dropdown").addEventListener("change", function () {
     refreshFilter();
     document.getElementById("filter_form").reset();
+     document.getElementById("recent").classList.remove("active");
+    document.getElementById("filter_button").classList.remove("active");
     const selectedValue = this.value;
     stat = selectedValue;
     page = 1;
@@ -104,7 +110,7 @@ function loadPage(page) {
                                         </div>
 
                                         <div class="col-6 d-flex justify-content-end ">
-                                            <button id="btnEdit" class="btn" type="button" data-bs-toggle="modal"
+                                            <button class="adminBtn btn" type="button" data-bs-toggle="modal"
                                                 data-bs-target="#rent_popup" onclick="onEditRent(${rent.rent_id}, ${rents.length})">
                                                 Edit Rent
                                             </button>
@@ -177,7 +183,7 @@ function loadPage(page) {
                                             </div>
 
                                             <div class="col-6 d-flex justify-content-end ">
-                                                <button id="btnEdit" class="btn" type="button" data-bs-toggle="modal"
+                                                <button class="adminBtn btn" type="button" data-bs-toggle="modal"
                                                     data-bs-target="#bill_popup" onclick="onEditBill(${rent.rent_id}, ${rents.length})">
                                                     Edit Bill
                                                 </button>
