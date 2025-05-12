@@ -284,7 +284,6 @@
 
 
 
-            <!---edit the details-->
 
 
 
