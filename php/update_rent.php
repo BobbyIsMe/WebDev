@@ -5,10 +5,11 @@ requireAdmin($con);
 
 $rent_id = $_POST['rent_id'] ?? null;
 $status = $_POST['status'] ?? null;
+$boarder_type = $_POST['boarder_type'] ?? null;
 $check_in_date = $_POST['check_in_date'] ?? null;
 $due_date = $_POST['due_date'] ?? null;
 
-if (!isset($rent_id, $status, $check_in_date, $due_date)) {
+if (!isset($rent_id, $status, $boarder_type, $check_in_date, $due_date)) {
     echo json_encode(array("status" => 400, "message" => "Invalid request."));
     exit();
 }
@@ -30,6 +31,11 @@ if (!in_array(strtolower($status), ['pending', 'approved', 'rejected', 'closed']
     exit();
 }
 
+if (!in_array(strtolower($boarder_type), ['single', 'double'])) {
+    echo json_encode(array("status" => 400, "message" => "Invalid boarder type."));
+    exit();
+}
+
 if (!DateTime::createFromFormat('Y-m-d', $check_in_date) || !DateTime::createFromFormat('Y-m-d', $due_date)) {
     echo json_encode(array("status" => 400, "message" => "Invalid date format."));
     exit();
@@ -45,9 +51,9 @@ if($due_date < $check_in_date) {
     exit();
 }
 
-$stmt = $con->prepare("UPDATE Rents SET status = ?, check_in_date = ?, due_date = ? WHERE rent_id = ?");
-$stmt->bind_param("sssi", $status, $check_in_date, $due_date, $rent_id);
+$stmt = $con->prepare("UPDATE Rents SET status = ?, boarder_type = ?, check_in_date = ?, due_date = ? WHERE rent_id = ?");
+$stmt->bind_param("ssssi", $status, $boarder_type, $check_in_date, $due_date, $rent_id);
 $stmt->execute();
 $stmt->close();
-echo json_encode(array("status" => 400, "message" => "Successfully updated rent request."));
+echo json_encode(array("status" => 200, "message" => "Successfully updated rent request."));
 ?>

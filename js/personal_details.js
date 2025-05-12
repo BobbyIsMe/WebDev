@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const dropdown = document.getElementById("room-dropdown");
 
-    fetch("../php/get_personal_details.php")
+    fetch("../../php/get_personal_details.php")
         .then(res => res.json())
         .then(data => {
 

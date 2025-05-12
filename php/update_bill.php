@@ -19,19 +19,29 @@ if(!is_numeric($electricity_bill) || !is_numeric($miscellaneous_bill) || !is_num
     exit();
 }
 
-if(!$electricity_bill >= 0 || !is_numeric($miscellaneous_bill) || !is_numeric($rent_bill) || !is_numeric($total_bill)) {
-    echo json_encode(array("status" => 400, "message" => "Bill amounts must be non-negative."));
+if($electricity_bill <= 0 || $miscellaneous_bill <= 0 || $rent_bill <= 0 || $total_bill <= 0) {
+    echo json_encode(array("status" => 400, "message" => "Bill amounts must be above zero."));
     exit();
 }
 
-if (!DateTime::createFromFormat('Y-m-d', $check_in_date) || !DateTime::createFromFormat('Y-m-d', $due_date)) {
-    echo json_encode(array("status" => 400, "message" => "Invalid date format."));
-    exit();
-}
+$checkStmt = $con->prepare("SELECT COUNT(*) FROM Bills WHERE rent_id = ?");
+$checkStmt->bind_param("i", $rent_id);
+$checkStmt->execute();
+$checkStmt->bind_result($count);
+$checkStmt->fetch();
+$checkStmt->close();
 
+if ($count > 0) {
 $stmt = $con->prepare("UPDATE Bills SET electricity_bill = ?, miscellaneous_bill = ?, rent_bill = ?, total_bill = ? WHERE rent_id = ?");
 $stmt->bind_param("iiiii", $electricity_bill, $miscellaneous_bill, $rent_bill, $total_bill, $rent_id);
 $stmt->execute();
 $stmt->close();
-echo json_encode(array("status" => 400, "message" => "Successfully updated bill."));
+echo json_encode(array("status" => 200, "message" => "Successfully updated bill."));
+} else {
+    $stmt = $con->prepare("INSERT INTO Bills (rent_id, electricity_bill, miscellaneous_bill, rent_bill, total_bill) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("iiiii", $rent_id, $electricity_bill, $miscellaneous_bill, $rent_bill, $total_bill);
+    $stmt->execute();
+    $stmt->close();
+    echo json_encode(["status" => 200, "message" => "Successfully inserted bill."]);
+}
 ?>

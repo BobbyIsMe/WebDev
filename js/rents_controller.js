@@ -59,16 +59,16 @@ document.getElementById("status_dropdown").addEventListener("change", function (
 });
 
 document.getElementById("prev_button").addEventListener("click", () => {
-    if (currentPage > 1) {
-        currentPage--;
-        loadPage(currentPage);
+    if (page > 1) {
+        page--;
+        loadPage(page);
     }
 });
 
 document.getElementById("next_button").addEventListener("click", () => {
-    if (currentPage < totalPages) {
-        currentPage++;
-        loadPage(currentPage);
+    if (page < totalPages) {
+        page++;
+        loadPage(page);
     }
 });
 
@@ -84,7 +84,6 @@ function loadPage(page) {
     fetch(`../../php/get_rents.php?page=${page}${query}`)
         .then(res => res.json())
         .then(data => {
-            console.log(data);
             totalPages = data.totalPages;
             const rentsData = data.rents;
             const tableBody = document.getElementById("rent-list");
@@ -235,9 +234,16 @@ function loadPage(page) {
                     ["name"]: rent.name,
                     ["email"]: rent.email,
                     ["contact_number"]: rent.contact_number,
-                    ["room_id"]: rent.room_id
+                    ["room_id"]: rent.room_id,
+                    ["status"]: rent.status,
+                    ["boarder_type"]: rent.boarder_type,
+                    ["check_in_date"]: rent.check_in_date,
+                    ["due_date"]: rent.due_date,
+                    ["electricity_bill"]: rent.electricity_bill,
+                    ["miscellaneous_bill"]: rent.miscellaneous_bill,
+                    ["rent_bill"]: rent.rent_bill,
+                    ["total_bill"]: rent.total_bill
                 });
-                console.log(rents);
             });
             document.getElementById("page_number").textContent = `Page ${page} of ${data.totalPages}`;
             document.getElementById("prev_button").disabled = (page === 1);
@@ -247,16 +253,26 @@ function loadPage(page) {
 }
 
 function onEditRent(rentId, rentsId) {
+    document.getElementById("rent_header").textContent = `Edit Rent Details (ID: ${rents[rentsId].rent_id}, Room #${rents[rentsId].room_id})`;
     document.getElementById("rent_name").value = rents[rentsId].name;
     document.getElementById("rent_email").value = rents[rentsId].email;
     document.getElementById("rent_contact_number").value = rents[rentsId].contact_number;
+    document.getElementById("rent_status").value = rents[rentsId].status;
+    document.getElementById("rent_boarder_type").value = rents[rentsId].boarder_type;
+    document.getElementById("rent_check_in_date").value = rents[rentsId].check_in_date;
+    document.getElementById("rent_due_date").value = rents[rentsId].due_date;
     rent_id = rentId;
 }
 
 function onEditBill(rentId, rentsId) {
-    document.getElementById("bill_name").textContent = rents[rentsId].name;
-    document.getElementById("bill_email").textContent = rents[rentsId].email;
-    document.getElementById("bill_contact_number").textContent = rents[rentsId].contact_number;
+    document.getElementById("bill_header").textContent = `Edit Bill Details (ID: ${rents[rentsId].rent_id}, Room #${rents[rentsId].room_id})`;
+    document.getElementById("bill_name").value = rents[rentsId].name;
+    document.getElementById("bill_email").value = rents[rentsId].email;
+    document.getElementById("bill_contact_number").value = rents[rentsId].contact_number;
+    document.getElementById("bill_electricity_bill").value = rents[rentsId].electricity_bill;
+    document.getElementById("bill_miscellaneous_bill").value = rents[rentsId].miscellaneous_bill;
+    document.getElementById("bill_rent_bill").value = rents[rentsId].rent_bill;
+    document.getElementById("bill_total_bill").value = rents[rentsId].total_bill;
     rent_id = rentId;
 }
 
@@ -272,11 +288,14 @@ function onUpdateRent(e) {
         .then(res => res.json())
         .then(data => {
             alert(data.message);
+            if (data.status == 200) {
+                const modal = bootstrap.Modal.getInstance(document.getElementById('rent_popup'));
+                modal.hide();
+                document.getElementById("rent_form").reset();
+                loadPage(1);
+            }
         })
         .catch(err => console.error("Failed to update rent:", err));
-    const modal = bootstrap.Modal.getInstance(document.getElementById('rent_popup'));
-    modal.hide();
-    loadPage(1);
 }
 
 function onUpdateBill(e) {
@@ -291,11 +310,14 @@ function onUpdateBill(e) {
         .then(res => res.json())
         .then(data => {
             alert(data.message);
+            if (data.status == 200) {
+                const modal = bootstrap.Modal.getInstance(document.getElementById('bill_popup'));
+                modal.hide();
+                document.getElementById("bill_form").reset();
+                loadPage(1);
+            }
         })
         .catch(err => console.error("Failed to update bill:", err));
-    const modal = bootstrap.Modal.getInstance(document.getElementById('bill_popup'));
-    modal.hide();
-    loadPage(1);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

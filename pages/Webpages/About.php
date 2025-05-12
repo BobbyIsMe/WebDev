@@ -19,35 +19,39 @@
 
 <body>
     <div class="topnav">
-    <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
+        <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
 
-                <div class="navbar-nav mx-auto">
-                    <a class="nav-link me-5" href="home.php">Home</a>
-                    <a class="nav-link me-5" href="rooms.php">Rooms</a>
-                    <a class="nav-link me-5" href="FAQ.php">FAQ's</a>
-                    <a class="nav-link me-5" href="ContactUs.php">Contact Us</a>
-                    <a class="nav-link me-5 text-white" href="About.php">About Us</a>
-                </div>
+                    <div class="navbar-nav mx-auto">
+                        <a class="nav-link me-5" href="home.php">Home</a>
+                        <a class="nav-link me-5" href="rooms.php">Rooms</a>
+                        <a class="nav-link me-5" href="FAQ.php">FAQ's</a>
+                        <a class="nav-link me-5" href="ContactUs.php">Contact Us</a>
+                        <a class="nav-link me-5 text-white" href="About.php">About Us</a>
+                    </div>
 
-                <div class="dropdown ms-auto">
-                    <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
-                        data-bs-toggle="dropdown">
-                        Profile
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <a class="dropdown-item" id="personalDetailsLink" href="PersonalDetails.php">Personal Details</a>
-                        <a class="dropdown-item" id="rentedRoomLink" href="RentedRoom.php">Rented Room</a>
-                        <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
-                    </ul>
+                    <div class="dropdown ms-auto">
+                        <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown">
+                            Profile
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item" id="personalDetailsLink" href="../Profilepage/PersonalDetails.php">Personal Details</a>
+                            <a class="dropdown-item" id="rentedRoomLink" href="../Profilepage/RentedRoom.php">Rented Room</a>
+                            <?php session_start();
+                            if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
+                                <a class="dropdown-item" id="adminLink" href="../Profilepage/Admin.php">Admin</a>
+                            <?php endif; ?>
+                            <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-</div>
-    
+        </nav>
+    </div>
+
 
     <main>
         <section class="about-us">
@@ -66,7 +70,7 @@
 
 </body>
 
-<script type="text/javascript" src="../js/session.js"></script>
+<script type="text/javascript" src="../../js/session.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
     crossorigin="anonymous"></script>
