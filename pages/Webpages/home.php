@@ -15,65 +15,83 @@
     <style>
         * {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        } 
+
+        }
     </style>
 </head>
 
 <body>
 
     <div class="topnav">
-    <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
-        <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
+        <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
 
-                <div class="navbar-nav mx-auto">
-                    <a class="nav-link me-5 text-white" href="home.php">Home</a>
-                    <a class="nav-link me-5" href="rooms.php">Rooms</a>
-                    <a class="nav-link me-5" href="FAQ.php">FAQ's</a>
-                    <a class="nav-link me-5" href="ContactUs.php">Contact Us</a>
-                    <a class="nav-link me-5" href="About.php">About Us</a>
-                </div>
+                    <div class="navbar-nav mx-auto">
+                            <a class="nav-link me-5 text-white" href="home.php">HOME</a>
+                            <a class="nav-link me-5" href="rooms.php">ROOMS</a>
+                            <a class="nav-link me-5" href="FAQ.php">FAQ'S</a>
+                            <a class="nav-link me-5" href="ContactUs.php">CONTACT US</a>
+                            <a class="nav-link me-5" href="About.php">ABOUT US</a>
+                    </div>
 
-                <div class="dropdown ms-auto">
-                    <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
-                        data-bs-toggle="dropdown">
-                        Profile
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <a class="dropdown-item" id="personalDetailsLink" href="PersonalDetails.php">Personal Details</a>
-                        <a class="dropdown-item" id="rentedRoomLink" href="RentedRoom.php">Rented Room</a>
-                        <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
-                    </ul>
+                    <div class="dropdown ms-auto">
+                        <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown">
+                            Profile
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item" id="personalDetailsLink" href="PersonalDetails.php">Personal
+                                Details</a>
+                            <a class="dropdown-item" id="rentedRoomLink" href="RentedRoom.php">Rented Room</a>
+                            <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-</div>
+        </nav>
+    </div>
     <div style="padding: 2vw;">
         <header>
             <br>
-            <div class="main-image">Image Placeholder</div><br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
+            <div class="main-image">
+                <img src="../../img/m1.png" alt="bembi">
+            </div><br>
+            <p>Matias Boarding House - Serving Rooms since 2010</p>
             <br>
         </header>
 
         <section class="rooms-showcase">
             <br>
-            <h2>Rooms Showcase</h2>
+            <h2>ROOMS SHOWCASE</h2><br><br>
             <div class="room-images">
-                <div class="room-placeholder"></div>
-                <div class="room-placeholder"></div>
-                <div class="room-placeholder"></div>
+                <div class="room-placeholder">
+                    <div>
+                        <img src="../../img/rp-1.jpg" alt="bembi">
+                    </div>
+                </div>
+
+                <div class="room-placeholder">
+                    <div>
+                        <img src="../../img/rp-2.jpg" alt="bembi">
+                    </div>
+                </div>
+
+                <div class="room-placeholder">
+                    <div>
+                        <img src="../../img/rp-3.jpg" alt="bembi">
+                    </div>
+                </div>
             </div>
+
             <br>
-            <p>Boarding house details (Price, Room dimensions, Billing, etc...)</p>
         </section>
 
         <section class="reservation-steps">
             <h2>Steps on Reserving</h2>
-            <p class="paragraphs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            <p class="paragraphs">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et
                 dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                 laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate

@@ -36,3 +36,8 @@
 .navbar{
     background-color:rgb(17, 180, 161, 0.69);
 }
+
+.navbar-nav{
+    letter-spacing: 5px;
+    font-size: 20px;
+}
