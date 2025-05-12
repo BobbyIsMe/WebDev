@@ -1,7 +1,5 @@
 
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,21 +9,23 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="../../css/Webpage/landingpage.css">
-    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../../css/navbar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/auth.js"></script>
-    <script type="text/javascript" src="../js/personal_details.js"></script>
+    <script type="text/javascript" src="../js/rented_rooms_details.js"></script>
 
     <style>
         * {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border: solid 1px
         }
+
     </style>
 </head>
 
 <body>
 
-   <div class="topnav">
+    <div class="topnav">
     <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarContent">
@@ -47,6 +47,7 @@
                     <ul class="dropdown-menu dropdown-menu-end">
                         <a class="dropdown-item" id="personalDetailsLink" href="PersonalDetails.php">Personal Details</a>
                         <a class="dropdown-item" id="rentedRoomLink" href="RentedRoom.php">Rented Room</a>
+                        <a class="dropdown-item" id="adminLink" href="Admin.php">Admin</a>
                         <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
                     </ul>
                 </div>
@@ -57,54 +58,29 @@
 
     <div class="container-fluid">
         <div class="row">
-
-            <div class="col-md-2 bg-light border-end min-vh-100 p-3">
-                <div class="nav flex-column">
-                    <a class="nav-link fw-bold" href="PersonalDetails.php">Personal Details</a>
-                    <a class="nav-link " href="RentedRoom.php">Rented Room</a>
+            <div class="col-2 bg-light border-end min-vh-100 p-3">
+                <div class="nav flex-column ">
+                    <a class="nav-link " href="PersonalDetails.php">Personal Details</a>
+                    <a class="nav-link" href="RentedRoom.php">Rented Room</a>
+                    <a class="nav-link fw-bold" href="RentedRoom.php">Admin</a>
+                
+                
+                
                 </div>
             </div>
 
+            <div class="col-10">
+        
+           </div>
 
-            <div class="col-md-10 p-4">
-                <div class="col-9 mx-auto">
 
 
-                    <h5 id="date-created"> </h5>
-                    <br>
 
-                    <form>
-                        <div class="row">
-                            <div class="col-md-10">
-                                <label for="Email" class="form-label">Email</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="email" value=" ">
-                            </div>
-                            <div class="col-md-10">
-                                <br>
-                                <label for="Name" class="form-label">Name</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="name" value=" ">
-                            </div>
-
-                            <div class="col-md-10">
-                                <br>
-                                <label for="Contactnumber" class="form-label">Contact Number</label>
-                                <input type="text" readonly class="form-control-plaintext border bg-light px-2"
-                                    id="contact-number" value=" ">
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div>
-                </div>
-            </div>
 
             <script type="text/javascript" src="../js/session.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
                 crossorigin="anonymous"></script>
-
 </body>
 
 </html>
