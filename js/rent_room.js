@@ -60,7 +60,7 @@ function rentSubmit(e) {
     })
     .then(res => {
         if (res["status"] === 200) {
-            window.location.replace('../pages/Profilepage/RentedRoom.php');
+            window.location.replace('../../pages/Profilepage/RentedRoom.php');
         } else {
             document.getElementById("message").textContent = res["message"];
         }

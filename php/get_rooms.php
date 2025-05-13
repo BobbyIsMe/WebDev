@@ -7,6 +7,7 @@ SELECT r.room_id, r.description,
        CASE WHEN EXISTS (
            SELECT 1 FROM Rents rt 
            WHERE rt.room_id = r.room_id 
+           AND status = 'approved' 
              AND CURRENT_DATE BETWEEN rt.check_in_date AND rt.due_date
        ) THEN 1 ELSE 0 END AS is_rented
 FROM Rooms r;");

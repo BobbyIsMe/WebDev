@@ -32,6 +32,7 @@ function validateForm($con)
         (SELECT COUNT(*) 
          FROM Rents 
          WHERE room_id = ? 
+           AND status = 'approved' 
            AND CURRENT_DATE BETWEEN check_in_date AND COALESCE(due_date, CURRENT_DATE)
         ) AS room_rented,
         (SELECT COUNT(*) 
