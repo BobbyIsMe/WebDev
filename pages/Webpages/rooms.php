@@ -7,7 +7,7 @@
     <title>Matias BH | Rooms</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../../css/Webpage/reservation.css">
+    <link rel="stylesheet" href="../../css/Webpage/rooms.css">
     <link rel="stylesheet" href="../../css/navbar.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="../../js/auth.js"></script>
@@ -16,42 +16,45 @@
     <style>
         * {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
         }
     </style>
 </head>
 <div class="topnav">
-        <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarContent">
-                    <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>Matias BH</b></a>
+    <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>Matias BH</b></a>
 
-                    <div class="navbar-nav mx-auto">
-                        <a class="nav-link me-5" href="home.php">HOME</a>
-                        <a class="nav-link me-5 fw-bold" style="color:rgba(14, 131, 117, 0.69);" href="rooms.php">ROOMS</a>
-                        <a class="nav-link me-5" href="FAQ.php">FAQ'S</a>
-                        <a class="nav-link me-5" href="ContactUs.php">CONTACT US</a>
-                        <a class="nav-link me-5" href="About.php">ABOUT US</a>
-                    </div>
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-link me-5" href="home.php">HOME</a>
+                    <a class="nav-link me-5 fw-bold" style="color:rgba(14, 131, 117, 0.69);" href="rooms.php">ROOMS</a>
+                    <a class="nav-link me-5" href="FAQ.php">FAQ'S</a>
+                    <a class="nav-link me-5" href="ContactUs.php">CONTACT US</a>
+                    <a class="nav-link me-5" href="About.php">ABOUT US</a>
+                </div>
 
-                    <div class="dropdown ms-auto">
-                        <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
-                            data-bs-toggle="dropdown">
-                            Profile
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" id="personalDetailsLink" href="../Profilepage/PersonalDetails.php">Personal Details</a>
-                            <a class="dropdown-item" id="rentedRoomLink" href="../Profilepage/RentedRoom.php">Rented Room</a>
-                            <?php session_start();
-                            if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
-                                <a class="dropdown-item" id="adminLink" href="../Profilepage/Admin.php">Admin</a>
-                            <?php endif; ?>
-                            <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
-                        </ul>
-                    </div>
+                <div class="dropdown ms-auto">
+                    <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
+                        data-bs-toggle="dropdown">
+                        Profile
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item" id="personalDetailsLink"
+                            href="../Profilepage/PersonalDetails.php">Personal Details</a>
+                        <a class="dropdown-item" id="rentedRoomLink" href="../Profilepage/RentedRoom.php">Rented
+                            Room</a>
+                        <?php session_start();
+                        if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
+                            <a class="dropdown-item" id="adminLink" href="../Profilepage/Admin.php">Admin</a>
+                        <?php endif; ?>
+                        <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
+                    </ul>
                 </div>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
+</div>
 
 <body>
 
@@ -60,33 +63,54 @@
             <h2 id="room-num">Room #.</h2>
             <p id="description">Description about the place</p>
 
-            <form id="room-form" method="post" onsubmit="rentSubmit(event)">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Room No.</label>
-                        <select id="room-dropdown" name="room_id">
-                            <option>Choose Room</option>
-                        </select>
-                    </div>
-                </div>
+            <div class="col-12 column p-5 ">
+                <form id="room-form" method="post" onsubmit="rentSubmit(event)">
+                    <div class="row">
+                        <div class="col-4  p-3">
+                            <div class="form-row">
+                                <div class="form-group ">
+                                    <label>Room No.</label>
+                                    <select id="room-dropdown" name="room_id">
+                                        <option>Choose Room</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-4  p-3">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Boarder Type</label>
+                                    <select id="boarder-type" name="boarder_type">
+                                    <div class="choices">
+                                        <option>Select Type</option>
+                                        <option>Single</option>
+                                        <option>Double</option>
+                                    </div>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Boarder Type</label>
-                        <select id="boarder-type" name="boarder_type">
-                            <option>Select Type</option>
-                            <option>Single</option>
-                            <option>Double</option>
-                        </select>
+                        <div class="col-4  p-3 d-flex align-items-center">
+                            <div class="form-group w-100">
+                                <label>Available</label>
+                                <input id="room-status" type="text" disabled value="Yes/No" class="disabled-field w-100">
+                            </div>
+                        </div>
+
+                        <div class="col-12 p-3 d-flex justify-content-center">
+                            <button type="submit" id="reserve" class="button">Reserve</button>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Available</label>
-                        <input id="room-status" type="text" disabled value="Yes/No" class="disabled-field">
-                    </div>
-                </div>
-                <button type="submit" class="button">Reserve</button>
-            </form>
+                </form>
+
+
+
+            </div>
+
             <p class="paragraphs" id="message">
             </p>
         </div>
@@ -94,7 +118,7 @@
 
         <div class="room-images">
             <div class="main-image">
-                <!-- These should be your actual room images -->
+               
                 <img src="../../img/test-image.jpg" alt="Room Image 1" class="active">
                 <img src="../../img/test-image2.jpg" alt="Room Image 2">
                 <img src="../../img/test-image3.jpg" alt="Room Image 3">

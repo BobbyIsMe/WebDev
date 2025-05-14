@@ -59,11 +59,11 @@
     <div class="main-image">
         <img src="../../img/homepage1.png" alt="bembi">
     </div>
-    <p>Matias Boarding House - Serving Rooms since 2010</p>
-    <br>
 </header>
 
-
+<!--footer
+    <p>Matias Boarding House - Serving Rooms since 2010</p>
+    <br>------>
 <body>
     <div style="padding: 2vw;">
 
