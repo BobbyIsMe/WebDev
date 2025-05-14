@@ -15,57 +15,59 @@
     <style>
         * {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
         }
     </style>
 </head>
+<div class="topnav">
+    <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>Matias BH</b></a>
 
-<body>
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-link me-5 fw-bold" style="color:rgba(14, 131, 117, 0.69);" href="home.php">HOME</a>
+                    <a class="nav-link me-5" href="rooms.php">ROOMS</a>
+                    <a class="nav-link me-5" href="FAQ.php">FAQ'S</a>
+                    <a class="nav-link me-5" href="ContactUs.php">CONTACT US</a>
+                    <a class="nav-link me-5" href="About.php">ABOUT US</a>
+                </div>
 
-    <div class="topnav">
-        <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarContent">
-                    <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
-
-                    <div class="navbar-nav mx-auto">
-                        <a class="nav-link me-5 text-white fw-bold" href="home.php">HOME</a>
-                        <a class="nav-link me-5" href="rooms.php">ROOMS</a>
-                        <a class="nav-link me-5" href="FAQ.php">FAQ'S</a>
-                        <a class="nav-link me-5" href="ContactUs.php">CONTACT US</a>
-                        <a class="nav-link me-5" href="About.php">ABOUT US</a>
-                    </div>
-
-                    <div class="dropdown ms-auto">
-                        <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
-                            data-bs-toggle="dropdown">
-                            Profile
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" id="personalDetailsLink" href="../Profilepage/PersonalDetails.php">Personal Details</a>
-                            <a class="dropdown-item" id="rentedRoomLink" href="../Profilepage/RentedRoom.php">Rented Room</a>
-                            <?php session_start();
-                            if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
-                                <a class="dropdown-item" id="adminLink" href="../Profilepage/Admin.php">Admin</a>
-                            <?php endif; ?>
-                            <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
-                        </ul>
-                    </div>
+                <div class="dropdown ms-auto">
+                    <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
+                        data-bs-toggle="dropdown">
+                        Profile
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item" id="personalDetailsLink"
+                            href="../Profilepage/PersonalDetails.php">Personal Details</a>
+                        <a class="dropdown-item" id="rentedRoomLink" href="../Profilepage/RentedRoom.php">Rented
+                            Room</a>
+                        <?php session_start();
+                        if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
+                            <a class="dropdown-item" id="adminLink" href="../Profilepage/Admin.php">Admin</a>
+                        <?php endif; ?>
+                        <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
+                    </ul>
                 </div>
             </div>
-        </nav>
-    </div>
-    <div style="padding: 2vw;">
-        <header>
-            <br>
-            <div class="main-image">
-                <img src="../../img/m1.png" alt="bembi">
-            </div><br>
-            <p>Matias Boarding House - Serving Rooms since 2010</p>
-            <br>
-        </header>
+        </div>
+    </nav>
+</div>
 
-        <section class="rooms-showcase">
+<header>
+
+    <div class="main-image">
+        <img src="../../img/homepage1.png" alt="bembi">
+    </div>
+    <p>Matias Boarding House - Serving Rooms since 2010</p>
+    <br>
+</header>
+
+
+<body>
+    <div style="padding: 2vw;">
+
+<!---<section class="rooms-showcase">
             <br>
             <h2>ROOMS SHOWCASE</h2><br><br>
             <div class="room-images">
@@ -89,7 +91,8 @@
             </div>
 
             <br>
-        </section>
+        </section>---->
+        
 
 
 

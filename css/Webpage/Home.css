@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+        background-color: #f4f4f4;
 }
 
 .paragraphs {
@@ -17,12 +18,11 @@ body {
 
 header {
     text-align: center;
-    padding: 20px;
 }
 
 .main-image {
     width: 100%;
-    height: 600px;
+    height: auto;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -30,12 +30,10 @@ header {
 }
 
 .main-image img {
-     border-radius: 50px;
     width: 100%;
     height: 100%;
     object-fit: contain;
     display: block;
-    border-radius: 50px;
 }
 
 .room-images {

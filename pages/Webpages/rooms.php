@@ -19,17 +19,15 @@
         }
     </style>
 </head>
-
-<body>
-    <div class="topnav">
+<div class="topnav">
         <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarContent">
-                    <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
+                    <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>Matias BH</b></a>
 
                     <div class="navbar-nav mx-auto">
                         <a class="nav-link me-5" href="home.php">HOME</a>
-                        <a class="nav-link me-5 text-white fw-bold" href="rooms.php">ROOMS</a>
+                        <a class="nav-link me-5 fw-bold" style="color:rgba(14, 131, 117, 0.69);" href="rooms.php">ROOMS</a>
                         <a class="nav-link me-5" href="FAQ.php">FAQ'S</a>
                         <a class="nav-link me-5" href="ContactUs.php">CONTACT US</a>
                         <a class="nav-link me-5" href="About.php">ABOUT US</a>
@@ -54,6 +52,8 @@
             </div>
         </nav>
     </div>
+
+<body>
 
     <section class="room-details">
         <div class="room-info">
