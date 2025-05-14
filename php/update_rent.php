@@ -41,7 +41,7 @@ if (!DateTime::createFromFormat('Y-m-d', $check_in_date) || !DateTime::createFro
     exit();
 }
 
-if($check_in_date < date('Y-m-d')) {
+if($check_in_date < date('Y-m-d') && strtolower($status) != 'closed') {
     echo json_encode(array("status" => 400, "message" => "Check-in date cannot be in the past."));
     exit();
 }

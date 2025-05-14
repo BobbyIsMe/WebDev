@@ -33,9 +33,9 @@ $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $row = $result->fetch_assoc();
-        
+
 $myObj = array(
-    'room_id' => $row['room_id'] ?? "No room rented",
+    'room_id' => $row && $row['room_id'] ? ("Room #" . $row['room_id']) : "No room rented",
     'description' => $row['description'] ?? "Please rent a room to load futher details",
     'boarder_type' => $row['boarder_type'] ?? "No room rented",
     'check_in_date' => $row['check_in_date'] ?? "TBD",
