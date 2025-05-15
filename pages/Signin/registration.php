@@ -122,7 +122,8 @@ if (isset($_SESSION["user_id"])) {
                                         Already have an account? <br>
                                        
                                     </div>
-                                     <a href="Login.php" class="register">Login Here</a>
+                                     <a href="Login.php" class="register">Login Here</a>#
+                                     <a href="../../pages/Webpages/Home.php" class="register p-3">Go To HOME</a>
                                 </div>
                             </form>
                         </div>
