@@ -20,7 +20,7 @@ if (empty($text) || empty($rating)) {
     exit();
 }
 
-if (strlen($text) > 255) {
+if (strlen($text) > 1000) {
     echo json_encode(['status' => 400, 'message' => 'Text exceeds maximum length of 500 characters.']);
     exit();
 }

@@ -30,13 +30,6 @@ h2 {
     letter-spacing: 2px;
 }
 
-
-
-
-
-
-
-
 .roomdc {
     background-color: rgba(255, 255, 255, 0.87);
     border-radius: 20px;
@@ -276,7 +269,7 @@ label {
 
 .review-text {
     margin-top: 10px;
-    max-width: 100px;
+    max-width: 100%;
     font-size: 14px;
 }
 
