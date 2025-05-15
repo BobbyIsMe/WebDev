@@ -58,7 +58,7 @@ if (isset($_SESSION["user_id"])) {
 
     <div class="container-fluid">
         <div class="login-overlay-container">
-            <img src="../../img/22.jpg" class="img-fluid background-image" alt="Room Image">
+            <img src="../../img/Login.png" class="img-fluid background-image" alt="Room Image">
             <div class="login-overlay" style=" background-color: rgba(255, 255, 255, 0);">
                 <div class="row">
                     <div class="col-6">
