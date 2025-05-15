@@ -36,100 +36,101 @@ if (isset($_SESSION["user_id"])) {
 
 
 
+    <div class="fadeIn">
+        <div class="container-fluid">
+            <div class="login-overlay-container">
+                <img src="../../img/Registration.png" class="img-fluid background-image" alt="Room Image">
+                <div class="login-overlay" style=" background-color: rgba(255, 255, 255, 0);">
+                    <div class="row">
+                        <div class="col-6">
 
-    <div class="container-fluid">
-        <div class="login-overlay-container">
-            <img src="../../img/Registration.png" class="img-fluid background-image" alt="Room Image">
-            <div class="login-overlay" style=" background-color: rgba(255, 255, 255, 0);">
-                <div class="row">
-                    <div class="col-6">
-
-                    </div>
-                    <div class="col-6">
-                        <div class="col-md-12 p-3">
-                            <div class="col-10 mx-auto">
-                                <form id="signupForm" method="post" onsubmit="signupSubmit(event)">
-                                    <div class=" p-2 mt-2 text-center">
-                                        <br>
-                                        <div class="login">Registration</div>
-                                        <div class="col-8 mx-auto">
-                                            <div class="col-12">
-
-                                                <div class="subtext">Email</div>
-                                                <input type="email" class="form-control" name="email" id="email" required="required">
-                                                <br>
-
-                                            </div>
-
-                                            <div class="col-12">
-                                                <div class="d-flex justify-content-between">
-                                                    <div class="name" style="padding-right: 5px;">
-                                                        <div class="subtext">First Name</div>
-                                                        <input type="text" class="form-control" name="first_name" id="fname" required="required">
-
-
-                                                    </div>
-                                                    <div class="name" style="padding-left: 5px;">
-                                                        <div class="subtext">Last Name</div>
-                                                        <input type="text" class="form-control" name="last_name" id="lname" required="required">
-
-
-                                                    </div>
-                                                </div><br>
-
-                                            </div>
-
-                                            <div class="col-12">
-
-                                                <div class="subtext">Contact Number</div>
-                                                <input type="text" class="form-control" name="contact_number" id="contactnumber" required="required">
-
-
-                                                <br>
-                                            </div>
-
-                                            <div class="col-12">
-
-                                                <div class="subtext">Password</div>
-                                                <input type="password" class="form-control" name="password" id="password" required="required">
-
-
-                                                <br>
-                                            </div>
-
-                                            <div class="col-12">
-
-                                                <div class="subtext">Re - Enter Password</div>
-                                                <input type="password" class="form-control" name="confirm_password" id="confirmpassword" required="required">
-
-
-                                                <br>
-                                            </div>
-
-                                            <div class="col-12">
-
-                                                <button type="submit" class="login-button">
-                                                    Register
-                                                    <div class="arrow-wrapper">
-                                                        <div class="arrow"></div>
-                                                    </div>
-                                                </button>
-                                            </div>
-
-                                        <br>
-                                    </div>
-                                    <div class="subp">
-                                        Already have an account? <br>
-                                       
-                                    </div>
-                                     <a href="Login.php" class="register">Login Here</a>#
-                                     <a href="../../pages/Webpages/Home.php" class="register p-3">Go To HOME</a>
-                                </div>
-                            </form>
                         </div>
-                    </div>
-                    </div>
+                        <div class="col-6">
+                            <div class="col-md-12 p-3">
+                                <div class="col-10 mx-auto">
+                                    <form id="signupForm" method="post" onsubmit="signupSubmit(event)">
+                                        <div class=" p-2 mt-2 text-center">
+                                            <br>
+                                            <div class="login">Registration</div>
+                                            <div class="col-8 mx-auto">
+                                                <div class="col-12">
 
+                                                    <div class="subtext">Email</div>
+                                                    <input type="email" class="form-control" name="email" id="email" required="required">
+                                                    <br>
+
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <div class="d-flex justify-content-between">
+                                                        <div class="name" style="padding-right: 5px;">
+                                                            <div class="subtext">First Name</div>
+                                                            <input type="text" class="form-control" name="first_name" id="fname" required="required">
+
+
+                                                        </div>
+                                                        <div class="name" style="padding-left: 5px;">
+                                                            <div class="subtext">Last Name</div>
+                                                            <input type="text" class="form-control" name="last_name" id="lname" required="required">
+
+
+                                                        </div>
+                                                    </div><br>
+
+                                                </div>
+
+                                                <div class="col-12">
+
+                                                    <div class="subtext">Contact Number</div>
+                                                    <input type="text" class="form-control" name="contact_number" id="contactnumber" required="required">
+
+
+                                                    <br>
+                                                </div>
+
+                                                <div class="col-12">
+
+                                                    <div class="subtext">Password</div>
+                                                    <input type="password" class="form-control" name="password" id="password" required="required">
+
+
+                                                    <br>
+                                                </div>
+
+                                                <div class="col-12">
+
+                                                    <div class="subtext">Re - Enter Password</div>
+                                                    <input type="password" class="form-control" name="confirm_password" id="confirmpassword" required="required">
+
+
+                                                    <br>
+                                                </div>
+
+                                                <div class="col-12">
+
+                                                    <button type="submit" class="login-button">
+                                                        Register
+                                                        <div class="arrow-wrapper">
+                                                            <div class="arrow"></div>
+                                                        </div>
+                                                    </button>
+                                                </div>
+
+                                                <br>
+                                            </div>
+                                            <div class="subp">
+                                                Already have an account? <br>
+
+                                            </div>
+                                            <a href="Login.php" class="register">Login Here</a>#
+                                            <a href="../../pages/Webpages/Home.php" class="register p-3">Go To HOME</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

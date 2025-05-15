@@ -56,70 +56,71 @@ if (isset($_SESSION["user_id"])) {
 
     </div>
 
+    <div class="fadeIn">
+        <div class="container-fluid">
+            <div class="login-overlay-container">
+                <img src="../../img/Login.png" class="img-fluid background-image" alt="Room Image">
+                <div class="login-overlay" style=" background-color: rgba(255, 255, 255, 0);">
+                    <div class="row">
+                        <div class="col-6">
 
-    <div class="container-fluid">
-        <div class="login-overlay-container">
-            <img src="../../img/Login.png" class="img-fluid background-image" alt="Room Image">
-            <div class="login-overlay" style=" background-color: rgba(255, 255, 255, 0);">
-                <div class="row">
-                    <div class="col-6">
+                        </div>
+                        <div class="col-6">
+                            <div class="col-md-12 p-4">
+                                <div class="col-10 mx-auto fixed-box">
 
-                    </div>
-                    <div class="col-6">
-                        <div class="col-md-12 p-4">
-                            <div class="col-10 mx-auto fixed-box">
+                                    <form id="signinForm" method="POST" onsubmit="signinSubmit(event)">
+                                        <div class="col-8 mx-auto">
+                                            <div class=" p-3 mt-4 centerForm">
+                                                <div class="login">Sign In</div>
+                                                <div class="col-12">
 
-                                <form id="signinForm" method="POST" onsubmit="signinSubmit(event)">
-                                    <div class="col-8 mx-auto">
-                                        <div class=" p-3 mt-4 centerForm">
-                                            <div class="login">Sign In</div>
-                                            <div class="col-12">
+                                                    <div class="subtext">Email</div>
+                                                    <input type="email" class="form-control w-100" name="email" id="email"
+                                                        required="required">
+                                                    <br><br>
 
-                                                <div class="subtext">Email</div>
-                                                <input type="email" class="form-control w-100" name="email" id="email"
-                                                    required="required">
-                                                <br><br>
+                                                </div>
 
-                                            </div>
+                                                <div class="col-12">
+                                                    <br>
+                                                    <div class="subtext">Password</div>
+                                                    <input type="password" class="form-control w-100" name="password"
+                                                        id="password" required="required">
+                                                    <br><br>
 
-                                            <div class="col-12">
+                                                    <br>
+                                                </div>
+
+                                                <div class="col-12">
+
+                                                    <button type="submit" class="login-button">
+                                                        LOGIN
+                                                        <div class="arrow-wrapper">
+                                                            <div class="arrow"></div>
+                                                        </div>
+                                                    </button>
+                                                </div>
+
                                                 <br>
-                                                <div class="subtext">Password</div>
-                                                <input type="password" class="form-control w-100" name="password"
-                                                    id="password" required="required">
-                                                <br><br>
-
-                                                <br>
-                                            </div>
-
-                                            <div class="col-12">
-
-                                                <button type="submit" class="login-button">
-                                                    LOGIN
-                                                    <div class="arrow-wrapper">
-                                                        <div class="arrow"></div>
-                                                    </div>
-                                                </button>
-                                            </div>
-
-                                            <br>
-                                            <div class="subp">
-                                                No account? <br>
-                                            </div>
-                                            <div class="p-4">
-                                            <a href="registration.php" class="register p-3">Register Here</a>
-                                            <a href="../../pages/Webpages/Home.php" class="register p-3">Go To HOME</a>
+                                                <div class="subp">
+                                                    No account? <br>
+                                                </div>
+                                                <div class="p-4">
+                                                    <a href="registration.php" class="register p-3">Register Here</a>
+                                                    <a href="../../pages/Webpages/Home.php" class="register p-3">Go To HOME</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                </form>
+                                    </form>
 
 
+                                </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
             </div>
         </div>
