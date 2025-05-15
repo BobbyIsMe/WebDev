@@ -59,7 +59,7 @@
 <body>
 
     <div class="faq-section">
-        <h1>Frequently Asked<br>Questions</h1>
+        <h1>Frequently Asked Questions</h1>
 
             <div class="faq-item">
                 <div class="faq-question">How to reserve?</div>
