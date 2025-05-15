@@ -65,24 +65,28 @@
                 <h3>Location</h3>
                 <iframe src="https://www.google.com/maps/embed?pb=!4v1747318444247!6m8!1m7!1sQRrrwKXYhGw1ExIjiDurog!2m2!1d10.33291470906647!2d123.9020951897359!3f332.2747204050012!4f3.5072753560243797!5f0.7820865974627469" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <br>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua...</p>
+                <a href="https://maps.app.goo.gl/UZoLAGcAh7peprJ47">Redirect to Google Maps</a>
             </div>
+            
             <div class="contact-box">
+            <br>
                 <div class="contact-item">
-                    <div class="icon">Image Placeholder</div>
-                    <p><strong>+63915-351-0286</strong></p>
+                <img src="../../img/Phone Logo.png"class="icon"></img>
+                    <p><strong>+63915-351-0286</strong></p> 
                 </div>
+                <br>
                 <div class="contact-item">
-                    <div class="icon">Image Placeholder</div>
+                    <img src="../../img/MatiasBH_crop.png"class="icon"></img>
                     <p>Michelle P. Matias</p>
                 </div>
+                <br>
                 <div class="contact-item">
-                    <div class="icon">Image Placeholder</div>
+                <img src="../../img/Facebook Logo.png"class="icon"></img>
                     <p>Mich-cNorma Matias</p>
                 </div>
+                <br>
                 <div class="contact-item">
-                    <div class="icon">Image Placeholder</div>
+                    <img src="../../img/Gmail Logo.png"class="icon"></img>
                     <p>mmatias07091@gmail.com</p>
                 </div>
             </div>
