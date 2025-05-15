@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
 
             document.getElementById("room-id").textContent = `${data.room_id}`;
-            document.getElementById("description").textContent = `${data.description}`;
+            document.getElementById("description").innerHTML = data.description;
             document.getElementById("check-in-date").value = `${data.check_in_date}`;
             document.getElementById("due-date").value = `${data.due_date}`;
             document.getElementById("status").value = `${data.status}`;
