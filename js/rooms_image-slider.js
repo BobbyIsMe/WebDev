@@ -59,11 +59,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Initialize
     showImage(0);
     startAutoSlide();
 
-    // Pause on hover
     document.querySelector('.room-images').addEventListener('mouseenter', stopAutoSlide);
     document.querySelector('.room-images').addEventListener('mouseleave', startAutoSlide);
 });

@@ -94,12 +94,10 @@ function loadPage(page) {
                 const desc = container.querySelector('.text');
                 const btn = container.querySelector('.read-more');
 
-                // Compare full scroll height vs visible height
                 if (desc.scrollHeight > desc.clientHeight + 1) {
                     btn.style.display = 'inline';
                 }
 
-                // Toggle expansion
                 btn.addEventListener('click', () => {
                     desc.classList.toggle('expanded');
                     btn.textContent = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
