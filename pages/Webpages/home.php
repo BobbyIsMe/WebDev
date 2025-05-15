@@ -15,22 +15,24 @@
     <style>
         * {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            border: 1px solid black;
             padding-left: 0 !important;
             padding-right: 0 !important;
             margin-left: 0 !important;
             margin-right: 0 !important;
+
         }
     </style>
 </head>
 <div class="topnav">
     <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
         <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarContent">
-                    <img src="../../img/MatiasBH.png" alt="LOGO">
+            <div class="collapse navbar-collapse d-flex align-items-center" id="navbarContent">
+                <div class="me-auto">
+                    <img src="../../img/MatiasBH.png" alt="LOGO" />
+                </div>
 
                 <div class="navbar-nav mx-auto">
-                    <a class="nav-link me-5 fw-bold" style="color:rgba(14, 131, 117, 0.69);" href="home.php">HOME</a>
+                    <a class="nav-link me-5 fw-bold" style="color: rgba(14, 131, 117, 0.69);" href="home.php">HOME</a>
                     <a class="nav-link me-5" href="rooms.php">ROOMS</a>
                     <a class="nav-link me-5" href="FAQ.php">FAQ'S</a>
                     <a class="nav-link me-5" href="ContactUs.php">CONTACT US</a>
@@ -55,6 +57,7 @@
                     </ul>
                 </div>
             </div>
+
         </div>
     </nav>
 </div>

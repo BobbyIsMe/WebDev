@@ -21,8 +21,9 @@
         <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarContent">
-                    <img src="../../img/MatiasBH.png" alt="LOGO">
-
+                <div class="me-auto">
+                    <img src="../../img/MatiasBH.png" alt="LOGO" />
+                </div>
                     <div class="navbar-nav mx-auto">
                             <a class="nav-link me-5" href="home.php">HOME</a>
                             <a class="nav-link me-5" href="rooms.php">ROOMS</a>

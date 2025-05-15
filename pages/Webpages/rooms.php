@@ -24,8 +24,11 @@
 <div class="topnav">
     <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
         <div class="container-fluid">
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>Matias BH</b></a>
+            <div class="collapse navbar-collapse  d-flex align-items-center" id="navbarContent">
+                <div class="me-auto">
+                    <img src="../../img/MatiasBH.png" alt="LOGO" />
+                </div>
+
 
                 <div class="navbar-nav mx-auto">
                     <a class="nav-link me-5" href="home.php">HOME</a>
@@ -97,7 +100,8 @@
                         <div class="col-4  p-3 d-flex align-items-center">
                             <div class="form-group w-100">
                                 <label>Available</label>
-                                <input id="room-status" type="text" disabled value="Yes/No" class="disabled-field w-100">
+                                <input id="room-status" type="text" disabled value="Yes/No"
+                                    class="disabled-field w-100">
                             </div>
                         </div>
 
