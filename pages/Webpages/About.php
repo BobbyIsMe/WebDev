@@ -65,7 +65,7 @@
                     <p>Each space is maintained to ensure cleanliness and functionality. Whether you're staying here long term or short term, we aim to make your experience warm and convenient.</p>
                 </div>
                 <div class="about-image">
-                    <img src="../../img/22.jpg"/>
+                    <img src="../../img/AboutUs.png"/>
                 </div>
             </div>
         </section>
