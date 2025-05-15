@@ -1,10 +1,4 @@
-<?php
-session_start();
-if (!isset($_SESSION["user_id"])) {
-    header("Location: ../Signin/Login.php");
-    exit();
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +26,7 @@ if (!isset($_SESSION["user_id"])) {
         <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarContent">
-                    <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>LogoName</b></a>
+                    <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>Matias BH</b></a>
 
                     <div class="navbar-nav mx-auto">
                         <a class="nav-link me-5" href="../Webpages/home.php">Home</a>
