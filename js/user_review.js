@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
             selectedRating = data.rating;
             document.getElementById("date_modified").textContent = `${data.date_modified}`;
             document.getElementById("review").value = `${data.text}`;
+            updateStars();
         });
-    updateStars();
 });
 
 const stars = document.querySelectorAll('.star');

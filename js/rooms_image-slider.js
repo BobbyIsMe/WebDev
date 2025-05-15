@@ -28,11 +28,15 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function startAutoSlide() {
+        if (autoSlideInterval) return;
         autoSlideInterval = setInterval(nextImage, 5000);
     }
 
     function stopAutoSlide() {
-        clearInterval(autoSlideInterval);
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = null;
+        }
     }
 
     prevBtn.addEventListener('click', () => {

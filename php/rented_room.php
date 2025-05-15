@@ -36,7 +36,7 @@ $row = $result->fetch_assoc();
 
 $myObj = array(
     'room_id' => $row && $row['room_id'] ? ("Room #" . $row['room_id']) : "No room rented",
-    'description' => $row['description'] ?? "Please rent a room to load futher details",
+    'description' => $row && $row['description'] ? nl2br(htmlspecialchars($row['description'])) : "Please rent a room to load futher details",
     'boarder_type' => $row['boarder_type'] ?? "No room rented",
     'check_in_date' => $row['check_in_date'] ?? "TBD",
     'due_date' => $row['due_date'] ?? "TBD",
