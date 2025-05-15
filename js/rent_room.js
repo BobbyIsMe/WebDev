@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isNaN(selected_id)) {
             checkRoomAvailability(selected_id-1);
             document.getElementById("room-num").textContent = `Room #${selected_id}`;
-            document.getElementById("description").textContent = `${rooms[selected_id-1].description}`;
+            document.getElementById("description").innerHTML = `${rooms[selected_id-1].description}`;
         } else {
             document.getElementById("room-status").value = "Yes/No";
             document.getElementById("room-num").textContent = `Room #.`;
