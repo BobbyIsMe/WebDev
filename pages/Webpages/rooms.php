@@ -19,7 +19,6 @@
         * {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             overflow: hide;
-            border: 1px solid black;
         }
     </style>
 </head>
