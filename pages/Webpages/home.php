@@ -69,11 +69,17 @@
     <p>Matias Boarding House - Serving Rooms since 2010</p>
     <br>------>
 
-    <div style="padding-top: 2vw;">
+    <div >
         <div class="container-fluid navFoot">
             Boarding Cebuanos and Alike - 2011
         </div>
+
+        <div class="container-fluid navFooter">
+            Reserve Now!
+        </div>
     </div>
+
+
 
     <script type="text/javascript" src="../../js/session.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"

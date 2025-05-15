@@ -45,7 +45,7 @@ header {
     border: none;
 }
 
-.navFoot {
+.navFoot, .navFooter {
     background-color: rgb(0, 0, 0);
     color: white;
     width: 100%;

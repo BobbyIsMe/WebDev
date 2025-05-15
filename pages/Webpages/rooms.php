@@ -17,7 +17,8 @@
     <style>
         * {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
+            overflow: hide;
+            border: 1px solid black;
         }
     </style>
 </head>
@@ -62,89 +63,112 @@
 
 <body>
 
-    <section class="room-details">
-        <div class="room-info">
-            <h2 id="room-num">Room #.</h2>
-            <p id="description">Description about the place</p>
+    <section class="col-12 room-details gap-3">
 
-            <div class="col-12 column p-5 ">
-                <form id="room-form" method="post" onsubmit="rentSubmit(event)">
-                    <div class="row">
-                        <div class="col-4  p-3">
-                            <div class="form-row">
-                                <div class="form-group ">
-                                    <label>Room No.</label>
-                                    <select id="room-dropdown" name="room_id">
-                                        <option>Choose Room</option>
-                                    </select>
+        <div class="col-6 p-4">
+            <div class="room-info col-12">
+                <div class="col-12 column p-5 roomdc">
+                    <div class="description">
+                        <h2 id="room-num">Room #.</h2>
+
+                        <p id="description">
+
+                        </p>
+                    </div>
+                    <form id="room-form" method="post" onsubmit="rentSubmit(event)">
+                        <div class="row">
+                            <div class="col-4  p-3">
+                                <div class="form-row">
+                                    <div class="form-group ">
+                                        <label>Room No.</label>
+                                        <select id="room-dropdown" name="room_id">
+                                            <option>Choose Room</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <br>
-                        <div class="col-4  p-3">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label>Boarder Type</label>
-                                    <select id="boarder-type" name="boarder_type">
-                                        <div class="choices">
-                                            <option>Select Type</option>
-                                            <option>Single</option>
-                                            <option>Double</option>
-                                        </div>
+                            <br>
+                            <div class="col-4  p-3">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label>Boarder Type</label>
+                                        <select id="boarder-type" name="boarder_type">
+                                            <div class="choices">
+                                                <option>Select Type</option>
+                                                <option>Single</option>
+                                                <option>Double</option>
+                                            </div>
 
-                                    </select>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-4  p-3 d-flex align-items-center">
-                            <div class="form-group w-100">
-                                <label>Available</label>
-                                <input id="room-status" type="text" disabled value="Yes/No"
-                                    class="disabled-field w-100">
+                            <div class="col-4  p-3 d-flex align-items-center">
+                                <div class="form-group w-100">
+                                    <label>Available</label>
+                                    <input id="room-status" type="text" disabled value="Yes/No"
+                                        class="disabled-field w-100">
+                                </div>
+                            </div>
+
+                            <div class="col-12 p-3 d-flex justify-content-center">
+                                <button type="submit" id="reserve" class="button">Reserve</button>
                             </div>
                         </div>
 
-                        <div class="col-12 p-3 d-flex justify-content-center">
-                            <button type="submit" id="reserve" class="button">Reserve</button>
-                        </div>
+                    </form>
+
+
+
+                </div>
+
+                <p class="paragraphs" id="message">
+                </p>
+            </div>
+        </div>
+
+
+        <div class="col-5 imgshow ">
+
+            <div class="room-images">
+                <div class="main-image">
+
+                    <img src="../../img/rooms/1.jpg" alt="Room Image 1" class="active">
+                    <img src="../../img/rooms/2.jpg" alt="Room Image 2">
+                    <img src="../../img/rooms/3.jpg" alt="Room Image 3">
+                    <img src="../../img/rooms/4.jpg" alt="Room Image 4">
+                    <img src="../../img/rooms/5.jpg" alt="Room Image 5">
+                    <img src="../../img/rooms/6.jpg" alt="Room Image 6">
+                    <img src="../../img/rooms/7.jpg" alt="Room Image 7">
+                    <img src="../../img/rooms/8.jpg" alt="Room Image 8">
+                    <img src="../../img/rooms/9.jpg" alt="Room Image 9">
+                    <img src="../../img/rooms/10.jpg" alt="Room Image 10">
+                </div>
+
+                <div class="slideshow">
+                    <button class="prev">&lt;</button>
+
+                    <div class="small-image active-thumb">
+                        <img src="../../img/rooms/1.jpg" alt="Room Thumbnail 1">
                     </div>
 
-                </form>
+                    <div class="small-image">
+                        <img src="../../img/rooms/4.jpg" alt="Room Thumbnail 4">
+                    </div>
+
+                    <div class="small-image">
+                        <img src="../../img/rooms/8.jpg" alt="Room Thumbnail 8">
+                    </div>
 
 
 
-            </div>
-
-            <p class="paragraphs" id="message">
-            </p>
-        </div>
-
-
-        <div class="room-images">
-            <div class="main-image">
-
-                <img src="../../img/test-image.jpg" alt="Room Image 1" class="active">
-                <img src="../../img/test-image2.jpg" alt="Room Image 2">
-                <img src="../../img/test-image3.jpg" alt="Room Image 3">
-            </div>
-
-            <div class="slideshow">
-                <button class="prev">&lt;</button>
-
-                <div class="small-image active-thumb">
-                    <img src="../../img/test-image.jpg" alt="Room Thumbnail 1">
+                    <button class="next">&gt;</button>
                 </div>
-                <div class="small-image">
-                    <img src="../../img/test-image2.jpg" alt="Room Thumbnail 2">
-                </div>
-                <div class="small-image">
-                    <img src="../../img/test-image3.jpg" alt="Room Thumbnail 3">
-                </div>
-
-                <button class="next">&gt;</button>
             </div>
         </div>
+
+
 
     </section>
 
