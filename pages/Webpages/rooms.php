@@ -62,153 +62,154 @@
 </div>
 
 <body>
+    <div class="fadeIn">
+        <section class="col-12 room-details gap-3">
 
-    <section class="col-12 room-details gap-3">
+            <div class="col-6 p-4">
+                <div class="room-info col-12">
+                    <div class="col-12 column p-5 roomdc">
+                        <div class="description">
+                            <h2 id="room-num">Room #.</h2>
 
-        <div class="col-6 p-4">
-            <div class="room-info col-12">
-                <div class="col-12 column p-5 roomdc">
-                    <div class="description">
-                        <h2 id="room-num">Room #.</h2>
+                            <p id="description">
+                                Description about the place
+                            </p>
+                        </div>
+                        <form id="room-form" method="post" onsubmit="rentSubmit(event)">
+                            <div class="row">
+                                <div class="col-4  p-3">
+                                    <div class="form-row">
+                                        <div class="form-group ">
+                                            <label>Room No.</label>
+                                            <select id="room-dropdown" name="room_id">
+                                                <option>Choose Room</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="col-4  p-3">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Boarder Type</label>
+                                            <select id="boarder-type" name="boarder_type">
+                                                <div class="choices">
+                                                    <option>Select Type</option>
+                                                    <option>Single</option>
+                                                    <option>Double</option>
+                                                </div>
 
-                        <p id="description">
-                            Description about the place
-                        </p>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-4  p-3 d-flex align-items-center">
+                                    <div class="form-group w-100">
+                                        <label>Available</label>
+                                        <input id="room-status" type="text" disabled value="Yes/No"
+                                            class="disabled-field w-100">
+                                    </div>
+                                </div>
+
+                                <div class="col-12 p-3 d-flex justify-content-center">
+                                    <button type="submit" id="reserve" class="button">Reserve</button>
+                                </div>
+                            </div>
+
+                        </form>
                     </div>
-                    <form id="room-form" method="post" onsubmit="rentSubmit(event)">
-                        <div class="row">
-                            <div class="col-4  p-3">
-                                <div class="form-row">
-                                    <div class="form-group ">
-                                        <label>Room No.</label>
-                                        <select id="room-dropdown" name="room_id">
-                                            <option>Choose Room</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="col-4  p-3">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label>Boarder Type</label>
-                                        <select id="boarder-type" name="boarder_type">
-                                            <div class="choices">
-                                                <option>Select Type</option>
-                                                <option>Single</option>
-                                                <option>Double</option>
-                                            </div>
+                    <p class="paragraphs" id="message">
+                    </p>
+                </div>
+            </div>
 
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div class="col-4  p-3 d-flex align-items-center">
-                                <div class="form-group w-100">
-                                    <label>Available</label>
-                                    <input id="room-status" type="text" disabled value="Yes/No"
-                                        class="disabled-field w-100">
-                                </div>
-                            </div>
+            <div class="col-5 imgshow ">
 
-                            <div class="col-12 p-3 d-flex justify-content-center">
-                                <button type="submit" id="reserve" class="button">Reserve</button>
-                            </div>
+                <div class="room-images">
+                    <div class="main-image">
+
+                        <img src="../../img/rooms/1.jpg" alt="Room Image 1" class="active">
+                        <img src="../../img/rooms/2.jpg" alt="Room Image 2">
+                        <img src="../../img/rooms/3.jpg" alt="Room Image 3">
+                        <img src="../../img/rooms/4.jpg" alt="Room Image 4">
+                        <img src="../../img/rooms/5.jpg" alt="Room Image 5">
+                        <img src="../../img/rooms/6.jpg" alt="Room Image 6">
+                        <img src="../../img/rooms/7.jpg" alt="Room Image 7">
+                        <img src="../../img/rooms/8.jpg" alt="Room Image 8">
+                        <img src="../../img/rooms/9.jpg" alt="Room Image 9">
+                        <img src="../../img/rooms/10.jpg" alt="Room Image 10">
+                    </div>
+
+                    <div class="slideshow">
+                        <button class="prev">&lt;</button>
+
+                        <div class="small-image active-thumb">
+                            <img src="../../img/rooms/1.jpg" alt="Room Thumbnail 1">
                         </div>
 
-                    </form>
-                </div>
-                <p class="paragraphs" id="message">
-                </p>
-            </div>
-        </div>
+                        <div class="small-image">
+                            <img src="../../img/rooms/4.jpg" alt="Room Thumbnail 4">
+                        </div>
+
+                        <div class="small-image">
+                            <img src="../../img/rooms/8.jpg" alt="Room Thumbnail 8">
+                        </div>
 
 
-        <div class="col-5 imgshow ">
 
-            <div class="room-images">
-                <div class="main-image">
-
-                    <img src="../../img/rooms/1.jpg" alt="Room Image 1" class="active">
-                    <img src="../../img/rooms/2.jpg" alt="Room Image 2">
-                    <img src="../../img/rooms/3.jpg" alt="Room Image 3">
-                    <img src="../../img/rooms/4.jpg" alt="Room Image 4">
-                    <img src="../../img/rooms/5.jpg" alt="Room Image 5">
-                    <img src="../../img/rooms/6.jpg" alt="Room Image 6">
-                    <img src="../../img/rooms/7.jpg" alt="Room Image 7">
-                    <img src="../../img/rooms/8.jpg" alt="Room Image 8">
-                    <img src="../../img/rooms/9.jpg" alt="Room Image 9">
-                    <img src="../../img/rooms/10.jpg" alt="Room Image 10">
-                </div>
-
-                <div class="slideshow">
-                    <button class="prev">&lt;</button>
-
-                    <div class="small-image active-thumb">
-                        <img src="../../img/rooms/1.jpg" alt="Room Thumbnail 1">
+                        <button class="next">&gt;</button>
                     </div>
-
-                    <div class="small-image">
-                        <img src="../../img/rooms/4.jpg" alt="Room Thumbnail 4">
-                    </div>
-
-                    <div class="small-image">
-                        <img src="../../img/rooms/8.jpg" alt="Room Thumbnail 8">
-                    </div>
-
-
-
-                    <button class="next">&gt;</button>
-                </div>
-            </div>
-        </div>
-
-
-
-    </section>
-
-    <div class="reviews">
-        <div class="col-9">
-
-            <h2>Reviews</h2>
-            <div class="controls">
-                <select class="dropdown" id="ratings">
-                    <option value="select">Sort by rating</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-                <select class="dropdown" id="rooms">
-                    <option value="select">Sort by room</option>
-                </select>
-                <select class="dropdown" id="orders">
-                    <option value="select">Sort by order</option>
-                    <option value="desc">Latest</option>
-                    <option value="asc">Oldest</option>
-                </select>
-            </div>
-            <div id="reviews-list">
-
-            </div>
-            <div class="d-flex justify-content-center">
-                <div class="p-4 d-flex justify-content-center align-items-center gap-4">
-                    <button class="navButton" type="button" id="prev_button">
-                        Previous
-                    </button>
-                    <span>|</span>
-                    <div id="page_number" class="paragraphs">
-                        Page # out of 10
-                    </div>
-                    <span>|</span>
-                    <button class="navButton" type="button" id="next_button">
-                        Next
-                    </button>
                 </div>
             </div>
 
+
+
+        </section>
+
+        <div class="reviews">
+            <div class="col-9">
+
+                <h2>Reviews</h2>
+                <div class="controls">
+                    <select class="dropdown" id="ratings">
+                        <option value="select">Sort by rating</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <select class="dropdown" id="rooms">
+                        <option value="select">Sort by room</option>
+                    </select>
+                    <select class="dropdown" id="orders">
+                        <option value="select">Sort by order</option>
+                        <option value="desc">Latest</option>
+                        <option value="asc">Oldest</option>
+                    </select>
+                </div>
+                <div id="reviews-list">
+
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="p-4 d-flex justify-content-center align-items-center gap-4">
+                        <button class="navButton" type="button" id="prev_button">
+                            Previous
+                        </button>
+                        <span>|</span>
+                        <div id="page_number" class="paragraphs">
+                            Page # out of 10
+                        </div>
+                        <span>|</span>
+                        <button class="navButton" type="button" id="next_button">
+                            Next
+                        </button>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="../../js/session.js"></script>
