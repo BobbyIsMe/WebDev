@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const option = document.createElement("option");
                 option.value = room.room_id;
                 option.textContent = `${room.room_id}`;
-                dropdown.appendChild(option);
-                dropdownSort.appendChild(option);
+                dropdown.appendChild(option.cloneNode(true));
+                dropdownSort.appendChild(option.cloneNode(true));
             });
         })
         .catch(err => console.error("Failed to fetch rooms:", err));
