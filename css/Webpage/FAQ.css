@@ -119,8 +119,11 @@ header {
 
 .faq-section h1 {
     text-align: center;
-    font-size: 2.5vw;
-    margin-bottom: 3vw;
+    font-size: 40px;
+    letter-spacing: 2px;
+    padding: 20px;
+    margin-bottom: 20px;
+    
 }
 
 .faq-item {
