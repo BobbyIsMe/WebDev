@@ -16,7 +16,7 @@ if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $rooms[] = [
             'room_id' => $row['room_id'],
-            'description' => $row['description'],
+            'description' =>  nl2br(htmlspecialchars($row['description'])),
             'is_rented' => (bool)$row['is_rented']
         ];
     }

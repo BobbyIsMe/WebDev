@@ -66,17 +66,17 @@ if (isset($_SESSION["user_id"])) {
                     </div>
                     <div class="col-6">
                         <div class="col-md-12 p-4">
-                            <div class="col-10 mx-auto">
+                            <div class="col-10 mx-auto fixed-box">
 
                                 <form id="signinForm" method="POST" onsubmit="signinSubmit(event)">
                                     <div class="col-8 mx-auto">
                                         <div class=" p-3 mt-4 centerForm">
                                             <div class="login">Sign In</div>
                                             <div class="col-12">
-                                                
+
                                                 <div class="subtext">Email</div>
                                                 <input type="email" class="form-control w-100" name="email" id="email"
-                                                     required="required">
+                                                    required="required">
                                                 <br><br>
 
                                             </div>
@@ -85,7 +85,7 @@ if (isset($_SESSION["user_id"])) {
                                                 <br>
                                                 <div class="subtext">Password</div>
                                                 <input type="password" class="form-control w-100" name="password"
-                                                    id="password"  required="required">
+                                                    id="password" required="required">
                                                 <br><br>
 
                                                 <br>
