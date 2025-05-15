@@ -252,7 +252,7 @@ label {
     position: absolute;
     top: 15px;
     right: 15px;
-    background-color: #f43f5e;
+    background-color: rgba(14, 131, 117, 0.69);
     color: white;
     border: none;
     padding: 8px 16px;
@@ -265,6 +265,7 @@ label {
 }
 
 .review-details {
+    font-weight: lighter;
     margin: 10px 0;
 }
 
@@ -272,6 +273,10 @@ label {
     margin-top: 10px;
     max-width: 100%;
     font-size: 14px;
+}
+
+.font {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .read-more {
@@ -287,6 +292,7 @@ label {
 
 .text {
     overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -314,6 +320,7 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .paragraphs {
@@ -321,5 +328,5 @@ label {
     padding: 0;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: red;
+    color: rgba(14, 131, 117, 0.69);
 }

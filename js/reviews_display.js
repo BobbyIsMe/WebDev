@@ -68,9 +68,9 @@ function loadPage(page) {
                 <div class="review-box">
                     ${data.is_admin ? `<button class="delete-btn" onclick=deleteReview(${review.review_id})>Delete</button>` : ""}
                     <div class="review-details">
-                        <div class="col-3">${review.name}</div>
-                        <div class="col-3">${review.email}</div>
-                        <div class="col-3">Room Number: ${review.room_id}</div>
+                        <div class="col-3 font">${review.name}</div>
+                        <div class="col-3 font">${review.email}</div>
+                        <div class="col-3">Room #${review.room_id}</div>
                         <div style="color: gold">${ratings}</div>
                         <div class="col-3">Date Created: ${review.date_created}</div>
                         ${review.date_modified != null ? `<div class="col-3">Last Modified: ${review.date_modified}</div>` : ""}
