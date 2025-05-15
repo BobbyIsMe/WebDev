@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matias BH | About</title>
+    <link rel="icon" href="../../img/favicon.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/Webpage/About.css">
     <link rel="stylesheet" href="../../css/navbar.css">
@@ -18,40 +19,40 @@
     <script type="text/javascript" src="../js/auth.js"></script>
 </head>
 
- <div class="topnav">
-        <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarContent">
+<div class="topnav">
+    <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarContent">
                 <div class="me-auto">
                     <img src="../../img/MatiasBH.png" alt="LOGO" />
                 </div>
-                    <div class="navbar-nav mx-auto">
-                            <a class="nav-link me-5" href="home.php">HOME</a>
-                            <a class="nav-link me-5" href="rooms.php">ROOMS</a>
-                            <a class="nav-link me-5" href="FAQ.php">FAQ'S</a>
-                            <a class="nav-link me-5" href="ContactUs.php">CONTACT US</a>
-                            <a class="nav-link me-5 fw-bold" style="color:rgba(14, 131, 117, 0.69);" href="About.php">ABOUT US</a>
-                    </div>
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-link me-5" href="home.php">HOME</a>
+                    <a class="nav-link me-5" href="rooms.php">ROOMS</a>
+                    <a class="nav-link me-5" href="FAQ.php">FAQ'S</a>
+                    <a class="nav-link me-5" href="ContactUs.php">CONTACT US</a>
+                    <a class="nav-link me-5 fw-bold" style="color:rgba(14, 131, 117, 0.69);" href="About.php">ABOUT US</a>
+                </div>
 
-                    <div class="dropdown ms-auto">
-                        <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
-                            data-bs-toggle="dropdown">
-                            Profile
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" id="personalDetailsLink" href="../Profilepage/PersonalDetails.php">Personal Details</a>
-                            <a class="dropdown-item" id="rentedRoomLink" href="../Profilepage/RentedRoom.php">Rented Room</a>
-                            <?php session_start();
-                            if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
-                                <a class="dropdown-item" id="adminLink" href="../Profilepage/Admin.php">Admin</a>
-                            <?php endif; ?>
-                            <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
-                        </ul>
-                    </div>
+                <div class="dropdown ms-auto">
+                    <button id="profileDropdown" class="btn btn-outline-secondary dropdown-toggle" type="button"
+                        data-bs-toggle="dropdown">
+                        Profile
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item" id="personalDetailsLink" href="../Profilepage/PersonalDetails.php">Personal Details</a>
+                        <a class="dropdown-item" id="rentedRoomLink" href="../Profilepage/RentedRoom.php">Rented Room</a>
+                        <?php session_start();
+                        if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
+                            <a class="dropdown-item" id="adminLink" href="../Profilepage/Admin.php">Admin</a>
+                        <?php endif; ?>
+                        <a class="dropdown-item" id="authLink" href="#" onclick="signoutClick(event)">Logout</a>
+                    </ul>
                 </div>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
+</div>
 
 
 <body>
@@ -65,7 +66,7 @@
                     <p>Each space is maintained to ensure cleanliness and functionality. Whether you're staying here long term or short term, we aim to make your experience warm and convenient.</p>
                 </div>
                 <div class="about-image">
-                    <img src="../../img/AboutUs.png"/>
+                    <img src="../../img/AboutUs.png" />
                 </div>
             </div>
         </section>
