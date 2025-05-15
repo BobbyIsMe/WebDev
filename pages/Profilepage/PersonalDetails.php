@@ -133,6 +133,7 @@ if (!isset($_SESSION["user_id"])) {
                             </div>
                         </div>
                     </form>
+                    <br>
                     <div class="col-5">
                         <div class="review-container">
                             <h2 id="room_id">Loading Room...</h2>
