@@ -71,7 +71,7 @@
                         <h2 id="room-num">Room #.</h2>
 
                         <p id="description">
-
+                            Description about the place
                         </p>
                     </div>
                     <form id="room-form" method="post" onsubmit="rentSubmit(event)">
@@ -117,8 +117,9 @@
                         </div>
 
                     </form>
-
                 </div>
+                <p class="paragraphs" id="message">
+                </p>
             </div>
         </div>
 
