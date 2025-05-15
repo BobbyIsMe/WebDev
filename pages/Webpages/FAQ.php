@@ -61,18 +61,38 @@
         <h1>Frequently Asked<br>Questions</h1>
 
         <div class="faq-item">
-            <div class="faq-question">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-            <div class="faq-answer">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            <div class="faq-question">How to reserve?</div>
+            <div class="faq-answer">After boarders have signed in, go to the rooms section on the navigation bar. Select a room and a boarder type, then press the reserve button to reserve a room. Lastly, wait for further updates via Gmail or text message.</div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-            <div class="faq-answer">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            <div class="faq-question">Who can reserve the rooms?</div>
+            <div class="faq-answer">Only 1 or 2 adults can reserve the room, students arent allowed to board. Lastly, kids aren't allowed, to not disturb the other boarders.</div>
         </div>
 
         <div class="faq-item">
-            <div class="faq-question">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
-            <div class="faq-answer">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+            <div class="faq-question">Are visitors allowed?</div>
+            <div class="faq-answer">Yes, but not for a prolonged time.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is there a curfew?</div>
+            <div class="faq-answer">No, boardedrs can go out whenever they want and come back whenever they want</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How do you secure the room?</div>
+            <div class="faq-answer">After boarders reserve it, the boarders need to deposit 4500 first and do 1-month advance payment, which is 40,00-4500 depending on the room.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How long can boarders stay? </div>
+            <div class="faq-answer">A minimum of 6 months of stay before boarder can back out and refund.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What do boarders need to pay?</div>
+            <div class="faq-answer">The boarders need to pay the rent of the room itself, the electric bill, and miscellaneous stuff.</div>
         </div>
     </div>
 

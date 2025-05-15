@@ -61,11 +61,11 @@
             <div class="about-container">
                 <div class="about-text">
                     <h1>About Us</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                    <p>Matias Boarding House is a safe and welcoming place that prioritizes comfort, security, and a sense of home for all its residents. We foster a friendly environment where respect and community matter.</p>
+                    <p>Each space is maintained to ensure cleanliness and functionality. Whether you're staying here long term or short term, we aim to make your experience warm and convenient.</p>
                 </div>
                 <div class="about-image">
-                    <p>Image Placeholder</p>
+                    <img src="../../img/22.jpg"/>
                 </div>
             </div>
         </section>
