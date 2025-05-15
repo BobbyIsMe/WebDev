@@ -17,9 +17,25 @@ body {
 
 
 h2 {
-    font-size: 2.5vw;
+    font-size: 40px;
+    letter-spacing: 10px;
     font-weight: lighter;
 }
+
+
+.dropdown{
+    border: none;
+
+    padding: 5px;
+    letter-spacing: 2px;
+}
+
+
+
+
+
+
+
 
 .roomdc {
     background-color: rgba(255, 255, 255, 0.87);

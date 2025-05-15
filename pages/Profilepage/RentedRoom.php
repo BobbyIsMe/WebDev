@@ -84,11 +84,7 @@ if (!isset($_SESSION["user_id"])) {
 
             <div class="col-md-10 p-4">
                 <div class="col-9 mx-auto">
-                    <div class="mb-4 border text-center" style="height: 200px;">
-                        <p class="pt-5">Image Placeholder</p>
-                    </div>
-
-
+                   
                     <h5 id="room-id">Loading room number...</h5>
                     <p id="description" class="paragraphs"><strong>Loading room description...</strong></p>
 

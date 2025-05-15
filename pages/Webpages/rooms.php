@@ -19,6 +19,7 @@
         * {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             overflow: hide;
+            border: 1px solid black;
         }
     </style>
 </head>
@@ -173,7 +174,7 @@
 
                 <h2>Reviews</h2>
                 <div class="controls">
-                    <select class="dropdown" id="ratings">
+                    <select class="dropdown" id="ratings" style="border-top:1px solid black">
                         <option value="select">Sort by rating</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -181,10 +182,10 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <select class="dropdown" id="rooms">
+                    <select class="dropdown" id="rooms" style="border-top:1px solid black">
                         <option value="select">Sort by room</option>
                     </select>
-                    <select class="dropdown" id="orders">
+                    <select class="dropdown" id="orders" style="border-top:1px solid black">
                         <option value="select">Sort by order</option>
                         <option value="desc">Latest</option>
                         <option value="asc">Oldest</option>
