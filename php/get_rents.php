@@ -144,3 +144,4 @@ echo json_encode([
         'results' => $results,
         'totalPages' => $totalPages
 ]);
+?>

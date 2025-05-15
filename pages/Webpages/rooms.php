@@ -17,7 +17,7 @@
     <style>
         * {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            
+
         }
     </style>
 </head>
@@ -144,59 +144,55 @@
 
     </section>
 
-        <div class="reviews">
-            <div class="col-9">
+    <div class="reviews">
+        <div class="col-9">
 
-                <h2>Reviews</h2>
-                <div class="controls">
-                    <div class="rating">★★★★☆</div>
-                    <select class="dropdown">
-                        <option>Value (1-10)</option>
-                    </select>
-                    <select class="dropdown">
-                        <option>Value (Latest, Oldest)</option>
-                    </select>
-                </div>
-
-                <div class="review-box">
-                    <button class="delete-btn">Delete</button>
-                    <div class="review-details">
-                        <div class=" col-3">Name</div>
-                        <div class=" col-3">Email</div>
-                        <div class=" col-3">Room Number: </div>
-                        <div class="col-3"> Rating: ★★★★☆</div>
-                        <div class=" col-3">Date Created</div>
-                        <div class=" col-3">Last Modified</div>
-                    </div>
-                    <div class="review-text">
-                        <strong>Review</strong><br>
-                        <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</a>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="p-4 d-flex justify-content-center align-items-center gap-4">
-                        <button class="navButton" type="button" id="prev_button">
-                            Previous
-                        </button>
-                        <span>|</span>
-                        <div id="page_number" class="paragraphs">
-                            Page # out of 10
-                        </div>
-                        <span>|</span>
-                        <button class="navButton" type="button" id="next_button">
-                            Next
-                        </button>
-                    </div>
-                </div>
+            <h2>Reviews</h2>
+            <div class="controls">
+                <select class="dropdown" id="ratings">
+                    <option value="select">Sort by rating</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <select class="dropdown" id="rooms">
+                    <option value="select">Sort by room</option>
+                </select>
+                <select class="dropdown" id="orders">
+                    <option value="select">Sort by order</option>
+                    <option value="desc">Latest</option>
+                    <option value="asc">Oldest</option>
+                </select>
+            </div>
+            <div id="reviews-list">
 
             </div>
+            <div class="d-flex justify-content-center">
+                <div class="p-4 d-flex justify-content-center align-items-center gap-4">
+                    <button class="navButton" type="button" id="prev_button">
+                        Previous
+                    </button>
+                    <span>|</span>
+                    <div id="page_number" class="paragraphs">
+                        Page # out of 10
+                    </div>
+                    <span>|</span>
+                    <button class="navButton" type="button" id="next_button">
+                        Next
+                    </button>
+                </div>
+            </div>
+
         </div>
-            <script type="text/javascript" src="../../js/session.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-                crossorigin="anonymous"></script>
-            <script type="text/javascript" src="../../js/rooms_image-slider.js"></script>
+    </div>
+    <script type="text/javascript" src="../../js/session.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../js/reviews_display.js"></script>
+    <script type="text/javascript" src="../../js/rooms_image-slider.js"></script>
 </body>
 
 </html>

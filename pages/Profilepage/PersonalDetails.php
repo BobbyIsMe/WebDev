@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] == 0) {
+    header("Location: ../Signin/Login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,11 +23,30 @@
         * {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
+
+        .stars {
+            display: flex;
+            cursor: pointer;
+        }
+
+        .star {
+            font-size: 2rem;
+            color: gray;
+            transition: color 0.2s;
+        }
+
+        .star.selected {
+            color: gold;
+        }
+
+        .star:hover,
+        .star.hovered {
+            color: gold;
+        }
     </style>
 </head>
 
 <body>
-
     <div class="topnav">
         <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
             <div class="container-fluid">
@@ -100,33 +126,37 @@
                                     class="paragraphs form-control-plaintext border bg-light px-2" id="contact-number"
                                     value=" ">
                             </div>
-
-                            <div class="col-5">
-                                <div class="review-container">
-                                    <h2>Add Review for Room #1</h2>
-
-                                    <div class="review-header">
-                                        <div class="stars">★☆☆☆☆</div>
-                                        <div class="modified-date">Last Modified: <em>date</em></div>
-                                    </div>
-
-                                    <textarea placeholder="Your review…"></textarea>
-
-                                    <button class="save-button">Save</button>
-                                </div>
-                            </div>
                         </div>
                     </form>
-                </div>
-                <div>
+                    <div class="col-5">
+                        <div class="review-container">
+                            <h2 id="room_id">Loading Room...</h2>
+
+                            <div class="review-header">
+                                <div class="stars" id="starRating">
+                                    <span class="star" data-value="1">&#9733;</span>
+                                    <span class="star" data-value="2">&#9733;</span>
+                                    <span class="star" data-value="3">&#9733;</span>
+                                    <span class="star" data-value="4">&#9733;</span>
+                                    <span class="star" data-value="5">&#9733;</span>
+                                </div>
+                                <div class="modified-date" id="date_modified">Last Modified: <em>date</em></div>
+                            </div>
+                            <form id="review-form" method="post" onsubmit="reviewSubmit(event)">
+                                <textarea placeholder="Your review…" name="text" id="review" required></textarea>
+                                <button type="submit" class="save-button">Save</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <script type="text/javascript" src="../../js/session.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-                crossorigin="anonymous"></script>
-
+        </div>
+    </div>
+    <script type="text/javascript" src="../../js/session.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../js/user_review.js"></script>
 </body>
 
 </html>

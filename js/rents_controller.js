@@ -9,8 +9,7 @@ let due_date = "";
 let page = 1;
 let query = "";
 let rent_id = 0;
-totalPages = 1;
-rents = [];
+let rents = [];
 
 function refreshFilter() {
     email = "";
@@ -29,7 +28,7 @@ function onSubmit(e) {
     refreshFilter();
     const form = document.getElementById("filter_form");
     const formData = new FormData(form);
-     document.getElementById("recent").classList.remove("active");
+    document.getElementById("recent").classList.remove("active");
     document.getElementById("filter_button").classList.add("active");
     email = formData.get("email");
     contact_number = formData.get("contact_number");
@@ -58,7 +57,7 @@ document.getElementById("recent").addEventListener("click", function (event) {
 document.getElementById("status_dropdown").addEventListener("change", function () {
     refreshFilter();
     document.getElementById("filter_form").reset();
-     document.getElementById("recent").classList.remove("active");
+    document.getElementById("recent").classList.remove("active");
     document.getElementById("filter_button").classList.remove("active");
     const selectedValue = this.value;
     stat = selectedValue;
@@ -81,6 +80,7 @@ document.getElementById("next_button").addEventListener("click", () => {
 });
 
 function loadPage(page) {
+    query = "";
     if (email != null && email != "") query += `&email=${email}`;
     if (contact_number != null && contact_number != "") query += `&contact_number=${contact_number}`;
     if (room_id != null && room_id != "") query += `&room_id=${room_id}`;
@@ -100,13 +100,15 @@ function loadPage(page) {
             rents = [];
             rentsData.forEach(rent => {
                 tableBody.innerHTML += `
+                <div class="col-6 my-auto">
+                    ID: ${rent.rent_id}, Room #${rent.room_id}
+                </div>
                 <div class="col-12" style="border-top: 1px solid black; border-bottom:  1px solid black;">
-
                             <div class="row">
                                 <div class="col-6 p-5" style="border-right: 1px solid black ;">
                                     <div class="row">
                                         <div class="col-6 my-auto">
-                                            Rent Details (ID: ${rent.rent_id}, Room #${rent.room_id})
+                                            Rent Details
                                         </div>
 
                                         <div class="col-6 d-flex justify-content-end ">
@@ -142,22 +144,6 @@ function loadPage(page) {
                                             <div class="row col-12 mx-auto container-fluid margin-content">
                                                 <div class="col-5 container-fluid margin-content">
                                                     <br>
-                                                    <label for="check_in_date" class="form-label">Check-in Date</label>
-                                                    <input type="text" readonly
-                                                        class="paragraphs form-control-plaintext border bg-light px-2"
-                                                        id="check_in_date" value=${rent.check_in_date}>
-                                                </div>
-                                                <div class="col-2 container-fluid margin-content">
-                                                </div>
-                                                <div class="col-5 container-fluid margin-content">
-                                                    <br>
-                                                    <label for="due_date" class="form-label">Due Date</label>
-                                                    <input type="text" readonly
-                                                        class="paragraphs form-control-plaintext border bg-light px-2"
-                                                        id="due_date" value=${rent.due_date}>
-                                                </div>
-                                                <div class="col-5 container-fluid margin-content">
-                                                    <br>
                                                     <label for="status" class="form-label">Status</label>
                                                     <input type="text" readonly
                                                         class="paragraphs form-control-plaintext border bg-light px-2" id="status"
@@ -171,6 +157,22 @@ function loadPage(page) {
                                                     <input type="text" readonly
                                                         class="paragraphs form-control-plaintext border bg-light px-2"
                                                         id="boarder_type" value=${rent.boarder_type}>
+                                                </div>
+                                                <div class="col-5 container-fluid margin-content">
+                                                    <br>
+                                                    <label for="check_in_date" class="form-label">Check-in Date</label>
+                                                    <input type="text" readonly
+                                                        class="paragraphs form-control-plaintext border bg-light px-2"
+                                                        id="check_in_date" value=${rent.check_in_date}>
+                                                </div>
+                                                <div class="col-2 container-fluid margin-content">
+                                                </div>
+                                                <div class="col-5 container-fluid margin-content">
+                                                    <br>
+                                                    <label for="due_date" class="form-label">Due Date</label>
+                                                    <input type="text" readonly
+                                                        class="paragraphs form-control-plaintext border bg-light px-2"
+                                                        id="due_date" value=${rent.due_date}>
                                                 </div>
                                             </div>
                                         </div>
@@ -300,7 +302,7 @@ function onUpdateRent(e) {
                 const modal = bootstrap.Modal.getInstance(document.getElementById('rent_popup'));
                 modal.hide();
                 document.getElementById("rent_form").reset();
-                loadPage(1);
+                loadPage(page);
             }
         })
         .catch(err => console.error("Failed to update rent:", err));
@@ -322,7 +324,7 @@ function onUpdateBill(e) {
                 const modal = bootstrap.Modal.getInstance(document.getElementById('bill_popup'));
                 modal.hide();
                 document.getElementById("bill_form").reset();
-                loadPage(1);
+                loadPage(page);
             }
         })
         .catch(err => console.error("Failed to update bill:", err));

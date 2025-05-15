@@ -2,6 +2,7 @@ let rooms = [];
 
 document.addEventListener('DOMContentLoaded', () => {
     const dropdown = document.getElementById("room-dropdown");
+    const dropdownSort = document.getElementById("rooms");
 
     fetch("../../php/get_rooms.php")
         .then(res => res.json())
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 option.value = room.room_id;
                 option.textContent = `${room.room_id}`;
                 dropdown.appendChild(option);
+                dropdownSort.appendChild(option);
             });
         })
         .catch(err => console.error("Failed to fetch rooms:", err));

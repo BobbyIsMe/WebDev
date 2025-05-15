@@ -89,12 +89,12 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                             |
                             <div class="dropdown">
                                 <select class="form-select border-0" id="status_dropdown" name="rent_status" required>
-                                        <option value="status">Status</option>
-                                        <option value="pending">Pending</option>
-                                        <option value="approved">Approved</option>
-                                        <option value="rejected">Rejected</option>
-                                        <option value="closed">Closed</option>
-                                    </select>
+                                    <option value="status">Status</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="approved">Approved</option>
+                                    <option value="rejected">Rejected</option>
+                                    <option value="closed">Closed</option>
+                                </select>
                             </div>
                             |
                             <button id="filter_button" class="btn adminBtn" type="button" data-bs-toggle="modal"
@@ -106,7 +106,7 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
 
                         <!---Admin Body Page-->
                         <div id="rent-list">
-                            
+
                         </div>
 
                     </div>
@@ -169,15 +169,6 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                                         id="rent_contact_number" value="">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="check_in_date" class="form-label">Check-in Date</label>
-                                    <input type="date" class="paragraphs form-control" id="rent_check_in_date" name="check_in_date"
-                                        required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="due_date" class="form-label">Due Date</label>
-                                    <input type="date" class="paragraphs form-control" id="rent_due_date" name="due_date" required>
-                                </div>
-                                <div class="mb-3">
                                     <label for="status" class="form-label">Status</label>
                                     <select class="paragraphs form-select" id="rent_status" name="status" required>
                                         <option value="pending">Pending</option>
@@ -192,6 +183,15 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                                         <option value="single">Single</option>
                                         <option value="double">Double</option>
                                     </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="check_in_date" class="form-label">Check-in Date</label>
+                                    <input type="date" class="paragraphs form-control" id="rent_check_in_date" name="check_in_date"
+                                        required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="due_date" class="form-label">Due Date</label>
+                                    <input type="date" class="paragraphs form-control" id="rent_due_date" name="due_date" required>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -305,15 +305,6 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="check_in_date" class="form-label">Check-in Date</label>
-                                    <input type="date" class="paragraphs form-control" id="filter_check_in_date"
-                                        name="check_in_date">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="due_date" class="form-label">Due Date</label>
-                                    <input type="date" class="paragraphs form-control" id="filter_dueDate" name="due_date">
-                                </div>
-                                <div class="mb-3">
                                     <label for="status" class="form-label">Status</label>
                                     <select class="paragraphs form-select" id="filter_status" name="status">
                                         <option value="">Select Status</option>
@@ -330,6 +321,15 @@ if (!isset($_SESSION["user_id"]) && !isset($_SESSION["is_admin"]) || $_SESSION["
                                         <option value="Single">Single</option>
                                         <option value="Double">Double</option>
                                     </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="check_in_date" class="form-label">Check-in Date</label>
+                                    <input type="date" class="paragraphs form-control" id="filter_check_in_date"
+                                        name="check_in_date">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="due_date" class="form-label">Due Date</label>
+                                    <input type="date" class="paragraphs form-control" id="filter_dueDate" name="due_date">
                                 </div>
                             </div>
                             <div class="modal-footer">
