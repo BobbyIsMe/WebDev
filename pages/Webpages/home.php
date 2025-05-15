@@ -66,9 +66,6 @@
             </div>
         </header>
 
-        <!--footer
-    <p>Matias Boarding House - Serving Rooms since 2010</p>
-    <br>------>
 
         <div>
             <div class="container-fluid navFoot">
