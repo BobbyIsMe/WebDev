@@ -82,7 +82,7 @@
 
         <div class="faq-item">
             <div class="faq-question">How do you secure the room?</div>
-            <div class="faq-answer">After boarders reserve it, the boarders need to deposit 4500 first and do 1-month advance payment, which is 40,00-4500 depending on the room.</div>
+            <div class="faq-answer">After boarders reserve it, the boarders need to deposit 4500 first and do 1-month advance payment, which is 4000-4500 depending on the room.</div>
         </div>
 
         <div class="faq-item">

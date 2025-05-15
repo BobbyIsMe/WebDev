@@ -4,11 +4,6 @@ body {
     background-color: #f4f4f4;
 }
 
-html {
-    overflow-y: scroll;
-}
-
-
 .paragraphs {
     margin: 0 auto;
     width: 70%;
@@ -257,10 +252,6 @@ label {
 
 .rating {
     font-size: 20px;
-}
-
-.dropdown {
-    padding: 5px;
 }
 
 .review-details {
