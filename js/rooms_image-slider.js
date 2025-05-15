@@ -1,19 +1,19 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const mainImages = document.querySelectorAll('.main-image img');
     const smallImages = document.querySelectorAll('.small-image');
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
-    
+
     let currentIndex = 0;
     let autoSlideInterval;
 
     function showImage(index) {
         mainImages.forEach(img => img.classList.remove('active'));
         mainImages[index].classList.add('active');
-        
+
         smallImages.forEach(thumb => thumb.classList.remove('active-thumb'));
-        smallImages[index].classList.add('active-thumb');
-        
+        smallImages[index]?.classList.add('active-thumb');
+
         currentIndex = index;
     }
 
@@ -28,11 +28,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function startAutoSlide() {
+        if (autoSlideInterval) return;
         autoSlideInterval = setInterval(nextImage, 5000);
     }
 
     function stopAutoSlide() {
-        clearInterval(autoSlideInterval);
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = null;
+        }
     }
 
     prevBtn.addEventListener('click', () => {

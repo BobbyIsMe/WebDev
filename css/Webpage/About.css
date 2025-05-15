@@ -54,14 +54,19 @@ header {
 
 .about-image {
     flex: 1;
-    background-color: #ddd;
-    height: 20vw;
     border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #777;
-    font-size: 1.5vw;
+    max-width: 40%;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
 }
 
 

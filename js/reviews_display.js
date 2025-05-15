@@ -77,8 +77,9 @@ function loadPage(page) {
                     </div>
                     <div class="review-text">
                         <strong>Review</strong><br>
-                        <p>${review.text}</p>
+                        <p class="text">${review.text}</p>
                     </div>
+                    <button class="read-more")>Read More</button>
                 </div>
                 <br>
                 `;
@@ -86,9 +87,28 @@ function loadPage(page) {
             document.getElementById("page_number").innerHTML = data.totalPages != 0 ? `Page <strong>${page}</strong> of <strong>${data.totalPages}</strong>` : data.message;
             document.getElementById("prev_button").disabled = (page === 1);
             document.getElementById("next_button").disabled = (page === totalPages);
+
+            const containers = document.querySelectorAll('.review-box');
+
+            containers.forEach(container => {
+                const desc = container.querySelector('.text');
+                const btn = container.querySelector('.read-more');
+
+                // Compare full scroll height vs visible height
+                if (desc.scrollHeight > desc.clientHeight + 1) {
+                    btn.style.display = 'inline';
+                }
+
+                // Toggle expansion
+                btn.addEventListener('click', () => {
+                    desc.classList.toggle('expanded');
+                    btn.textContent = desc.classList.contains('expanded') ? 'Read less' : 'Read more';
+                });
+            });
         })
         .catch(err => console.error("Failed to fetch reviews:", err));
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
     loadPage(1);
