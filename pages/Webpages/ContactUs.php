@@ -56,39 +56,38 @@
 
 
 <body>
-    <div class="fadeIn">
-        <section class="contact-section">
-            <h2 style="font-size: 35px;">Contact Us</h2>
-            <br>
-            <div class="contact-container">
-                <div class="contact-box">
-                    <h3>Location</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!4v1747318444247!6m8!1m7!1sQRrrwKXYhGw1ExIjiDurog!2m2!1d10.33291470906647!2d123.9020951897359!3f332.2747204050012!4f3.5072753560243797!5f0.7820865974627469" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <br>
-                    <a href="https://maps.app.goo.gl/UZoLAGcAh7peprJ47">Redirect to Google Maps</a>
-                </div>
 
-                <div class="contact-box">
-                    <br>
-                    <div class="contact-item">
-                        <img src="../../img/Phone Logo.png" class="icon"></img>
-                        <p><strong>+63915-351-0286</strong></p>
-                    </div>
-                    <br>
-                    <div class="contact-item">
-                        <img src="../../img/MatiasBH_crop.png" class="icon"></img>
-                        <p>Michelle P. Matias</p>
-                    </div>
-                    <br>
-                    <div class="contact-item">
-                        <img src="../../img/Facebook Logo.png" class="icon"></img>
-                        <p>Mich-cNorma Matias</p>
-                    </div>
-                    <br>
-                    <div class="contact-item">
-                        <img src="../../img/Gmail Logo.png" class="icon"></img>
-                        <p>mmatias07091@gmail.com</p>
-                    </div>
+    <section class="contact-section">
+        <h2 style="font-size: 35px;">Contact Us</h2>
+        <br>
+        <div class="contact-container">
+            <div class="contact-box">
+                <h3>Location</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!4v1747318444247!6m8!1m7!1sQRrrwKXYhGw1ExIjiDurog!2m2!1d10.33291470906647!2d123.9020951897359!3f332.2747204050012!4f3.5072753560243797!5f0.7820865974627469" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <br>
+                <a href="https://maps.app.goo.gl/UZoLAGcAh7peprJ47">Redirect to Google Maps</a>
+            </div>
+            
+            <div class="contact-box">
+            <br>
+                <div class="contact-item">
+                <img src="../../img/Phone Logo.png"class="icon"></img>
+                    <p><strong>+63915-351-0286</strong></p> 
+                </div>
+                <br>
+                <div class="contact-item">
+                    <img src="../../img/MatiasBH_crop.png"class="icon"></img>
+                    <p>Michelle P. Matias</p>
+                </div>
+                <br>
+                <div class="contact-item">
+                <img src="../../img/Facebook Logo.png"class="icon"></img>
+                    <p>Mich-cNorma Matias</p>
+                </div>
+                <br>
+                <div class="contact-item">
+                    <img src="../../img/Gmail Logo.png"class="icon"></img>
+                    <p>mmatias07091@gmail.com</p>
                 </div>
             </div>
         </section>

@@ -119,8 +119,11 @@ header {
 
 .faq-section h1 {
     text-align: center;
-    font-size: 2.5vw;
-    margin-bottom: 3vw;
+    font-size: 40px;
+    letter-spacing: 2px;
+    padding: 20px;
+    margin-bottom: 20px;
+
 }
 
 .faq-item {
@@ -130,7 +133,8 @@ header {
 }
 
 .faq-question {
-    font-size: 1.5vw;
+    font-size: 30px;
+    letter-spacing: 3px;
     cursor: pointer;
     position: relative;
     padding-right: 2vw;
@@ -154,7 +158,8 @@ header {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease;
-    font-size: 1.2vw;
+    font-size: 20px;
+    letter-spacing: 3px;
     line-height: 1.5;
     margin-top: 0.5vw;
     color: #555;

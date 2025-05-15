@@ -57,9 +57,9 @@
 
 
 <body>
-    <div class="fadeIn">
-        <div class="faq-section">
-            <h1>Frequently Asked<br>Questions</h1>
+
+    <div class="faq-section">
+        <h1>Frequently Asked<br>Questions</h1>
 
             <div class="faq-item">
                 <div class="faq-question">How to reserve?</div>

@@ -116,17 +116,17 @@ if (isset($_SESSION["user_id"])) {
                                                 </button>
                                             </div>
 
-                                            <br>
-                                        </div>
-                                        <div class="subp">
-                                            Already have an account? <br>
-
-                                        </div>
-                                        <a href="Login.php" class="register">Login Here</a>
+                                        <br>
                                     </div>
-                                </form>
-                            </div>
+                                    <div class="subp">
+                                        Already have an account? <br>
+                                       
+                                    </div>
+                                     <a href="Login.php" class="register">Login Here</a>
+                                </div>
+                            </form>
                         </div>
+                    </div>
                     </div>
 
                 </div>

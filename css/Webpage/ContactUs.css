@@ -12,6 +12,12 @@ body {
 
 }
 
+h2{
+    font-size: 30px;
+    letter-spacing: 10px;
+    font-weight: bolder;
+}
+
 nav {
 
     background-color: #f8b6b6;
@@ -128,6 +134,7 @@ header {
     width: 30vw;
     min-width: 280px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
 }
 
 .location-img {
@@ -148,6 +155,7 @@ header {
     gap: 10px;
     margin: 15px 0;
     padding-left: 30px;
+    font-size: 10px;
 }
 
 .contact-item .icon {
@@ -164,9 +172,34 @@ header {
 
 }
 
-.contact-item p {
+h3{
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
+
+
+h4{
+    font-size: 20px;
+    color: black;
+    padding: 20px;
+    letter-spacing: 5px;
+}
+
+
+h4:hover{
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+
+
+p {
     margin: 0;
-    font-size: 30px;
+    font-size: 20px;
     text-align: left;
+    padding: 20px;
+    letter-spacing: 5px;
+    font-weight: bolder;
 
 }

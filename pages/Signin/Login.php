@@ -105,10 +105,11 @@ if (isset($_SESSION["user_id"])) {
                                             <br>
                                             <div class="subp">
                                                 No account? <br>
-
                                             </div>
-                                            <a href="registration.php" class="register">Register Here</a>
-                                            <br>
+                                            <div class="p-4">
+                                            <a href="registration.php" class="register p-3">Register Here</a>
+                                            <a href="../../pages/Webpages/Home.php" class="register p-3">Go To HOME</a>
+                                            </div>
                                         </div>
                                     </div>
 
