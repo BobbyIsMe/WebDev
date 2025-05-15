@@ -15,6 +15,11 @@
     <style>
         * {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border: 1px solid black;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
         }
     </style>
 </head>
@@ -22,7 +27,7 @@
     <nav class="navbar navbar-expand-lg border-bottom w-100 p-3">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarContent">
-                <a class="navbar-brand me-auto fs-3 fw-bold" href="#"><b>Matias BH</b></a>
+                    <img src="../../img/MatiasBH.png" alt="LOGO">
 
                 <div class="navbar-nav mx-auto">
                     <a class="nav-link me-5 fw-bold" style="color:rgba(14, 131, 117, 0.69);" href="home.php">HOME</a>
@@ -64,73 +69,22 @@
 <!--footer
     <p>Matias Boarding House - Serving Rooms since 2010</p>
     <br>------>
+
 <body>
     <div style="padding: 2vw;">
 
-<!---<section class="rooms-showcase">
-            <br>
-            <h2>ROOMS SHOWCASE</h2><br><br>
-            <div class="room-images">
-                <div class="room-placeholder">
-                    <div>
-                        <img src="../../img/rp-1.jpg" alt="bembi">
-                    </div>
-                </div>
 
-                <div class="room-placeholder">
-                    <div>
-                        <img src="../../img/rp-2.jpg" alt="bembi">
-                    </div>
-                </div>
+        <script type="text/javascript" src="../../js/session.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+            crossorigin="anonymous"></script>
 
-                <div class="room-placeholder">
-                    <div>
-                        <img src="../../img/rp-3.jpg" alt="bembi">
-                    </div>
-                </div>
-            </div>
-
-            <br>
-        </section>---->
-        
-
-
-
-        <div class="col-12 row navFoot mx-auto">
-            <div class="col-6 navBox " style="border-right: 1px solid black">
-                <section class="reservation-steps ">
-                    <h2>RESERVATION STEPS</h2>
-                    <p class="paragraphs">
-                        1. Create an account
-                        <br>
-                        2. Sign In
-                        <br>
-                        3. Navigate to the rooms section
-                        <br>
-                        4. Select the room you want to avail
-                        <br>
-                        5. Fill in the details, and Reserve!
-                        <br>
-                    </p>
-                </section>
-            </div>
-            <div class="col-6 navBox">
-                <div class="map-placeholder">
-                    <div>
-                        <img src="../../img/mapArrow.png" alt="bembi">
-                    </div>
-                </div>
-                <br>
-                <a href="https://maps.app.goo.gl/bkQG8VRU2HgTdWMg8" class="map-button" target="_blank">Click for Google
-                    Map link</a>
-            </div>
-        </div>
-    </div>
-
-    <script type="text/javascript" src="../../js/session.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-        crossorigin="anonymous"></script>
 </body>
+
+<div class="container-fluid navFoot">
+    Boarding Cebuanos and Alike - 2011
+</div>
+
+
 
 </html>

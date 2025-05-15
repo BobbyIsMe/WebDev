@@ -1,19 +1,14 @@
 body {
     margin: 0;
     padding: 0;
-        background-color: #f4f4f4;
+    background-color: #ebebeb;
+    
 }
 
 .paragraphs {
     margin: 0 auto;
     width: 70%;
     text-align: justify;
-}
-
-
-.logo {
-    font-size: 2vw;
-    font-weight: bold;
 }
 
 header {
@@ -36,36 +31,6 @@ header {
     display: block;
 }
 
-.room-images {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 150px;
-    width: 100%;
-    height: 100%;
-}
-
-.room-placeholder {
-    width: 300px;
-    height: 400px;
-    overflow: hidden;
-}
-
-.room-placeholder img {
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.rooms-showcase{
-    border-top: 1px solid black;
-}
-
-.rooms-showcase, .reservation-steps {
-    text-align: center;
-    padding: 20px;
-}
 
 
 
@@ -77,55 +42,40 @@ header {
     padding: 40px;
     height: 100%;
     text-align: center;
+    border: none;
+}
+
+.navFoot {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 10px;
+
     
 }
 
 
-.navFoot{
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    padding: 10px;
 
-}
 
-.navBox{
-    height: 500px;
-        display: flex;
+.navBox {
+    height: auto;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-h2{
+h2 {
     font-size: 30px;
     letter-spacing: 3px;
 }
 
-.paragraphs{
+.paragraphs {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgba(0, 0, 0, 0.747);
-}
-
-.map-placeholder {
-    width: 300px;
-    height: auto;
-    overflow: hidden;
-}
-
-.map-placeholder img {
-    border-radius: 10px;
-    width: 100%;
-    height: 125%;
-    object-fit: contain;
-}
-
-.map-button{
-    text-decoration: none;
-    color: black;
-    letter-spacing: 2px;
-}
-
-.map-button:hover{
-    font-weight: bolder;
-
 }
