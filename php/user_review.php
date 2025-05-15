@@ -19,21 +19,24 @@ $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $stmt->close();
-if($result->num_rows > 0) {
+if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     echo json_encode([
         'room_id' =>  $row && $row['room_id'] ? ("Add Review for Room #" . $row['room_id']) : "No room rented",
         'rating' => $row['rating'] ?? 5,
-        'text' => !empty($row['text']) ? $row['text'] : "Your review here.",
+        'text' => !empty($row['text']) ? htmlspecialchars($row['text']) : "Your review here.",
         'date_modified' => $row && $row['date_modified'] != null ? ("Last Modified: " . $row['date_modified']) : "",
-        'status' => 200, 
-        'message' => 'Review retrieved successfully.']);
+        'status' => 200,
+        'message' => 'Review retrieved successfully.'
+    ]);
 } else {
     echo json_encode([
         'room_id' => "No room rented",
+        'rating' => 5,
         'text' => "Your review here.",
-        'status' => 404, 
-        'message' => 'No room found.']);
+        'date_modified' => "",
+        'status' => 404,
+        'message' => 'No room found.'
+    ]);
     exit();
 }
-?>
