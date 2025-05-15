@@ -71,7 +71,7 @@
 
     <div >
         <div class="container-fluid navFoot">
-            Boarding Cebuanos and Alike - 2011
+            Offering Residency  - Since 2011
         </div>
     </div>
 
