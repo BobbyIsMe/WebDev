@@ -61,7 +61,7 @@
     <header>
 
         <div class="main-image">
-            <img src="../../img/homepage1.png" alt="bembi">
+            <img src="../../img/homepage2.png" alt="bembi">
         </div>
     </header>
 
@@ -72,10 +72,6 @@
     <div >
         <div class="container-fluid navFoot">
             Boarding Cebuanos and Alike - 2011
-        </div>
-
-        <div class="container-fluid navFooter">
-            Reserve Now!
         </div>
     </div>
 
