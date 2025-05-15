@@ -120,8 +120,9 @@ if (isset($_SESSION["user_id"])) {
                                     <div class="subp">
                                         Already have an account? <br>
                                        
-                                    </div>
-                                     <a href="Login.php" class="register">Login Here</a>
+                                    </div class="p-4">
+                                     <a href="Login.php" class="register p-4">Login Here</a>
+                                     <a href="../../pages/Webpages/Home.php" class="register p-4">Go To HOME</a>
                                 </div>
                             </form>
                         </div>
