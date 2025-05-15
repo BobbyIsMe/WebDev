@@ -59,20 +59,21 @@
         </nav>
     </div>
 
-    <header>
+    <div class="fadeIn">
+        <header>
+            <div class="main-image">
+                <img src="../../img/homepage2.png" alt="bembi">
+            </div>
+        </header>
 
-        <div class="main-image">
-            <img src="../../img/homepage2.png" alt="bembi">
-        </div>
-    </header>
-
-    <!--footer
+        <!--footer
     <p>Matias Boarding House - Serving Rooms since 2010</p>
     <br>------>
 
-    <div >
-        <div class="container-fluid navFoot">
-            Offering Residency  - Since 2011
+        <div>
+            <div class="container-fluid navFoot">
+                Offering Residency - Since 2011
+            </div>
         </div>
     </div>
 
