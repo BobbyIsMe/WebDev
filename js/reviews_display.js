@@ -48,7 +48,6 @@ function loadPage(page) {
     if (rating != null && rating != 0) query += `&rating=${rating}`;
     if (order != null && order != "") query += `&order=${order}`;
     if (room_id != null && room_id != 0) query += `&room_id=${room_id}`;
-    console.log("hi");
 
     fetch(`../../php/get_reviews.php?page=${page}${query}`)
         .then(res => res.json())
@@ -65,7 +64,7 @@ function loadPage(page) {
                 for (let i = 0; i < 5 - review.rating; i++) {
                     ratings += "☆";
                 }
-                tableBody.innerHTML = `
+                tableBody.innerHTML += `
                 <div class="review-box">
                     ${data.is_admin ? `<button class="delete-btn" onclick=deleteReview(${review.review_id})>Delete</button>` : ""}
                     <div class="review-details">
@@ -81,6 +80,7 @@ function loadPage(page) {
                         <p>${review.text}</p>
                     </div>
                 </div>
+                <br>
                 `;
             });
             document.getElementById("page_number").innerHTML = data.totalPages != 0 ? `Page <strong>${page}</strong> of <strong>${data.totalPages}</strong>` : data.message;
