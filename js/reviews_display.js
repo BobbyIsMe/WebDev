@@ -23,6 +23,21 @@ document.getElementById("orders").addEventListener("change", (e) => {
     loadPage(1);
 });
 
+document.getElementById("prev_button").addEventListener("click", () => {
+    if (page > 1) {
+        page--;
+        loadPage(page);
+    }
+});
+
+document.getElementById("next_button").addEventListener("click", () => {
+    if (page < totalPages) {
+        page++;
+        loadPage(page);
+    }
+});
+
+
 function deleteReview(review_id) {
     if (confirm("Are you sure you want to delete this review?")) {
         fetch(`../../php/delete_review.php`, {
