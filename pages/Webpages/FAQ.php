@@ -58,7 +58,7 @@
 
 <body>
 
-    <div class="faq-section">
+    <div class="faq-section fadeIn">
         <h1>Frequently Asked Questions</h1>
 
             <div class="faq-item">
