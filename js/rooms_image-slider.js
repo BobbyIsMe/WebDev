@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const mainImages = document.querySelectorAll('.main-image img');
-    const smallImages = document.querySelectorAll('.small-image');
+    let mainImages = document.querySelectorAll('.main-image img');
+    let smallImages = document.querySelectorAll('.small-image');
     const prevBtn = document.querySelector('.prev');
     const nextBtn = document.querySelector('.next');
 
     let currentIndex = 0;
     let autoSlideInterval;
+    let startThumbIndex = 0;
+    const maxVisibleThumbs = 3;
 
     function showImage(index) {
         mainImages.forEach(img => img.classList.remove('active'));
@@ -18,12 +20,32 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function nextImage() {
-        currentIndex = (currentIndex + 1) % mainImages.length;
+        currentIndex++;
+
+        if (currentIndex >= mainImages.length) {
+            currentIndex = 0;
+            startThumbIndex = 0;
+        } else if (currentIndex >= startThumbIndex + maxVisibleThumbs) {
+            startThumbIndex = Math.min(currentIndex, smallImages.length - maxVisibleThumbs);
+        }
+
+        updateThumbnailDisplay();
         showImage(currentIndex);
     }
 
     function prevImage() {
-        currentIndex = (currentIndex - 1 + mainImages.length) % mainImages.length;
+        currentIndex--;
+
+        if (currentIndex < 0) {
+            currentIndex = mainImages.length - 1;
+            startThumbIndex = smallImages.length - maxVisibleThumbs;
+        }
+
+        if (currentIndex < startThumbIndex) {
+            startThumbIndex = Math.max(0, currentIndex - maxVisibleThumbs + 1);
+        }
+
+        updateThumbnailDisplay();
         showImage(currentIndex);
     }
 
@@ -39,6 +61,36 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    function updateThumbnailDisplay() {
+        smallImages.forEach((thumb, index) => {
+            if (index >= startThumbIndex && index < startThumbIndex + maxVisibleThumbs) {
+                thumb.style.display = 'inline-block';
+            } else {
+                thumb.style.display = 'none';
+            }
+        });
+    }
+
+    smallImages.forEach((thumb, index) => {
+        thumb.addEventListener('click', () => {
+            const visibleIndex = index - startThumbIndex;
+
+            if (visibleIndex === 2 && index < smallImages.length - 1) {
+                startThumbIndex = Math.min(startThumbIndex + 1, smallImages.length - maxVisibleThumbs);
+                updateThumbnailDisplay();
+            }
+
+            if (visibleIndex === 0 && index > 0) {
+                startThumbIndex = Math.max(startThumbIndex - 1, 0);
+                updateThumbnailDisplay();
+            }
+
+            showImage(index);
+            stopAutoSlide();
+            startAutoSlide();
+        });
+    });
+
     prevBtn.addEventListener('click', () => {
         prevImage();
         stopAutoSlide();
@@ -46,20 +98,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     nextBtn.addEventListener('click', () => {
-        nextImage();
+        if (currentIndex === mainImages.length - 1) {
+            currentIndex = 0;
+            startThumbIndex = 0;
+        } else {
+            currentIndex++;
+
+            if (currentIndex >= startThumbIndex + maxVisibleThumbs) {
+                startThumbIndex = Math.min(currentIndex, smallImages.length - maxVisibleThumbs);
+            }
+        }
+
+        updateThumbnailDisplay();
+        showImage(currentIndex);
+
         stopAutoSlide();
         startAutoSlide();
     });
 
-    smallImages.forEach((thumb, index) => {
-        thumb.addEventListener('click', () => {
-            showImage(index);
-            stopAutoSlide();
-            startAutoSlide();
-        });
-    });
-
     showImage(0);
+    updateThumbnailDisplay();
     startAutoSlide();
 
     document.querySelector('.room-images').addEventListener('mouseenter', stopAutoSlide);

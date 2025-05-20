@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION["user_id"])) {
-    header("Location: home.php");
+    header("Location: ../../pages/Webpages/home.php");
     exit();
 }
 ?>
@@ -123,7 +123,7 @@ if (isset($_SESSION["user_id"])) {
 
                                             </div>
                                             <a href="Login.php" class="register">Login Here</a>#
-                                            <a href="../../pages/Webpages/Home.php" class="register p-3">Go To HOME</a>
+                                            <a href="../../pages/Webpages/home.php" class="register p-3">Go To HOME</a>
                                         </div>
                                     </form>
                                 </div>

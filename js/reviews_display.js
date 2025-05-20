@@ -101,7 +101,7 @@ function loadPage(page) {
             });
             document.getElementById("page_number").innerHTML = data.totalPages != 0 ? `Page <strong>${page}</strong> of <strong>${data.totalPages}</strong>` : data.message;
             document.getElementById("prev_button").disabled = (page === 1);
-            document.getElementById("next_button").disabled = (page === totalPages);
+            document.getElementById("next_button").disabled = (page >= totalPages);
 
             const containers = document.querySelectorAll('.review-box');
 

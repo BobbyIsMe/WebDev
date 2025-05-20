@@ -144,17 +144,37 @@
 
                     <div class="slideshow">
                         <button class="prev">&lt;</button>
-
-                        <div class="small-image active-thumb">
-                            <img src="../../img/rooms/1.jpg" alt="Room Thumbnail 1">
-                        </div>
-
-                        <div class="small-image">
-                            <img src="../../img/rooms/4.jpg" alt="Room Thumbnail 4">
-                        </div>
-
-                        <div class="small-image">
-                            <img src="../../img/rooms/8.jpg" alt="Room Thumbnail 8">
+                        <div class="thumbnails">
+                            <div class="small-image active-thumb">
+                                <img src="../../img/rooms/1.jpg" alt="Room Thumbnail 1">
+                            </div>
+                            <div class="small-image">
+                                <img src="../../img/rooms/2.jpg" alt="Room Thumbnail 2">
+                            </div>
+                            <div class="small-image">
+                                <img src="../../img/rooms/3.jpg" alt="Room Thumbnail 3">
+                            </div>
+                            <div class="small-image">
+                                <img src="../../img/rooms/4.jpg" alt="Room Thumbnail 3">
+                            </div>
+                            <div class="small-image">
+                                <img src="../../img/rooms/5.jpg" alt="Room Thumbnail 3">
+                            </div>
+                            <div class="small-image">
+                                <img src="../../img/rooms/6.jpg" alt="Room Thumbnail 3">
+                            </div>
+                            <div class="small-image">
+                                <img src="../../img/rooms/7.jpg" alt="Room Thumbnail 3">
+                            </div>
+                            <div class="small-image">
+                                <img src="../../img/rooms/8.jpg" alt="Room Thumbnail 3">
+                            </div>
+                            <div class="small-image">
+                                <img src="../../img/rooms/9.jpg" alt="Room Thumbnail 3">
+                            </div>
+                            <div class="small-image">
+                                <img src="../../img/rooms/10.jpg" alt="Room Thumbnail 3">
+                            </div>
                         </div>
 
 
